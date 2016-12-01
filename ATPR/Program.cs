@@ -20,9 +20,13 @@ namespace ATPR
 				HelpText = "Output directory where the tool will save the results.")]
 			public bool Output { get; set; }
 				
-			[Option('c', "choose", Required = false,
-				HelpText = "Option of the tool.")]
-			public bool Choose { get; set; }
+			[Option('c', "choose", Required = true,
+				HelpText = "Selected option for running the tool.")]
+			public int Choose { get; set; }
+
+			[Option('d', "dictionary", Required = false,
+				HelpText = "Path to a dictionary.")]
+			public string Dictionary { get; set; }
 
 			[HelpOption]
 			public string GetUsage() {
@@ -36,7 +40,21 @@ namespace ATPR
 			var options = new Options();
 			if (CommandLine.Parser.Default.ParseArguments(args, options)) {
 				// Values are available here
-				if (options.Verbose) Console.WriteLine("Jiji jaja: {0}", options.InputFile);
+				if (options.Verbose) Console.WriteLine("Running with options {0}", options.ToString());
+				int choose = options.Choose;
+				switch (choose) {
+				case 1:	//Option 1, gets only entities
+					break;
+				case 2:	//Option 2, generates dictionary
+					break;
+				case 3:	//Option 3, gets entities that match with a dictionary
+					break;
+				default:
+					//ERROR
+					break;
+				}
+
+
 			}
 		}
 	}
