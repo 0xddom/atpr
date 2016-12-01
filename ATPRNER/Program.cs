@@ -2,10 +2,10 @@
 using Toxy;
 using edu.stanford.nlp.ie.crf;
 using System.IO;
+using System.Collections.Generic;
 
 namespace ATPRNER
 {
-	
 	class MainClass
 	{
 		/// <summary>
@@ -25,9 +25,7 @@ namespace ATPRNER
 		/// <param name="outputPath">Output path.</param>
 		public void GenerateDict(string inputPath,string outputPath)
 		{
-
 			System.IO.StreamWriter outputFile = new System.IO.StreamWriter(outputPath);
-
 			var jarRoot = @"~/Hackaton/Standford/";
 			var classifiersDirecrory = jarRoot + @"/stanford-ner-2015-12-09/classifiers/";
 			string [] fileEntries = Directory.GetFiles(inputPath);
@@ -60,9 +58,7 @@ namespace ATPRNER
 
 			var jarRoot = @"~/Hackaton/Standford/";
 			var classifiersDirecrory = jarRoot + @"/stanford-ner-2015-12-09/classifiers/";
-
 			string [] fileEntries = Directory.GetFiles(inputPath);
-
 
 			foreach(string file in fileEntries)
 			{
@@ -79,5 +75,39 @@ namespace ATPRNER
 			}
 	
 		}
+
+
+
+		/// <summary>
+		/// Generates the entities and return it as list of strings (XML format).
+		/// </summary>
+		/// <returns>The entities.</returns>
+		/// <param name="inputPath">Input path.</param>
+		public List<String> GenerateEntities(string inputPath)
+		{
+			List<String> entities = new List<String>();
+
+			var jarRoot = @"~/Hackaton/Standford/";
+			var classifiersDirecrory = jarRoot + @"/stanford-ner-2015-12-09/classifiers/";
+			string [] fileEntries = Directory.GetFiles(inputPath);
+
+			foreach(String document in fileEntries)
+			{
+				ParserContext c=new ParserContext(@"~/Hackaton/Dics/DicHack.pdf");
+				IDocumentParser parser=ParserFactory.CreateDocument(c);
+				ToxyDocument result = parser.Parse();
+
+				string text = result.ToString();
+				var classifier = CRFClassifier.getClassifierNoExceptions(classifiersDirecrory + 
+					@"/spanish.ancora.distsim.s512.crf.ser.gz");
+
+				entities.Add (classifier.classifyToString (text, "xml", true));
+
+			}
+
+			return entities;
+		}
+
+
 	}
 }
