@@ -15,7 +15,7 @@ namespace ATPRParser
 		/// <param name="args">The command-line arguments.</param>
 		public static void Main (string[] args)
 		{
-
+			Parse("Por mi hija pequeña que te pego un tiro en toda la pierna.");
 		}
 
 		/// <summary>
