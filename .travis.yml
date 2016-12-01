@@ -5,15 +5,15 @@ os:
 sudo: false
 
 language: csharp
-solution : ATPR.sln
+solution: ./ATPR/ATPR.sln
 
-install :
-  - nuget restore ATPR.sln
+install:
+  - nuget restore ./ATPR/ATPR.sln
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 
 script:
-  - xbuild /p:Configuration=Release ATPR.sln
-  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./ATPR.Tests/bin/Release/ATPR.Tests.dll
+  - xbuild /p:Configuration=Release ./ATPR/ATPR.sln
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./ATPR/ATPR.Tests/bin/Release/ATPR.Tests.dll
 
 notifications:
   on_success: never
