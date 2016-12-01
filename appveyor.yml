@@ -6,5 +6,4 @@ before_build:
 build:
   verbosity: minimal
   publish_wap: false
-  project: ATPR.sln
 
