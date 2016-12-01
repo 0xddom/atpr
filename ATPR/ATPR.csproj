@@ -30,10 +30,64 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="LumenWorks.Framework.IO">
+      <HintPath>..\packages\LumenWorks.Framework.IO.3.8.0\lib\net20\LumenWorks.Framework.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="policy.2.0.taglib-sharp">
+      <HintPath>..\packages\taglib.2.1.0.0\lib\policy.2.0.taglib-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="taglib-sharp">
+      <HintPath>..\packages\taglib.2.1.0.0\lib\taglib-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\packages\iTextSharp.5.5.6\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml">
+      <HintPath>..\packages\DocumentFormat.OpenXmlSDK.2.0\lib\Net35\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DCSoft.RTF">
+      <HintPath>..\packages\Toxy.1.6.1.1\lib\net45\DCSoft.RTF.dll</HintPath>
+    </Reference>
+    <Reference Include="dmach.Mail">
+      <HintPath>..\packages\Toxy.1.6.1.1\lib\net45\dmach.Mail.dll</HintPath>
+    </Reference>
+    <Reference Include="MsgReader">
+      <HintPath>..\packages\Toxy.1.6.1.1\lib\net45\MsgReader.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\packages\Toxy.1.6.1.1\lib\net45\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\packages\Toxy.1.6.1.1\lib\net45\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\packages\Toxy.1.6.1.1\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\packages\Toxy.1.6.1.1\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.ScratchPad.HWPF">
+      <HintPath>..\packages\Toxy.1.6.1.1\lib\net45\NPOI.ScratchPad.HWPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Thought.vCards">
+      <HintPath>..\packages\Toxy.1.6.1.1\lib\net45\Thought.vCards.dll</HintPath>
+    </Reference>
+    <Reference Include="Toxy">
+      <HintPath>..\packages\Toxy.1.6.1.1\lib\net45\Toxy.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
 </Project>
