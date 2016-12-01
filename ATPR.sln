@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATPR", "ATPR\ATPR.csproj", "{2D7E1FC4-67DF-407D-B63A-A22B10C36634}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATPR.Tests", "ATPR.Tests\ATPR.Tests.csproj", "{72B1EE3A-7CD1-4E8C-9FAF-ECFB33223F85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,5 +15,9 @@ Global
 		{2D7E1FC4-67DF-407D-B63A-A22B10C36634}.Debug|x86.Build.0 = Debug|x86
 		{2D7E1FC4-67DF-407D-B63A-A22B10C36634}.Release|x86.ActiveCfg = Release|x86
 		{2D7E1FC4-67DF-407D-B63A-A22B10C36634}.Release|x86.Build.0 = Release|x86
+		{72B1EE3A-7CD1-4E8C-9FAF-ECFB33223F85}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{72B1EE3A-7CD1-4E8C-9FAF-ECFB33223F85}.Debug|x86.Build.0 = Debug|Any CPU
+		{72B1EE3A-7CD1-4E8C-9FAF-ECFB33223F85}.Release|x86.ActiveCfg = Release|Any CPU
+		{72B1EE3A-7CD1-4E8C-9FAF-ECFB33223F85}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
