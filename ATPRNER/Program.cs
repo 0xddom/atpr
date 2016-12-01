@@ -2,10 +2,10 @@
 using Toxy;
 using edu.stanford.nlp.ie.crf;
 using System.IO;
+using System.Collections.Generic;
 
 namespace ATPRNER
 {
-
 	class MainClass
 	{
 		/// <summary>
@@ -16,7 +16,5 @@ namespace ATPRNER
 		{
 
 		}
-
-
 	}
 }
