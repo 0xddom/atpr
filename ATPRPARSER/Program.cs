@@ -4,6 +4,7 @@ using edu.stanford.nlp.parser.lexparser;
 using java.io;
 using edu.stanford.nlp.process;
 using edu.stanford.nlp.trees;
+using com.sun.tools.corba.se.logutil;
 
 namespace ATPRParser
 {
@@ -21,20 +22,17 @@ namespace ATPRParser
 		/// Parse the specified sentence.
 		/// </summary>
 		/// <param name="Sentence">Sentence to parse</param>
-		public static void Parse(string Sentence)
+		public static void Parse(string sentence)
 		{
-
 			//Load spanish models.
 			var jarRoot = GetStanfordHome();
 			var modelsDirectory = jarRoot + Consts.MODELS;
 			var lexparserDirectory = modelsDirectory + Consts.LEXPARSER;
-
 			var lp = LexicalizedParser.loadModel(lexparserDirectory);
 
 			//Parser sentence.
-			var sent2 = Sentence;
 			var tokenizerFactory = PTBTokenizer.factory(new CoreLabelTokenFactory(), "");
-			var sent2Reader = new StringReader(sent2);
+			var sent2Reader = new StringReader(sentence);
 			var rawWords2 = tokenizerFactory.getTokenizer(sent2Reader).tokenize();
 			sent2Reader.close();
 			var tree2 = lp.apply(rawWords2);

@@ -95,6 +95,7 @@
     <Compile Include="GenerateEntitiesStrategy.cs" />
     <Compile Include="GenerateDictionaryStrategy.cs" />
     <Compile Include="MatchEntitiesStrategy.cs" />
+    <Compile Include="ParseStrategy.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
