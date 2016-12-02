@@ -23,7 +23,6 @@ namespace ATPR.Utils
 				ParserContext c = new ParserContext(filePath);
 				//TODO Add support to csv, xls and xlsx CreateSpreadsheet
 				//TODO Add suport to ppt and pptx CreateSlideshow
-				//TODO Add support to txt CreateText and PDF PDFTextParser
 				//Examples https://github.com/tonyqus/toxy/tree/master/Toxy.Test
 				try
 				{	

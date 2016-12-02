@@ -97,6 +97,9 @@
     <Compile Include="MatchEntitiesStrategy.cs" />
     <Compile Include="ParseStrategy.cs" />
     <Compile Include="AbstractExecStrategy.cs" />
+    <Compile Include="MatchIterator.cs" />
+    <Compile Include="IMatchIterator.cs" />
+    <Compile Include="Match.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
