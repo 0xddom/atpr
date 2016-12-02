@@ -25,6 +25,8 @@ namespace ATPR
 			else output = new StreamWriter(options.Output);
 
 			DictionaryMatcher.MatchEntitiesInFiles(options.InputFile, options.Dictionary, output, options.Separator);
+
+			output.Close();
 		}
 	}
 }
