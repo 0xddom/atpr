@@ -43,17 +43,17 @@ TODO
 
 ## Using ATPR with command line
 
-# Entities extractor:
+#### Entities extractor:
 
 mono atpr -c 1 -p pathToDocuments [-o outputFile ]
 
-If -o is missing the output will redirect to STDOUT.
+If -o is missing the output will be redirected to STDOUT.
 
-# Dictionary generator:
+#### Dictionary generator:
 
 mono atpr -c 2 -p pathToDocuments [-o outputFile ]
 
-If -o is missing the output will redirect to STDOUT.
+If -o is missing the output will be redirected to STDOUT.
 
 TODO: Complete usage
 
