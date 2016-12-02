@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using TagLib.Riff;
+using NPOI.OpenXmlFormats.Dml.Diagram;
 
 namespace ATPRNER
 {
@@ -13,12 +15,12 @@ namespace ATPRNER
 		/// <param name="textEntities">Text entities.</param>
 		/// <param name="dictEntities">Dict entities.</param>
 		public static Dictionary<string, MatchedEntity> 
-			MatchEntities (List<string[]> textEntities,List<string[]> dictEntities)
+			MatchEntities (List<string[]> textEntities,List<string> dictEntities)
 		{
 			Dictionary<string, MatchedEntity> matches = new Dictionary<string, MatchedEntity> ();
 
 			foreach (string[] entity in textEntities) {
-				if (dictEntities.Contains(entity)) {
+				if (dictEntities.Contains(entity[1])) { 
 					if (matches.ContainsKey (entity[1])) {
 						matches[entity[1]].IncrementMatch();
 					} else {
@@ -47,7 +49,17 @@ namespace ATPRNER
 				var dicTable = CSVUtils.TabulateCSV(new StreamReader(dicPath), sep);
 				var fileTable = CSVUtils.TabulateCSV(new StringReader(csv), sep);
 
-				var matchs = MatchEntities(fileTable, dicTable);
+				//Refactor this (is a bug fix)
+					
+				List<String> dicTable2 = new List<String> ();
+
+				foreach (string[] item in dicTable) {
+					dicTable2.Add (item [0]);
+				}
+
+				//
+
+				var matchs = MatchEntities(fileTable, dicTable2);
 
 				CSVUtils.GenerateMatchedEntriesCSV(file, dicPath, matchs, output, sep);
 			}
