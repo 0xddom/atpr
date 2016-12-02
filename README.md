@@ -13,6 +13,25 @@
 # Install ATPR
 Check the Wiki https://github.com/KuroAku/atpr/wiki for tutorials and installation steps. 
 
+# Build
+## *NIX
+First install mono (and the IDE if you want)
+
+You can either load the .sln in Xamarin Studio/MonoDevelop or in a shell run:
+
+    cd <the project path>
+    nuget restore
+    xbuild /p:Configuration=<Debug or Release> ATPR.sln
+    
+## Windows
+Install Xamarin Studio and the c# toolchain
+
+Load the project in Xamarin Studio (prefered) or VS (not tested) and build, or in a shell:
+
+    cd <project path>
+    nuget restore
+    msbuild ATPR.sln
+    
 # Usage
 ## Using ATPR with Autopsy
 TODO
