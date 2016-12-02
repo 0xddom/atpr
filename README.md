@@ -57,7 +57,7 @@ If `-o` is missing the output will be redirected to STDOUT.
 
 ### Dictionary matching:
 
-    mono ATPR.exe -c match -i <path_to_documents> [-o output_file]
+    mono ATPR.exe -c match -i <path_to_documents> -d <path_to_dictionary> [-o output_file]
     
 If `-o` is missing the output will be redirected to STDOUT.
 
