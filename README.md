@@ -80,6 +80,14 @@ The aplication support the following documents types:
 * doc
 * docx
 * pdf
+* txt
+* csv
+* xls
+* xlsx
+* ppt
+* pptx
+* rtf
+* html    
 
 The main target for this tool is to help the forensics community in processing evidences with large amount of documents.
 
