@@ -36,20 +36,20 @@ namespace ATPRNER
 		/// <param name="inputPath">Files path.</param>
 		/// <param name="dicPath">Dictionary path.</param>
 		/// <param name="output">Output stream.</param>
-		public static void MatchEntitiesInFiles(string inputPath, string dicPath, TextWriter output)
+		public static void MatchEntitiesInFiles(string inputPath, string dicPath, TextWriter output, char sep)
 		{
 			string[] files = FilesUtils.GetFiles(inputPath);
 			foreach (string file in files)
 			{
 				string xml = NER.GenerateEntitiesToString(file);
-				string csv = CSVUtils.EntitiesToCsv(xml);
+				string csv = CSVUtils.EntitiesToCsv(xml, sep);
 
-				var dicTable = CSVUtils.TabulateCSV(new StreamReader(dicPath), ';');
-				var fileTable = CSVUtils.TabulateCSV(new StringReader(csv), ';');
+				var dicTable = CSVUtils.TabulateCSV(new StreamReader(dicPath), sep);
+				var fileTable = CSVUtils.TabulateCSV(new StringReader(csv), sep);
 
 				var matchs = MatchEntities(fileTable, dicTable);
 
-				CSVUtils.GenerateMatchedEntriesCSV(file, dicPath, matchs, output);
+				CSVUtils.GenerateMatchedEntriesCSV(file, dicPath, matchs, output, sep);
 			}
 		}
 	}

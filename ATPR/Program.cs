@@ -16,39 +16,6 @@ namespace ATPR
 	class MainClass
 	{
 		/// <summary>
-		/// Argument parse options.
-		/// </summary>
-		class Options
-		{
-			[Option('p', "path", Required = true,
-				HelpText = "File or directory where the tool will get the files.")]
-			public string InputFile { get; set; }
-
-			[Option('v', "verbose", DefaultValue = false,
-				HelpText = "Prints all messages to standard output.")]
-			public bool Verbose { get; set; }
-
-			[Option('o', "output", Required = false,
-				HelpText = "Output path where the tool will save the results.")]
-			public string Output { get; set; }
-
-			[Option('c', "choose", Required = true,
-				HelpText = "Selected option for running the tool.")]
-			public int Choose { get; set; }
-
-			[Option('d', "dictionary", Required = false,
-				HelpText = "Path to a dictionary.")]
-			public string Dictionary { get; set; }
-
-			[HelpOption]
-			public string GetUsage()
-			{
-				return CommandLine.Text.HelpText.AutoBuild(this,
-					(CommandLine.Text.HelpText current) => CommandLine.Text.HelpText.DefaultParsingErrorsHandler(this, current));
-			}
-		}
-
-		/// <summary>
 		/// The entry point of the program, where the program control starts and ends.
 		/// </summary>
 		/// <param name="args">The command-line arguments.</param>
@@ -74,60 +41,25 @@ namespace ATPR
 				}
 
 				int choose = options.Choose;
+				ExecStrategy strategy = null;
 
 				switch (choose)
 				{
 					case 1: //Option 1, gets only entities
-						if (options.Verbose)
-							Console.WriteLine("Option 1.");
-
-						if (String.IsNullOrEmpty(options.Output))
-						{
-							NER.GenerateEntities(options.InputFile);
-						}
-						else {
-							NER.GenerateEntities(options.InputFile, options.Output);
-						}
-
+						strategy = new GenerateEntitiesStrategy();
 						break;
 					case 2: //Option 2, generates dictionary
-						if (options.Verbose)
-							Console.WriteLine("Option 2.");
-
-						string xml = NER.GenerateEntitiesToString(options.InputFile);
-						string csv = CSVUtils.EntitiesToCsv(xml);
-
-						if (string.IsNullOrEmpty(options.Output))
-						{
-							Console.WriteLine(csv);
-						}
-						else {
-							System.IO.File.WriteAllText(options.Output, csv);
-						}
+						strategy = new GenerateDictionaryStrategy();
 						break;
-
 					case 3: //Option 3, gets entities that match with a dictionary
-
-						if (options.Verbose)
-							Console.WriteLine("Option 3.");
-
-						if (options.Dictionary == null)
-						{
-							Console.WriteLine("Dictionary required. Exiting...");
-							return;
-						}
-						TextWriter output;
-						if (string.IsNullOrEmpty(options.Output)) output = new StreamWriter(Console.OpenStandardOutput());
-						else output = new StreamWriter(options.Output);
-
-						DictionaryMatcher.MatchEntitiesInFiles(options.InputFile, options.Dictionary, output);
-
+						strategy = new MatchEntitiesStrategy();
 						break;
 					default:
 						Console.WriteLine("Option not recognized. Exiting...");
 						break;
-
 				}
+				if (strategy != null)
+					strategy.Run(options);
 			}
 		}
 	}

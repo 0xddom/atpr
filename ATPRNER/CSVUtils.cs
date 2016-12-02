@@ -15,7 +15,7 @@ namespace ATPRNER
 		/// </summary>
 		/// <returns>The entities in CSV.</returns>
 		/// <param name="entitiesXml">Entities xml.</param>
-		public static string EntitiesToCsv(string entitiesXml)
+		public static string EntitiesToCsv(string entitiesXml, char sep)
 		{
 			foundWi = false;
 
@@ -24,7 +24,7 @@ namespace ATPRNER
 			XmlReader reader = XmlReader.Create(new StringReader(entitiesXml));
 
 			while (reader.Read())
-				CreateEntry(ref reader, ref sb);
+				CreateEntry(ref reader, ref sb, sep);
 			reader.Close();
 
 			return RemoveDuplicates(sb.ToString());
@@ -78,7 +78,7 @@ namespace ATPRNER
 		/// </summary>
 		/// <param name="reader">The xml.</param>
 		/// <param name="sb">Output string builder.</param>
-		static void CreateEntry(ref XmlReader reader, ref StringBuilder sb)
+		static void CreateEntry(ref XmlReader reader, ref StringBuilder sb, char sep)
 		{
 			bool shouldBreak = false;
 			string entity = null;
@@ -99,7 +99,7 @@ namespace ATPRNER
 					case XmlNodeType.Text:
 						if (foundWi && entity != null && reader.Value.Length > 3)
 						{
-							sb.AppendFormat("{0};{1}\n", entity, reader.Value);
+							sb.AppendFormat("{0}{2}{1}\n", entity, reader.Value, sep);
 							foundWi = false;
 							shouldBreak = true;
 							entity = null;
@@ -116,7 +116,7 @@ namespace ATPRNER
 		/// </summary>
 		/// <returns>The entities from dic.</returns>
 		/// <param name="dictionaryPath">Dictionary path.</param>
-		public static List<String> GetEntitiesFromDic(string dictionaryPath)
+		public static List<String> GetEntitiesFromDic(string dictionaryPath, char sep)
 		{
 
 			List<String> entities = new List<String>();
@@ -124,7 +124,7 @@ namespace ATPRNER
 			while (!reader.EndOfStream)
 			{
 				var line = reader.ReadLine();
-				var values = line.Split(';');
+				var values = line.Split(sep);
 				entities.Add(values[1]);
 			}
 
@@ -139,12 +139,12 @@ namespace ATPRNER
 		/// <param name="dicFile">The dictionary used to match.</param>
 		/// <param name="entries">The found matchs.</param>
 		/// <param name="output">Output stream.</param>
-		public static void GenerateMatchedEntriesCSV(string origFile, string dicFile, Dictionary<string, MatchedEntity> entries, TextWriter output)
+		public static void GenerateMatchedEntriesCSV(string origFile, string dicFile, Dictionary<string, MatchedEntity> entries, TextWriter output, char sep)
 		{
 			foreach (var entry in entries)
 			{
 				var entryObj = entry.Value;
-				output.WriteLine("{0};{1};{2};{3}", origFile, entryObj.entityName, entryObj.matchNumber, dicFile);
+				output.WriteLine("{0}{4}{1}{4}{2}{4}{3}", origFile, entryObj.entityName, entryObj.matchNumber, dicFile, sep);
 			}
 		}
 	}

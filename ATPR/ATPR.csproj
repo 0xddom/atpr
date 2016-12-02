@@ -90,6 +90,11 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ExecStrategy.cs" />
+    <Compile Include="Options.cs" />
+    <Compile Include="GenerateEntitiesStrategy.cs" />
+    <Compile Include="GenerateDictionaryStrategy.cs" />
+    <Compile Include="MatchEntitiesStrategy.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
