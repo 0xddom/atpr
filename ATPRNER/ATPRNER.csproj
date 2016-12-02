@@ -180,6 +180,8 @@
     <Compile Include="Consts.cs" />
     <Compile Include="NER.cs" />
     <Compile Include="CSVUtils.cs" />
+    <Compile Include="DictionaryMatcher.cs" />
+    <Compile Include="MatchedEntity.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
