@@ -22,11 +22,11 @@ cache:
 install:
   - nuget restore ATPR.sln
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
-  - scripts/build_docker.sh
 
 script:
   - xbuild /p:Configuration=Release ATPR.sln
   - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ATPR.Tests/bin/Release/ATPR.Tests.dll
+  - scripts/build_docker.sh
 
 notifications:
   on_success: never
