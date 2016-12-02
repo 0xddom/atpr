@@ -39,7 +39,7 @@ Load the project in Xamarin Studio (prefered) or VS (not tested) and build, or i
     
 # Usage
 ## Using ATPR with Autopsy
-TODO
+Check https://github.com/KuroAku/atpr/wiki/Autopsy-Integration
 
 ## Using ATPR with command line
 
