@@ -15,9 +15,9 @@ namespace ATPR
 		public GenerateEntitiesStrategy()
 		{
 		}
+
 		/// <summary>
-		/// Run the specified options.
-		/// Run all the logic of the command.
+		/// Generates an entities XML from NER output.
 		/// </summary>
 		/// <param name="options">Options.</param>
 		public void Run(Options options)

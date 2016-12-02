@@ -4,6 +4,9 @@ using ATPRNER;
 
 namespace ATPR
 {
+	/// <summary>
+	/// This strategy class that generates the dictionary from the NER result.
+	/// </summary>
 	public class GenerateDictionaryStrategy : ExecStrategy
 	{
 		public GenerateDictionaryStrategy()
@@ -12,6 +15,10 @@ namespace ATPR
 
 		Options options;
 
+		/// <summary>
+		/// Generates the dictionary of entities found.
+		/// </summary>
+		/// <param name="options">Options.</param>
 		public void Run(Options options)
 		{
 			this.options = options;
@@ -25,6 +32,10 @@ namespace ATPR
 			WriteResult(csv);
 		}
 
+		/// <summary>
+		/// Writes the result to the output stream.
+		/// </summary>
+		/// <param name="result">Result.</param>
 		void WriteResult(string result)
 		{
 			if (string.IsNullOrEmpty(options.Output)) Console.Write(result);
