@@ -21,6 +21,10 @@ namespace ATPRNER
 			outputFile.Close();
 		}
 
+		/// <summary>
+		/// Gets the home for the stanford jars.
+		/// </summary>
+		/// <returns>The stanford home path</returns>
 		static string GetStanfordHome()
 		{
 			return Environment.GetEnvironmentVariable("STANFORD_HOME") ?? Consts.DEFAULT_STANFORD_NLP;
@@ -49,16 +53,34 @@ namespace ATPRNER
 			{
 				return Directory.GetFiles(inputPath);
 			}
-			else {
-				if (File.Exists(inputPath))
-				{
-					return new string[] { inputPath };
-				}
-				else
-				{
-					throw new DirectoryNotFoundException(inputPath);
-				}
+			else if (File.Exists(inputPath))
+			{
+				return new string[] { inputPath };
 			}
+			else
+			{
+				throw new DirectoryNotFoundException(inputPath);
+			}
+
+		}
+
+		static string FileToText(string filePath)
+		{
+			if (filePath.EndsWith(".doc", StringComparison.CurrentCulture)
+				|| filePath.EndsWith(".docx", StringComparison.CurrentCulture)
+				|| filePath.EndsWith(".pdf", StringComparison.CurrentCulture))
+			{
+				Toxy.ParserContext c = new Toxy.ParserContext(filePath);
+				IDocumentParser parser = ParserFactory.CreateDocument(c);
+				ToxyDocument result = parser.Parse();
+
+				return result.ToString();
+			}
+			else if (filePath.EndsWith(".txt", StringComparison.CurrentCulture))
+			{
+				return File.ReadAllText(filePath);
+			}
+			return null; // Unsupported file
 		}
 
 		/// <summary>
@@ -76,11 +98,15 @@ namespace ATPRNER
 
 			foreach (var document in fileEntries)
 			{
-				Toxy.ParserContext c = new Toxy.ParserContext(document);
-				IDocumentParser parser = ParserFactory.CreateDocument(c);
-				ToxyDocument result = parser.Parse();
-
-				string text = result.ToString();
+				string text = FileToText(document);
+				// XXX: Better a NullObject, but string can't be inherited I think.
+				if (text == null)
+				{
+					var stderr = new StreamWriter(Console.OpenStandardError());
+					stderr.WriteLine($"The file '{document}' is not supported");
+					stderr.Close();
+					continue;
+				}
 
 				var classifier = CRFClassifier.getClassifierNoExceptions(classifiersDirecrory + Consts.MODELS);
 
