@@ -7,9 +7,22 @@ sudo: false
 language: csharp
 solution: ATPR.sln
 
+env:
+  - BUILD_DOCKER=yes
+  - BUILD_DOCKER=no
+
+addons:
+  apt:
+    packages:
+      - docker
+
+cache:
+  - apt
+
 install:
   - nuget restore ATPR.sln
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+  - scripts/build_docker.sh
 
 script:
   - xbuild /p:Configuration=Release ATPR.sln
@@ -18,4 +31,11 @@ script:
 notifications:
   on_success: never
   on_failure: always
+
+matrix:
+  exclude:
+    - os: osx
+      env: BUILD_DOCKER=yes
+    - os: linux
+      env: BUILD_DOCKER=no
 

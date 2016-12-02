@@ -11,9 +11,10 @@ RUN apt-get install -y mono-devel nuget
 # Install Stanford libraries
 RUN apt-get install -y wget
 
-RUN wget 'https://www.dropbox.com/s/103t3z1tiiquizq/Standford.tar.gz?dl=0' -o stanford.tar.gz
+RUN wget 'https://www.dropbox.com/s/103t3z1tiiquizq/Standford.tar.gz?dl=0' -O stanford.tar.gz
+RUN wget 'https://www.dropbox.com/s/42iympdp1ei8ow4/checksum.sha1.txt?dl=0' -O checksum.sha1
 
-RUN tar -xvvf stanford.tar.gz
+RUN cat checksum.sha1 && shasum -c checksum.sha1 && tar -xvvf stanford.tar.gz && mv Standford stanford
 
 # Add and compile app
 ADD . /app
@@ -22,4 +23,5 @@ WORKDIR /app
 
 RUN nuget restore && xbuild /p:Configuration=Release
 
-RUN ln -s /app/ATPR/bin/Release/ATPR.exe /bin/atpr
+RUN chmod +x atpr.sh && ln -s /app/atpr.sh /bin/atpr
+
