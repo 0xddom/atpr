@@ -48,17 +48,12 @@ namespace ATPR
 		/// The entry point of the program, where the program control starts and ends.
 		/// </summary>
 		/// <param name="args">The command-line arguments.</param>
-<<<<<<< HEAD
-		static void Main(string[] args)
-		{
-=======
 		static void Main(string[] args) {
 
 			CultureInfo ci = new CultureInfo("en-US");
 			Thread.CurrentThread.CurrentCulture = ci;
 			Thread.CurrentThread.CurrentUICulture = ci;
 		
->>>>>>> 755bb784c66dc833bc435db3892dc8e45e34f71d
 			var options = new Options();
 			if (Parser.Default.ParseArguments(args, options))
 			{
