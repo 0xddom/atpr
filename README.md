@@ -17,7 +17,7 @@ Check the Wiki https://github.com/KuroAku/atpr/wiki for tutorials and installati
 ## *NIX
 First install mono (and the IDE if you want)
 
-You have to download Stanford libs and extract it in ~/Hackaton : [LIBS] https://www.dropbox.com/s/103t3z1tiiquizq/Standford.tar.gz?dl=0)
+You have to download Stanford libs and extract it in ~/Hackaton : [LIBS] (https://www.dropbox.com/s/103t3z1tiiquizq/Standford.tar.gz?dl=0)
 
 
 You can either load the .sln in Xamarin Studio/MonoDevelop or in a shell run:
@@ -29,7 +29,7 @@ You can either load the .sln in Xamarin Studio/MonoDevelop or in a shell run:
 ## Windows
 Install Xamarin Studio and the c# toolchain
 
-You have to download Stanford libs and extract it in ~/Hackaton : [LIBS] https://www.dropbox.com/s/103t3z1tiiquizq/Standford.tar.gz?dl=0)
+You have to download Stanford libs and extract it in ~/Hackaton : [LIBS] (https://www.dropbox.com/s/103t3z1tiiquizq/Standford.tar.gz?dl=0)
 
 Load the project in Xamarin Studio (prefered) or VS (not tested) and build, or in a shell:
 
