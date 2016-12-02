@@ -74,7 +74,7 @@ class FindTextFilesIngestModule(FileIngestModule):
             return IngestModule.ProcessResult.OK
 
         # Look for files with extension docx, ,doc, pdf and txt  
-        extensions = ['docx','doc','pdf','txt','csv','xls','xlsx','ppt','pptx','rtf','html']      
+        extensions = ['docx','doc','pdf','txt','csv', 'ppt','pptx','rtf','html']      
 
         if (file.getNameExtension() in extensions):
 
