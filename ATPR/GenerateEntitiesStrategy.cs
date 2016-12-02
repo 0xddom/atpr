@@ -22,9 +22,9 @@ namespace ATPR
 		public override void Run(Options options)
 		{
 			if (options.Verbose)
-				Console.WriteLine("Option 1.");
+				Console.Error.WriteLine("Option 1.");
 
-			WriteResult(NER.GenerateEntitiesToString(options.InputFile);
+			WriteResult(NER.GenerateEntitiesToString(options.InputFile));
 		}
 	}
 }

@@ -24,11 +24,11 @@ namespace ATPR
 		public override void Run(Options options)
 		{
 			if (options.Verbose)
-				Console.WriteLine("Option 3.");
+				Console.Error.WriteLine("Option 3.");
 
 			if (options.Dictionary == null)
 			{
-				Console.WriteLine("Dictionary required. Exiting...");
+				Console.Error.WriteLine("Dictionary required. Exiting...");
 				return;
 			}
 			TextWriter output;

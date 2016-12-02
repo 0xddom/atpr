@@ -26,15 +26,15 @@ namespace ATPR
 			this.options = options;
 
 			if (options.Verbose)
-				Console.WriteLine ("Parse text command");
+				Console.Error.WriteLine ("Parse text command");
 
 			if (options.Matchfile == null) {
-				Console.WriteLine ("Matcfile required. Exiting...");
+				Console.Error.WriteLine ("Matcfile required. Exiting...");
 				return;
 			}
 				
 			if (options.InputFile == null) {
-				Console.WriteLine ("Input file/directory required. Exiting...");
+				Console.Error.WriteLine ("Input file/directory required. Exiting...");
 				return;
 			}
 				

@@ -34,7 +34,7 @@ namespace ATPR.Utils
 				}
 				catch (Exception e)
 				{
-					Console.WriteLine("{0} Exception caught.", e);
+					Console.Error.WriteLine("{0} Exception caught.", e);
 					return null;
 				}
 			}

@@ -23,7 +23,7 @@ namespace ATPR
 			this.options = options;
 
 			if (options.Verbose)
-				Console.WriteLine("Dictionary generation command");
+				Console.Error.WriteLine("Dictionary generation command");
 
 			string xml = NER.GenerateEntitiesToString(options.InputFile);
 			string csv = CSVUtils.RemoveDuplicates(CSVUtils.EntitiesToCsv(xml, options.Separator));
