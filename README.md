@@ -82,8 +82,6 @@ The aplication support the following documents types:
 * pdf
 * txt
 * csv
-* xls
-* xlsx
 * ppt
 * pptx
 * rtf

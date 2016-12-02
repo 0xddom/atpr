@@ -21,7 +21,6 @@ namespace ATPR.Utils
 				)
 			{
 				ParserContext c = new ParserContext(filePath);
-				//TODO Add support to csv, xls and xlsx CreateSpreadsheet
 				//TODO Add suport to ppt and pptx CreateSlideshow
 				//Examples https://github.com/tonyqus/toxy/tree/master/Toxy.Test
 				try
@@ -33,14 +32,16 @@ namespace ATPR.Utils
 				}
 				catch (Exception e)
 				{
-					Console.Error.WriteLine("{0} Exception caught.", e);
+					Console.WriteLine("{0} Exception caught error with {1}.", e, filePath);
 					return null;
 				}
 			}
-			if (filePath.EndsWith(".txt", StringComparison.CurrentCulture))
+			if (filePath.EndsWith(".txt", StringComparison.CurrentCulture)
+				|| filePath.EndsWith(".csv", StringComparison.CurrentCulture))
 				return File.ReadAllText(filePath);
 			return null; // Unsupported file
 		}
+
 
 		/// <summary>
 		/// Returns an array of files to be parsed
