@@ -20,16 +20,16 @@ namespace ATPR
 			HelpText = "Output path where the tool will save the results.")]
 		public string Output { get; set; }
 
-		[Option('c', "choose", Required = true,
+		[Option('c', "command", Required = true,
 			HelpText = "Selected option for running the tool.")]
-		public int Choose { get; set; }
+		public string Choose { get; set; }
 
 		[Option('d', "dictionary", Required = false,
 			HelpText = "Path to a dictionary.")]
 		public string Dictionary { get; set; }
 
 		[Option('S', "separator", DefaultValue = ';',
-				HelpText = "The CSV separator for the input and output CSVs. Default ';'")]
+				HelpText = "The CSV separator for the input and output CSVs")]
 		public char Separator { get; set; }
 
 		[HelpOption]

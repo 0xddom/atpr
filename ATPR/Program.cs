@@ -40,18 +40,18 @@ namespace ATPR
 					Console.WriteLine("");
 				}
 
-				int choose = options.Choose;
+				string choose = options.Choose;
 				ExecStrategy strategy = null;
 
-				switch (choose)
+				switch (options.Choose)
 				{
-					case 1: //Option 1, gets only entities
+					case "entities": //Option 1, gets only entities
 						strategy = new GenerateEntitiesStrategy();
 						break;
-					case 2: //Option 2, generates dictionary
+					case "dictionary": //Option 2, generates dictionary
 						strategy = new GenerateDictionaryStrategy();
 						break;
-					case 3: //Option 3, gets entities that match with a dictionary
+					case "match": //Option 3, gets entities that match with a dictionary
 						strategy = new MatchEntitiesStrategy();
 						break;
 					default:
