@@ -2,9 +2,7 @@
 using System.IO;
 using System.Text;
 using System.Xml;
-using System.Collections.Generic;
 using System;
-using TagLib.Riff;
 
 namespace ATPRNER
 {
@@ -69,7 +67,7 @@ namespace ATPRNER
 			string line;
 			while ((line = reader.ReadLine()) != null)
 			{
-				table.Add(line.Split(sep));	
+				table.Add(line.Split(sep));
 			}
 
 			return table;
@@ -120,17 +118,34 @@ namespace ATPRNER
 		/// <param name="dictionaryPath">Dictionary path.</param>
 		public static List<String> GetEntitiesFromDic(string dictionaryPath)
 		{
-			
-			List<String> entities = new List<String> ();
-			StreamReader reader = new StreamReader(System.IO.File.OpenRead(@"C:\test.csv"));
+
+			List<String> entities = new List<String>();
+			StreamReader reader = new StreamReader(File.OpenRead(@"C:\test.csv"));
 			while (!reader.EndOfStream)
 			{
 				var line = reader.ReadLine();
 				var values = line.Split(';');
-				entities.Add (values [1]);		
+				entities.Add(values[1]);
 			}
 
 			return entities;
+		}
+
+
+		/// <summary>
+		/// Generates a CSV with the provided dictionary and writes it to the stream
+		/// </summary>
+		/// <param name="origFile">Path of the file where the match was found.</param>
+		/// <param name="dicFile">The dictionary used to match.</param>
+		/// <param name="entries">The found matchs.</param>
+		/// <param name="output">Output stream.</param>
+		public static void GenerateMatchedEntriesCSV(string origFile, string dicFile, Dictionary<string, MatchedEntity> entries, TextWriter output)
+		{
+			foreach (var entry in entries)
+			{
+				var entryObj = entry.Value;
+				output.WriteLine("{0};{1};{2};{3}", origFile, entryObj.entityName, entryObj.matchNumber, dicFile);
+			}
 		}
 	}
 }

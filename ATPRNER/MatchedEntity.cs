@@ -6,10 +6,10 @@ namespace ATPRNER
 	public class MatchedEntity
 	{
 		/// <summary>
-		/// Gets or sets the name of the enity.
+		/// Gets or sets the name of the entity.
 		/// </summary>
-		/// <value>The name of the enity.</value>
-		public String enityName {
+		/// <value>The name of the entity.</value>
+		public String entityName {
 			get;
 			set;
 		}
@@ -28,8 +28,8 @@ namespace ATPRNER
 		/// <param name="entityName">Entity name.</param>
 		public MatchedEntity (String entityName)
 		{
-			this.enityName = entityName;
-			matchNumber++;
+			this.entityName = entityName;
+			matchNumber = 1;
 		}
 
 		/// <summary>

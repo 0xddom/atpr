@@ -18,5 +18,13 @@ namespace ATPRNER
 		/// </summary>
 		public static string MODELS = @"/spanish.ancora.distsim.s512.crf.ser.gz";
 
+		/// <summary>
+		/// Gets the home for the stanford jars.
+		/// </summary>
+		/// <returns>The stanford home path</returns>
+		public static string GetStanfordHome()
+		{
+			return Environment.GetEnvironmentVariable("STANFORD_HOME") ?? Consts.DEFAULT_STANFORD_NLP;
+		}
 	}
 }
