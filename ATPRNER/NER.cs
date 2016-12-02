@@ -38,13 +38,41 @@ namespace ATPRNER
 			stdout.Close();
 		}
 
+		/// <summary>
+		/// Returns an array of files to be parsed
+		/// </summary>
+		/// <returns>A file paths array</returns>
+		/// <param name="inputPath">The input path.</param>
+		static String[] GetFiles(string inputPath)
+		{
+			if (Directory.Exists(inputPath))
+			{
+				return Directory.GetFiles(inputPath);
+			}
+			else {
+				if (File.Exists(inputPath))
+				{
+					return new string[] { inputPath };
+				}
+				else
+				{
+					throw new DirectoryNotFoundException(inputPath);
+				}
+			}
+		}
+
+		/// <summary>
+		/// Global method for dictionary generation
+		/// </summary>
+		/// <param name="inputPath">The input path</param>
+		/// <param name="output">Output stream</param>
 		static void GenerateDict(string inputPath, StreamWriter output)
 		{
 			output.WriteLine("<wis>");
 
 			var jarRoot = GetStanfordHome();
 			var classifiersDirecrory = jarRoot + Consts.CLASIFIERS;
-			string[] fileEntries = Directory.GetFiles(inputPath);
+			string[] fileEntries = GetFiles(inputPath);
 
 			foreach (var document in fileEntries)
 			{
