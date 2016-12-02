@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using ATPR.Utils;
 
 namespace ATPRNER
 {
@@ -50,7 +51,7 @@ namespace ATPRNER
 
 				var matchs = MatchEntities(fileTable, entitiesTable);
 
-				CSVUtils.GenerateMatchedEntriesCSV(file, dicPath, matchs, output, sep);
+				GenerateMatchedEntriesCSV(file, dicPath, matchs, output, sep);
 			}
 		}
 
@@ -68,6 +69,22 @@ namespace ATPRNER
 
 			return entitiesTable;
 				
+		}
+
+		/// <summary>
+		/// Generates a CSV with the provided dictionary and writes it to the stream
+		/// </summary>
+		/// <param name="origFile">Path of the file where the match was found.</param>
+		/// <param name="dicFile">The dictionary used to match.</param>
+		/// <param name="entries">The found matchs.</param>
+		/// <param name="output">Output stream.</param>
+		public static void GenerateMatchedEntriesCSV(string origFile, string dicFile, Dictionary<string, MatchedEntity> entries, TextWriter output, char sep)
+		{
+			foreach (var entry in entries)
+			{
+				var entryObj = entry.Value;
+				output.WriteLine("{0}{4}{1}{4}{2}{4}{5}{4}{3}", origFile, entryObj.EntityName, entryObj.MatchNumber, dicFile, sep, entryObj.Type);
+			}
 		}
 	}
 }

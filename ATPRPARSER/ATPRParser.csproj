@@ -185,4 +185,10 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ATPR.Utils\ATPR.Utils.csproj">
+      <Project>{19ED0270-F067-4F55-A8EA-D7D98CAD16C7}</Project>
+      <Name>ATPR.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

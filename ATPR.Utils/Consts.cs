@@ -1,5 +1,5 @@
 ﻿using System;
-namespace ATPRNER
+namespace ATPR.Utils
 {
 	public class Consts
 	{

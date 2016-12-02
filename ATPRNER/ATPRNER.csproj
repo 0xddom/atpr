@@ -177,9 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Consts.cs" />
     <Compile Include="NER.cs" />
-    <Compile Include="CSVUtils.cs" />
     <Compile Include="DictionaryMatcher.cs" />
     <Compile Include="MatchedEntity.cs" />
     <Compile Include="FilesUtils.cs" />
@@ -187,5 +185,11 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ATPR.Utils\ATPR.Utils.csproj">
+      <Project>{19ED0270-F067-4F55-A8EA-D7D98CAD16C7}</Project>
+      <Name>ATPR.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
