@@ -90,7 +90,7 @@ namespace ATPRNER
 
 				return result.ToString();
 			}
-			else if (filePath.EndsWith(".txt", StringComparison.CurrentCulture))
+			if (filePath.EndsWith(".txt", StringComparison.CurrentCulture))
 			{
 				return File.ReadAllText(filePath);
 			}
