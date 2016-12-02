@@ -24,7 +24,8 @@ namespace ATPR
 			if (string.IsNullOrEmpty(options.Output)) output = new StreamWriter(Console.OpenStandardOutput());
 			else output = new StreamWriter(options.Output);
 
-			DictionaryMatcher.MatchEntitiesInFiles(options.InputFile, options.Dictionary, output, options.Separator);
+			foreach(string dic in FilesUtils.GetFiles(options.Dictionary)) 
+				DictionaryMatcher.MatchEntitiesInFiles(options.InputFile, dic, output, options.Separator);
 
 			output.Close();
 		}

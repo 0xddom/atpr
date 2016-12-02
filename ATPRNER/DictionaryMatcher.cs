@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using TagLib.Riff;
-using NPOI.OpenXmlFormats.Dml.Diagram;
 
 namespace ATPRNER
 {
@@ -14,18 +12,22 @@ namespace ATPRNER
 		/// <returns>The entities.</returns>
 		/// <param name="textEntities">Text entities.</param>
 		/// <param name="dictEntities">Dict entities.</param>
-		public static Dictionary<string, MatchedEntity> 
-			MatchEntities (List<string[]> textEntities,List<string> dictEntities)
+		public static Dictionary<string, MatchedEntity>
+			MatchEntities(List<string[]> textEntities, List<string> dictEntities)
 		{
-			Dictionary<string, MatchedEntity> matches = new Dictionary<string, MatchedEntity> ();
+			Dictionary<string, MatchedEntity> matches = new Dictionary<string, MatchedEntity>();
 
-			foreach (string[] entity in textEntities) {
-				if (dictEntities.Contains(entity[1])) { 
-					if (matches.ContainsKey (entity[1])) {
+			foreach (string[] entity in textEntities)
+			{
+				if (dictEntities.Contains(entity[1]))
+				{
+					if (matches.ContainsKey(entity[1]))
+					{
 						matches[entity[1]].IncrementMatch();
-					} else {
-						var matchedEntity = new MatchedEntity (entity[1]);
-						matches.Add (entity[1], matchedEntity);
+					}
+					else {
+						var matchedEntity = new MatchedEntity(entity[1]);
+						matches.Add(entity[1], matchedEntity);
 					}
 				}
 			}
@@ -50,11 +52,12 @@ namespace ATPRNER
 				var fileTable = CSVUtils.TabulateCSV(new StringReader(csv), sep);
 
 				//Refactor this (is a bug fix)
-					
-				List<String> dicTable2 = new List<String> ();
 
-				foreach (string[] item in dicTable) {
-					dicTable2.Add (item [0]);
+				List<String> dicTable2 = new List<String>();
+
+				foreach (string[] item in dicTable)
+				{
+					dicTable2.Add(item[1]);
 				}
 
 				//

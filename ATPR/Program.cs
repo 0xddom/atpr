@@ -1,15 +1,7 @@
 ﻿using System;
 using CommandLine;
-using CommandLine.Text;
-using DocumentFormat.OpenXml.Office2010.PowerPoint;
-using Org.BouncyCastle.Asn1.Misc;
-using ATPRNER;
 using System.Globalization;
 using System.Threading;
-using System.IO;
-using System.Collections.Generic;
-using DocumentFormat.OpenXml.Wordprocessing;
-using TagLib.Riff;
 
 namespace ATPR
 {
