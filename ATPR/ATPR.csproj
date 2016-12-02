@@ -104,6 +104,5 @@
       <Project>{5F569CDB-28A5-476A-A586-1ACF8B312A3A}</Project>
       <Name>ATPRParser</Name>
     </ProjectReference>
-
   </ItemGroup>
 </Project>
