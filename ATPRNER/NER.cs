@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using com.sun.xml.@internal.xsom.impl.parser;
 using edu.stanford.nlp.ie.crf;
 using Toxy;
 
@@ -74,6 +73,11 @@ namespace ATPRNER
 
 		}
 
+		/// <summary>
+		/// Extrat the text from a file, using Toxy for binary files.
+		/// </summary>
+		/// <returns>The plain text of the document</returns>
+		/// <param name="filePath">File path.</param>
 		static string FileToText(string filePath)
 		{
 			if (filePath.EndsWith(".doc", StringComparison.CurrentCulture)
