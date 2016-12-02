@@ -1,7 +1,7 @@
 ﻿using System;
 namespace ATPR.Utils
 {
-	public class Consts
+	public class StanfordEnv
 	{
 		/// <summary>
 		/// The default stanford nlp directory.
@@ -24,7 +24,7 @@ namespace ATPR.Utils
 		/// <returns>The stanford home path</returns>
 		public static string GetStanfordHome()
 		{
-			return Environment.GetEnvironmentVariable("STANFORD_HOME") ?? Consts.DEFAULT_STANFORD_NLP;
+			return Environment.GetEnvironmentVariable("STANFORD_HOME") ?? DEFAULT_STANFORD_NLP;
 		}
 	}
 }

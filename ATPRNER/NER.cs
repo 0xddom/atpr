@@ -55,8 +55,8 @@ namespace ATPRNER
 		{
 			output.WriteLine("<wis>");
 
-			var jarRoot = Consts.GetStanfordHome();
-			var classifiersDirectory = jarRoot + Consts.CLASIFIERS;
+			var jarRoot = StanfordEnv.GetStanfordHome();
+			var classifiersDirectory = jarRoot + StanfordEnv.CLASIFIERS;
 			string[] fileEntries = FilesUtils.GetFiles(inputPath);
 
 			foreach (var document in fileEntries)
@@ -71,7 +71,7 @@ namespace ATPRNER
 					continue;
 				}
 
-				var classifier = CRFClassifier.getClassifierNoExceptions(classifiersDirectory + Consts.MODELS);
+				var classifier = CRFClassifier.getClassifierNoExceptions(classifiersDirectory + StanfordEnv.MODELS);
 
 				output.WriteLine(classifier.classifyToString(text, "xml", true));
 			}
