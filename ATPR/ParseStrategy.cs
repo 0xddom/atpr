@@ -8,7 +8,9 @@ namespace ATPR
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ATPR.ParseStrategy"/> class.
 		/// </summary>
-		public ParseStrategy (){}
+		public ParseStrategy ()
+		{
+		}
 
 		/// <summary>
 		/// The command line argument options.
@@ -20,13 +22,23 @@ namespace ATPR
 		/// Run all the logic of the command.
 		/// </summary>
 		/// <param name="options">Options.</param>
-		public void Run(Options options)
+		public void Run (Options options)
 		{
 			this.options = options;
 
 			if (options.Verbose)
-				Console.WriteLine("Parse text command");
+				Console.WriteLine ("Parse text command");
 
+			if (options.Matchfile == null) {
+				Console.WriteLine ("Matcfile required. Exiting...");
+				return;
+			}
+				
+			if (options.InputFile == null) {
+				Console.WriteLine ("Input file/directory required. Exiting...");
+				return;
+			}
+				
 			//TODO: Parse text
 
 			WriteResult ("TODO");
@@ -36,10 +48,12 @@ namespace ATPR
 		/// Writes the run method result.
 		/// </summary>
 		/// <param name="result">Result.</param>
-		void WriteResult(string result)
+		void WriteResult (string result)
 		{
-			if (string.IsNullOrEmpty(options.Output)) Console.Write(result);
-			else File.WriteAllText(options.Output, result);
+			if (string.IsNullOrEmpty (options.Output))
+				Console.Write (result);
+			else
+				File.WriteAllText (options.Output, result);
 		}
 	}
 }

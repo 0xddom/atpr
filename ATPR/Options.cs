@@ -28,6 +28,10 @@ namespace ATPR
 			HelpText = "Path to a dictionary.")]
 		public string Dictionary { get; set; }
 
+		[Option('m', "matchfile", Required = false,
+			HelpText = "Path to a matchfile.")]
+		public string Matchfile { get; set; }
+
 		[Option('S', "separator", DefaultValue = ';',
 				HelpText = "The CSV separator for the input and output CSVs")]
 		public char Separator { get; set; }
