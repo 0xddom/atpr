@@ -6,7 +6,7 @@ using Toxy;
 
 namespace ATPRNER
 {
-	public class NER
+	public static class NER
 	{
 		/// <summary>
 		/// Generates the dict from the documents in inputPath

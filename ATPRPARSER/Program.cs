@@ -21,7 +21,7 @@ namespace ATPRParser
 		/// <summary>
 		/// Parse the specified sentence.
 		/// </summary>
-		/// <param name="Sentence">Sentence to parse</param>
+		/// <param name="sentence">Sentence to parse</param>
 		public static void Parse(string sentence)
 		{
 			//Load spanish models.
