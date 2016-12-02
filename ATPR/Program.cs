@@ -6,7 +6,9 @@ namespace ATPR
 {
 	class MainClass
 	{
-		// Define a class to receive parsed values
+		/// <summary>
+		/// Argument parse options.
+		/// </summary>
 		class Options {
 			[Option('p', "path", Required = true,
 				HelpText = "Directory where the tool will find the files.")]
@@ -35,7 +37,10 @@ namespace ATPR
 			}
 		}
 
-		// Consume them
+		/// <summary>
+		/// The entry point of the program, where the program control starts and ends.
+		/// </summary>
+		/// <param name="args">The command-line arguments.</param>
 		static void Main(string[] args) {
 			var options = new Options();
 			if (CommandLine.Parser.Default.ParseArguments(args, options)) {

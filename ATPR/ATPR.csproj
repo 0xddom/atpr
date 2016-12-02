@@ -81,6 +81,9 @@
     <Reference Include="Toxy">
       <HintPath>..\packages\Toxy.1.6.1.1\lib\net45\Toxy.dll</HintPath>
     </Reference>
+    <Reference Include="CommandLine">
+      <HintPath>..\packages\CommandLineParser.1.9.71\lib\net45\CommandLine.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
