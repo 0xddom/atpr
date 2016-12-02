@@ -1,5 +1,11 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Generic;
+using ATPRParser;
+using ATPR.Utils;
+using DocumentFormat.OpenXml.Drawing;
+using TagLib.Riff;
+using System.Collections.ObjectModel;
 
 namespace ATPR
 {
@@ -32,18 +38,34 @@ namespace ATPR
 
 			if (options.Verbose)
 				Console.WriteLine ("Parse text command");
-
-			if (options.Matchfile == null) {
-				Console.WriteLine ("Matcfile required. Exiting...");
-				return;
-			}
-				
+			
 			if (options.InputFile == null) {
 				Console.WriteLine ("Input file/directory required. Exiting...");
 				return;
 			}
 				
 			//TODO: Parse text
+
+			List<String[]> matchs = ATPRParser.Parser.GetMatching (options.InputFile);
+
+			Dictionary<string,List<String[]>> orgMatches = new Dictionary<string,List<String[]>> ();
+
+			foreach (String[] item in matchs) {
+				if (orgMatches.ContainsKey (item [0])) {
+					orgMatches [item [0]].Add (item);
+				} else {
+					List<String[]> itemList = new List<String []>();
+					itemList.Add (item);
+					orgMatches.Add (item [0], itemList);
+				}
+			}
+				
+			foreach (var entry in orgMatches) {
+				foreach (String[] subItem in entry.Value) {
+					String text = FilesUtils.FileToText (subItem [1]);
+					Parser.Parse (text, subItem [2], int.Parse(subItem [3]));
+				}
+			}
 
 			WriteResult ("TODO");
 		}
@@ -57,7 +79,7 @@ namespace ATPR
 			if (string.IsNullOrEmpty (options.Output))
 				Console.Write (result);
 			else
-				File.WriteAllText (options.Output, result);
+				System.IO.File.WriteAllText (options.Output, result);
 		}
 	}
 }

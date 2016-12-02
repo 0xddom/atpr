@@ -102,10 +102,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ATPRPARSER\ATPRParser.csproj">
-      <Project>{5F569CDB-28A5-476A-A586-1ACF8B312A3A}</Project>
-      <Name>ATPRParser</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ATPRNER\ATPRNER.csproj">
       <Project>{2BB20598-FE97-40B2-BDB2-1DD37BC8CFDD}</Project>
       <Name>ATPRNER</Name>
@@ -113,6 +109,10 @@
     <ProjectReference Include="..\ATPR.Utils\ATPR.Utils.csproj">
       <Project>{19ED0270-F067-4F55-A8EA-D7D98CAD16C7}</Project>
       <Name>ATPR.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ATPRPARSER\ATPRParser.csproj">
+      <Project>{5F569CDB-28A5-476A-A586-1ACF8B312A3A}</Project>
+      <Name>ATPRParser</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
