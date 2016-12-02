@@ -1,8 +1,6 @@
 ﻿using System;
 using System.IO;
 using Toxy;
-using iTextSharp.text.html.simpleparser;
-using iTextSharp.text;
 
 namespace ATPRNER
 {
@@ -15,14 +13,15 @@ namespace ATPRNER
 		/// <param name="filePath">File path.</param>
 		public static string FileToText(string filePath)
 		{
-			if (filePath.EndsWith (".doc", StringComparison.CurrentCulture)
-			    || filePath.EndsWith (".docx", StringComparison.CurrentCulture)
-			    || filePath.EndsWith (".pdf", StringComparison.CurrentCulture)) {
-				ParserContext c = new ParserContext (filePath);
-				IDocumentParser parser = ParserFactory.CreateDocument (c);
-				ToxyDocument result = parser.Parse ();
+			if (filePath.EndsWith(".doc", StringComparison.CurrentCulture)
+				|| filePath.EndsWith(".docx", StringComparison.CurrentCulture)
+				|| filePath.EndsWith(".pdf", StringComparison.CurrentCulture))
+			{
+				ParserContext c = new ParserContext(filePath);
+				IDocumentParser parser = ParserFactory.CreateDocument(c);
+				ToxyDocument result = parser.Parse();
 
-				return result.ToString ();
+				return result.ToString();
 			}
 			if (filePath.EndsWith(".txt", StringComparison.CurrentCulture))
 			{
