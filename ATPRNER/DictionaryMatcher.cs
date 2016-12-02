@@ -22,9 +22,7 @@ namespace ATPRNER
 			foreach (string[] entity in textEntities) {
 				if (dictEntities.Contains(entity[1])) { 
 					if (matches.ContainsKey (entity[1])) {
-						MatchedEntity matchedEntity = matches[entity [1]];
-						matchedEntity.IncrementMatch ();
-						matches [entity [1]] = matchedEntity;
+						matches[entity [1]].IncrementMatch();
 					} else {
 						var matchedEntity = new MatchedEntity (entity[1],entity[0]);
 						matches.Add (entity[1], matchedEntity);
@@ -67,7 +65,7 @@ namespace ATPRNER
 		{		
 			List<String> entitiesTable = new List<String> ();
 			foreach (string[] item in dicTable) {
-				entitiesTable.Add (item [0]);
+				entitiesTable.Add (item [1]);
 			}
 
 			return entitiesTable;
