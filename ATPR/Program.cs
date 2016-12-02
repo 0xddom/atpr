@@ -4,6 +4,8 @@ using CommandLine.Text;
 using DocumentFormat.OpenXml.Office2010.PowerPoint;
 using Org.BouncyCastle.Asn1.Misc;
 using ATPRNER;
+using System.Globalization;
+using System.Threading;
 
 namespace ATPR
 {
@@ -45,6 +47,11 @@ namespace ATPR
 		/// </summary>
 		/// <param name="args">The command-line arguments.</param>
 		static void Main(string[] args) {
+
+			CultureInfo ci = new CultureInfo("en-US");
+			Thread.CurrentThread.CurrentCulture = ci;
+			Thread.CurrentThread.CurrentUICulture = ci;
+		
 			var options = new Options();
 			if (Parser.Default.ParseArguments(args, options)) {
 				// Values are available here
