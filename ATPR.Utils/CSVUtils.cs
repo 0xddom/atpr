@@ -89,12 +89,9 @@ namespace ATPR.Utils
 					case XmlNodeType.Element:
 						foundWi = reader.Name.Equals("wi");
 						if (foundWi && !reader.GetAttribute("entity").Equals("O"))
-						{
 							entity = reader.GetAttribute("entity");
-						}
-						else {
+						else 
 							shouldBreak = true;
-						}
 						break;
 					case XmlNodeType.Text:
 						if (foundWi && entity != null && reader.Value.Length > 3)
@@ -110,27 +107,7 @@ namespace ATPR.Utils
 						break;
 				}
 		}
-
-		/// <summary>
-		/// Gets the entities from dictionary (CSV File).
-		/// </summary>
-		/// <returns>The entities from dic.</returns>
-		/// <param name="dictionaryPath">Dictionary path.</param>
-		public static List<String> GetEntitiesFromDic(string dictionaryPath, char sep)
-		{
-
-			List<String> entities = new List<String>();
-			StreamReader reader = new StreamReader(File.OpenRead(@"C:\test.csv"));
-			while (!reader.EndOfStream)
-			{
-				var line = reader.ReadLine();
-				var values = line.Split(sep);
-				entities.Add(values[1]);
-			}
-
-			return entities;
-		}
 	}
 }
-	
+
 

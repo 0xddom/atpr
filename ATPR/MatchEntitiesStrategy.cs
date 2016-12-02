@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using ATPR.Utils;
 using ATPRNER;
 
 namespace ATPR
@@ -7,7 +8,7 @@ namespace ATPR
 	/// <summary>
 	/// Strategy class that generates the matches between textentities and dictionary entities.
 	/// </summary>
-	public class MatchEntitiesStrategy : ExecStrategy
+	public class MatchEntitiesStrategy : AbstractExecStrategy
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ATPR.MatchEntitiesStrategy"/> class.
@@ -20,14 +21,14 @@ namespace ATPR
 		/// Generates the match between textentities and dictionary entities.
 		/// </summary>
 		/// <param name="options">Options.</param>
-		public void Run(Options options)
+		public override void Run(Options options)
 		{
 			if (options.Verbose)
-				Console.WriteLine("Option 3.");
+				Console.Error.WriteLine("Option 3.");
 
 			if (options.Dictionary == null)
 			{
-				Console.WriteLine("Dictionary required. Exiting...");
+				Console.Error.WriteLine("Dictionary required. Exiting...");
 				return;
 			}
 			TextWriter output;

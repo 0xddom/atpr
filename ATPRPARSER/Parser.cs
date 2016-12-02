@@ -6,14 +6,13 @@ using edu.stanford.nlp.trees;
 using com.sun.tools.corba.se.logutil;
 using System.Collections.Generic;
 using System.IO;
-
+using ATPR.Utils;
 namespace ATPRParser
 {
 	public class Parser
 	{
 
-
-		public static void Parse(string text,string entity,int number)
+		public static void Parse(string text,string entity,int number)  
 		{
 
 
@@ -52,9 +51,9 @@ namespace ATPRParser
 		/// <param name="matchingFilePath">Matching file path.</param>
 		public static List<String[]> GetMatching(string matchingFilePath)
 		{
-			String matchs = ATPR.Utils.FilesUtils.FileToText (matchingFilePath);
+			String matchs = FilesUtils.FileToText (matchingFilePath);
 			StringReader reader = new StringReader (matchs);
-			return ATPR.Utils.CSVUtils.TabulateCSV (reader,';');
+			return CSVUtils.TabulateCSV(reader,';');
 		}
 
 	}

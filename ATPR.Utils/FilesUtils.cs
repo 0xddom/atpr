@@ -15,13 +15,28 @@ namespace ATPR.Utils
 		{
 			if (filePath.EndsWith(".doc", StringComparison.CurrentCulture)
 				|| filePath.EndsWith(".docx", StringComparison.CurrentCulture)
-				|| filePath.EndsWith(".pdf", StringComparison.CurrentCulture))
+				|| filePath.EndsWith(".pdf", StringComparison.CurrentCulture)
+				|| filePath.EndsWith(".rtf", StringComparison.CurrentCulture)
+				|| filePath.EndsWith(".html", StringComparison.CurrentCulture)
+				)
 			{
 				ParserContext c = new ParserContext(filePath);
-				IDocumentParser parser = ParserFactory.CreateDocument(c);
-				ToxyDocument result = parser.Parse();
+				//TODO Add support to csv, xls and xlsx CreateSpreadsheet
+				//TODO Add suport to ppt and pptx CreateSlideshow
+				//TODO Add support to txt CreateText and PDF PDFTextParser
+				//Examples https://github.com/tonyqus/toxy/tree/master/Toxy.Test
+				try
+				{	
+					IDocumentParser parser = ParserFactory.CreateDocument(c);
+					ToxyDocument result = parser.Parse();
 
-				return result.ToString();
+					return result.ToString();
+				}
+				catch (Exception e)
+				{
+					Console.Error.WriteLine("{0} Exception caught.", e);
+					return null;
+				}
 			}
 			if (filePath.EndsWith(".txt", StringComparison.CurrentCulture))
 				return File.ReadAllText(filePath);

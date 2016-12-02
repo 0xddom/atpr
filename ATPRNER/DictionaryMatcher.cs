@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using ATPR.Utils;
 
@@ -13,18 +12,22 @@ namespace ATPRNER
 		/// <returns>The entities.</returns>
 		/// <param name="textEntities">Text entities.</param>
 		/// <param name="dictEntities">Dict entities.</param>
-		public static Dictionary<string, MatchedEntity>
-			MatchEntities(List<string[]> textEntities, List<string> dictEntities)
+		public static Dictionary<string, MatchedEntity> MatchEntities(
+			List<string[]> textEntities, List<string> dictEntities)
 		{
 			Dictionary<string, MatchedEntity> matches = new Dictionary<string, MatchedEntity>();
 
-			foreach (string[] entity in textEntities) {
-				if (dictEntities.Contains(entity[1])) { 
-					if (matches.ContainsKey (entity[1])) {
-						matches[entity [1]].IncrementMatch();
-					} else {
-						var matchedEntity = new MatchedEntity (entity[1],entity[0]);
-						matches.Add (entity[1], matchedEntity);
+			foreach (string[] entity in textEntities)
+			{
+				if (dictEntities.Contains(entity[1]))
+				{
+					if (matches.ContainsKey(entity[1]))
+					{
+						matches[entity[1]].IncrementMatch();
+					}
+					else {
+						var matchedEntity = new MatchedEntity(entity[1], entity[0]);
+						matches.Add(entity[1], matchedEntity);
 					}
 				}
 			}
@@ -45,9 +48,9 @@ namespace ATPRNER
 				string xml = NER.GenerateEntitiesToString(file);
 				string csv = CSVUtils.EntitiesToCsv(xml, sep);
 
-				List<String[]> dicTable = CSVUtils.TabulateCSV(new StreamReader(dicPath), sep);
-				List<String[]> fileTable = CSVUtils.TabulateCSV(new StringReader(csv), sep);
-				List<String> entitiesTable = GetEntitiesFromDic (dicTable);
+				List<string[]> dicTable = CSVUtils.TabulateCSV(new StreamReader(dicPath), sep);
+				List<string[]> fileTable = CSVUtils.TabulateCSV(new StringReader(csv), sep);
+				List<string> entitiesTable = GetEntitiesFromDic(dicTable);
 
 				var matchs = MatchEntities(fileTable, entitiesTable);
 
@@ -60,15 +63,16 @@ namespace ATPRNER
 		/// (entities are the second col of the csv).
 		/// </summary>
 		/// <returns>The entities from dic.</returns>
-		private static List<String> GetEntitiesFromDic(List<String[]> dicTable)
-		{		
-			List<String> entitiesTable = new List<String> ();
-			foreach (string[] item in dicTable) {
-				entitiesTable.Add (item [1]);
+		private static List<string> GetEntitiesFromDic(List<string[]> dicTable)
+		{
+			List<string> entitiesTable = new List<string>();
+			foreach (string[] item in dicTable)
+			{
+				entitiesTable.Add(item[1]);
 			}
 
 			return entitiesTable;
-				
+
 		}
 
 		/// <summary>
@@ -78,7 +82,11 @@ namespace ATPRNER
 		/// <param name="dicFile">The dictionary used to match.</param>
 		/// <param name="entries">The found matchs.</param>
 		/// <param name="output">Output stream.</param>
-		public static void GenerateMatchedEntriesCSV(string origFile, string dicFile, Dictionary<string, MatchedEntity> entries, TextWriter output, char sep)
+		public static void GenerateMatchedEntriesCSV(string origFile,
+													 string dicFile,
+													 Dictionary<string, MatchedEntity> entries,
+													 TextWriter output,
+													 char sep)
 		{
 			foreach (var entry in entries)
 			{

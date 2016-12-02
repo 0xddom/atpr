@@ -40,7 +40,7 @@ namespace ATPR
 						strategy = new ParseStrategy();
 						break;
 					default:
-						Console.WriteLine("Option not recognized. Exiting...");
+						Console.Error.WriteLine("Option not recognized. Exiting...");
 						break;
 				}
 				if (strategy != null)
@@ -50,12 +50,12 @@ namespace ATPR
 
 		static void PrintArgs(string[] args)
 		{
-			Console.Write("Running with options: ");
+			Console.Error.Write("Running with options: ");
 			for (int i = 0; i < args.Length; i++)
 			{
-				Console.Write(" {0} ", args[i]);
+				Console.Error.Write(" {0} ", args[i]);
 			}
-			Console.WriteLine("");
+			Console.Error.WriteLine("");
 		}
 	}
 }
