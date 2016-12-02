@@ -36,6 +36,9 @@ namespace ATPR
 					case "match": //Option 3, gets entities that match with a dictionary
 						strategy = new MatchEntitiesStrategy();
 						break;
+					case "parser": //Option 4, parse text and show the syntax analis
+						strategy = new ParseStrategy();
+						break;
 					default:
 						Console.WriteLine("Option not recognized. Exiting...");
 						break;

@@ -17,7 +17,7 @@ Check the Wiki https://github.com/KuroAku/atpr/wiki for tutorials and installati
 ## *NIX
 First install mono (and the IDE if you want)
 
-You have to download Stanford libs and extract it in ~/Hackaton : [LIBS] https://www.dropbox.com/s/103t3z1tiiquizq/Standford.tar.gz?dl=0)
+You have to download Stanford libs and extract it in ~/Hackaton : [LIBS] (https://www.dropbox.com/s/103t3z1tiiquizq/Standford.tar.gz?dl=0)
 
 
 You can either load the .sln in Xamarin Studio/MonoDevelop or in a shell run:
@@ -29,7 +29,7 @@ You can either load the .sln in Xamarin Studio/MonoDevelop or in a shell run:
 ## Windows
 Install Xamarin Studio and the c# toolchain
 
-You have to download Stanford libs and extract it in ~/Hackaton : [LIBS] https://www.dropbox.com/s/103t3z1tiiquizq/Standford.tar.gz?dl=0)
+You have to download Stanford libs and extract it in ~/Hackaton : [LIBS] (https://www.dropbox.com/s/103t3z1tiiquizq/Standford.tar.gz?dl=0)
 
 Load the project in Xamarin Studio (prefered) or VS (not tested) and build, or in a shell:
 
@@ -39,7 +39,7 @@ Load the project in Xamarin Studio (prefered) or VS (not tested) and build, or i
     
 # Usage
 ## Using ATPR with Autopsy
-TODO
+Check https://github.com/KuroAku/atpr/wiki/Autopsy-Integration
 
 ## Using ATPR with command line
 
@@ -62,6 +62,16 @@ If `-o` is missing the output will be redirected to STDOUT.
 If `-o` is missing the output will be redirected to STDOUT.
 
 TODO: Complete usage
+
+## Using ATPR with Docker
+
+Build the image or dowload it from the registry (TODO) and run
+
+    docker run -v <your inputs>:/inputs -v <your dictionaries>:/dictionaries atpr_image atpr <atpr arguments>
+    
+In this example the input files and the dictionaries are found in `/inputs` and `/dictionaries` respectively inside the docker container. In your atpr command use those directories to found your files.
+
+    docker run -v ~/Escritorio/Texts:/inputs atpr_image atpr -c dictionary -i /inputs -o ~/Escritorio/Dicts/generatedDict.csv
 
 # Functions
 ATPR is a tool focused in the analysis of documents using NLP(Natural Language Processing). 
