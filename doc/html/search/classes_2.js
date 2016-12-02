@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ner',['NER',['../d5/dec/class_a_t_p_r_n_e_r_1_1_n_e_r.html',1,'ATPRNER']]]
+  ['execstrategy',['ExecStrategy',['../dd/d44/interface_a_t_p_r_1_1_exec_strategy.html',1,'ATPR']]]
 ];

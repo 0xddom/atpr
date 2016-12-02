@@ -1,0 +1,4 @@
+<map id="ATPRNER.CSVUtils.GenerateMatchedEntriesCSV" name="ATPRNER.CSVUtils.GenerateMatchedEntriesCSV">
+<area shape="rect" id="node2" href="$d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher.html#a6fc36cbd0e0df420c2aaafa389ae7b61" title="Writes to the output stream a csv with the match results against the dictionary " alt="" coords="254,5,452,44"/>
+<area shape="rect" id="node3" href="$df/db7/class_a_t_p_r_1_1_match_entities_strategy.html#a7494fa761f1e14c463b4c6e5614ae1c4" title="Generates the match between textentities and dictionary entities. " alt="" coords="500,12,716,37"/>
+</map>

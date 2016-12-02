@@ -1,0 +1,90 @@
+\hypertarget{class_a_t_p_r_n_e_r_1_1_dictionary_matcher}{}\section{A\+T\+P\+R\+N\+E\+R.\+Dictionary\+Matcher Class Reference}
+\label{class_a_t_p_r_n_e_r_1_1_dictionary_matcher}\index{A\+T\+P\+R\+N\+E\+R.\+Dictionary\+Matcher@{A\+T\+P\+R\+N\+E\+R.\+Dictionary\+Matcher}}
+
+
+Collaboration diagram for A\+T\+P\+R\+N\+E\+R.\+Dictionary\+Matcher\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{db/d42/class_a_t_p_r_n_e_r_1_1_dictionary_matcher__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Dictionary$<$ string, \hyperlink{class_a_t_p_r_n_e_r_1_1_matched_entity}{Matched\+Entity} $>$ \hyperlink{class_a_t_p_r_n_e_r_1_1_dictionary_matcher_aa6fdeaf3a88c14b5ed8e4f452d1c3c17}{Match\+Entities} (List$<$ string\mbox{[}$\,$\mbox{]}$>$ text\+Entities, List$<$ string $>$ dict\+Entities)
+\begin{DoxyCompactList}\small\item\em Matchs the text entities with the dictionary entities. \end{DoxyCompactList}\item 
+static void \hyperlink{class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a6fc36cbd0e0df420c2aaafa389ae7b61}{Match\+Entities\+In\+Files} (string input\+Path, string dic\+Path, Text\+Writer output, char sep)
+\begin{DoxyCompactList}\small\item\em Writes to the output stream a csv with the match results against the dictionary \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_a_t_p_r_n_e_r_1_1_dictionary_matcher_aa6fdeaf3a88c14b5ed8e4f452d1c3c17}{}\label{class_a_t_p_r_n_e_r_1_1_dictionary_matcher_aa6fdeaf3a88c14b5ed8e4f452d1c3c17} 
+\index{A\+T\+P\+R\+N\+E\+R\+::\+Dictionary\+Matcher@{A\+T\+P\+R\+N\+E\+R\+::\+Dictionary\+Matcher}!Match\+Entities@{Match\+Entities}}
+\index{Match\+Entities@{Match\+Entities}!A\+T\+P\+R\+N\+E\+R\+::\+Dictionary\+Matcher@{A\+T\+P\+R\+N\+E\+R\+::\+Dictionary\+Matcher}}
+\subsubsection{\texorpdfstring{Match\+Entities()}{MatchEntities()}}
+{\footnotesize\ttfamily static Dictionary$<$string, \hyperlink{class_a_t_p_r_n_e_r_1_1_matched_entity}{Matched\+Entity}$>$ A\+T\+P\+R\+N\+E\+R.\+Dictionary\+Matcher.\+Match\+Entities (\begin{DoxyParamCaption}\item[{List$<$ string\mbox{[}$\,$\mbox{]}$>$}]{text\+Entities,  }\item[{List$<$ string $>$}]{dict\+Entities }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Matchs the text entities with the dictionary entities. 
+
+\begin{DoxyReturn}{Returns}
+The entities.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em text\+Entities} & Text entities.\\
+\hline
+{\em dict\+Entities} & Dict entities.\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_aa6fdeaf3a88c14b5ed8e4f452d1c3c17_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a6fc36cbd0e0df420c2aaafa389ae7b61}{}\label{class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a6fc36cbd0e0df420c2aaafa389ae7b61} 
+\index{A\+T\+P\+R\+N\+E\+R\+::\+Dictionary\+Matcher@{A\+T\+P\+R\+N\+E\+R\+::\+Dictionary\+Matcher}!Match\+Entities\+In\+Files@{Match\+Entities\+In\+Files}}
+\index{Match\+Entities\+In\+Files@{Match\+Entities\+In\+Files}!A\+T\+P\+R\+N\+E\+R\+::\+Dictionary\+Matcher@{A\+T\+P\+R\+N\+E\+R\+::\+Dictionary\+Matcher}}
+\subsubsection{\texorpdfstring{Match\+Entities\+In\+Files()}{MatchEntitiesInFiles()}}
+{\footnotesize\ttfamily static void A\+T\+P\+R\+N\+E\+R.\+Dictionary\+Matcher.\+Match\+Entities\+In\+Files (\begin{DoxyParamCaption}\item[{string}]{input\+Path,  }\item[{string}]{dic\+Path,  }\item[{Text\+Writer}]{output,  }\item[{char}]{sep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Writes to the output stream a csv with the match results against the dictionary 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Path} & Files path.\\
+\hline
+{\em dic\+Path} & Dictionary path.\\
+\hline
+{\em output} & Output stream.\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a6fc36cbd0e0df420c2aaafa389ae7b61_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a6fc36cbd0e0df420c2aaafa389ae7b61_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+A\+T\+P\+R\+N\+E\+R/Dictionary\+Matcher.\+cs\end{DoxyCompactItemize}

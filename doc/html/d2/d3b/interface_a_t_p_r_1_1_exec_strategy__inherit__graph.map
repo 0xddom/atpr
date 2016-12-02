@@ -1,0 +1,6 @@
+<map id="ATPR.ExecStrategy" name="ATPR.ExecStrategy">
+<area shape="rect" id="node2" href="$d2/d22/class_a_t_p_r_1_1_generate_dictionary_strategy.html" title="Strategy class that generates the dictionary from the NER result. " alt="" coords="5,127,229,213"/>
+<area shape="rect" id="node3" href="$de/d99/class_a_t_p_r_1_1_generate_entities_strategy.html" title="sStrategy class that check generate entities command arguments and execute generate entities..." alt="" coords="253,127,462,213"/>
+<area shape="rect" id="node4" href="$df/db7/class_a_t_p_r_1_1_match_entities_strategy.html" title="Strategy class that generates the matches between textentities and dictionary entities. " alt="" coords="485,127,675,213"/>
+<area shape="rect" id="node5" href="$d6/dba/class_a_t_p_r_1_1_parse_strategy.html" title="Strategy class that generate the syntax analisis of the documents using the entities of the matching ..." alt="" coords="699,127,843,213"/>
+</map>

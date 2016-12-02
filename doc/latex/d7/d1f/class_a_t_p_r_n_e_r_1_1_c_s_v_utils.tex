@@ -1,20 +1,36 @@
 \hypertarget{class_a_t_p_r_n_e_r_1_1_c_s_v_utils}{}\section{A\+T\+P\+R\+N\+E\+R.\+C\+S\+V\+Utils Class Reference}
 \label{class_a_t_p_r_n_e_r_1_1_c_s_v_utils}\index{A\+T\+P\+R\+N\+E\+R.\+C\+S\+V\+Utils@{A\+T\+P\+R\+N\+E\+R.\+C\+S\+V\+Utils}}
+
+
+Collaboration diagram for A\+T\+P\+R\+N\+E\+R.\+C\+S\+V\+Utils\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{d5/d53/class_a_t_p_r_n_e_r_1_1_c_s_v_utils__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static string \hyperlink{class_a_t_p_r_n_e_r_1_1_c_s_v_utils_adfa299109e3212e72e6468644b0bdd0c}{Entities\+To\+Csv} (string entities\+Xml)
+static string \hyperlink{class_a_t_p_r_n_e_r_1_1_c_s_v_utils_a6d40fcdbc82ad0745e7f47ace6695f8a}{Entities\+To\+Csv} (string entities\+Xml, char sep)
 \begin{DoxyCompactList}\small\item\em From a \hyperlink{class_a_t_p_r_n_e_r_1_1_n_e_r}{N\+ER} xml entities returns a C\+SV with the interesting entities \end{DoxyCompactList}\item 
 static string \hyperlink{class_a_t_p_r_n_e_r_1_1_c_s_v_utils_ab236c362e83053e0e7165aa2e45849c4}{Remove\+Duplicates} (string csv)
-\begin{DoxyCompactList}\small\item\em Removes the duplicates from a C\+SV. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Removes the duplicates from a C\+SV. \end{DoxyCompactList}\item 
+static List$<$ string\mbox{[}$\,$\mbox{]}$>$ \hyperlink{class_a_t_p_r_n_e_r_1_1_c_s_v_utils_addabfb59d0e9755c0336b2de6b0bc9a4}{Tabulate\+C\+SV} (Text\+Reader reader, char sep)
+\begin{DoxyCompactList}\small\item\em Returns the C\+SV as a tabular structure \end{DoxyCompactList}\item 
+static List$<$ String $>$ \hyperlink{class_a_t_p_r_n_e_r_1_1_c_s_v_utils_a1fd132bc18c3722a06eb10f1aedf50cd}{Get\+Entities\+From\+Dic} (string dictionary\+Path, char sep)
+\begin{DoxyCompactList}\small\item\em Gets the entities from dictionary (C\+SV File). \end{DoxyCompactList}\item 
+static void \hyperlink{class_a_t_p_r_n_e_r_1_1_c_s_v_utils_a377f7a74bf9bb2672f1669f6d562cd67}{Generate\+Matched\+Entries\+C\+SV} (string orig\+File, string dic\+File, Dictionary$<$ string, \hyperlink{class_a_t_p_r_n_e_r_1_1_matched_entity}{Matched\+Entity} $>$ entries, Text\+Writer output, char sep)
+\begin{DoxyCompactList}\small\item\em Generates a C\+SV with the provided dictionary and writes it to the stream \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_a_t_p_r_n_e_r_1_1_c_s_v_utils_adfa299109e3212e72e6468644b0bdd0c}{}\label{class_a_t_p_r_n_e_r_1_1_c_s_v_utils_adfa299109e3212e72e6468644b0bdd0c} 
+\hypertarget{class_a_t_p_r_n_e_r_1_1_c_s_v_utils_a6d40fcdbc82ad0745e7f47ace6695f8a}{}\label{class_a_t_p_r_n_e_r_1_1_c_s_v_utils_a6d40fcdbc82ad0745e7f47ace6695f8a} 
 \index{A\+T\+P\+R\+N\+E\+R\+::\+C\+S\+V\+Utils@{A\+T\+P\+R\+N\+E\+R\+::\+C\+S\+V\+Utils}!Entities\+To\+Csv@{Entities\+To\+Csv}}
 \index{Entities\+To\+Csv@{Entities\+To\+Csv}!A\+T\+P\+R\+N\+E\+R\+::\+C\+S\+V\+Utils@{A\+T\+P\+R\+N\+E\+R\+::\+C\+S\+V\+Utils}}
 \subsubsection{\texorpdfstring{Entities\+To\+Csv()}{EntitiesToCsv()}}
-{\footnotesize\ttfamily static string A\+T\+P\+R\+N\+E\+R.\+C\+S\+V\+Utils.\+Entities\+To\+Csv (\begin{DoxyParamCaption}\item[{string}]{entities\+Xml }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily static string A\+T\+P\+R\+N\+E\+R.\+C\+S\+V\+Utils.\+Entities\+To\+Csv (\begin{DoxyParamCaption}\item[{string}]{entities\+Xml,  }\item[{char}]{sep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -28,6 +44,61 @@ The entities in C\+SV.
 {\em entities\+Xml} & Entities xml.\\
 \hline
 \end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1f/class_a_t_p_r_n_e_r_1_1_c_s_v_utils_a6d40fcdbc82ad0745e7f47ace6695f8a_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_a_t_p_r_n_e_r_1_1_c_s_v_utils_a377f7a74bf9bb2672f1669f6d562cd67}{}\label{class_a_t_p_r_n_e_r_1_1_c_s_v_utils_a377f7a74bf9bb2672f1669f6d562cd67} 
+\index{A\+T\+P\+R\+N\+E\+R\+::\+C\+S\+V\+Utils@{A\+T\+P\+R\+N\+E\+R\+::\+C\+S\+V\+Utils}!Generate\+Matched\+Entries\+C\+SV@{Generate\+Matched\+Entries\+C\+SV}}
+\index{Generate\+Matched\+Entries\+C\+SV@{Generate\+Matched\+Entries\+C\+SV}!A\+T\+P\+R\+N\+E\+R\+::\+C\+S\+V\+Utils@{A\+T\+P\+R\+N\+E\+R\+::\+C\+S\+V\+Utils}}
+\subsubsection{\texorpdfstring{Generate\+Matched\+Entries\+C\+S\+V()}{GenerateMatchedEntriesCSV()}}
+{\footnotesize\ttfamily static void A\+T\+P\+R\+N\+E\+R.\+C\+S\+V\+Utils.\+Generate\+Matched\+Entries\+C\+SV (\begin{DoxyParamCaption}\item[{string}]{orig\+File,  }\item[{string}]{dic\+File,  }\item[{Dictionary$<$ string, \hyperlink{class_a_t_p_r_n_e_r_1_1_matched_entity}{Matched\+Entity} $>$}]{entries,  }\item[{Text\+Writer}]{output,  }\item[{char}]{sep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Generates a C\+SV with the provided dictionary and writes it to the stream 
+
+
+\begin{DoxyParams}{Parameters}
+{\em orig\+File} & Path of the file where the match was found.\\
+\hline
+{\em dic\+File} & The dictionary used to match.\\
+\hline
+{\em entries} & The found matchs.\\
+\hline
+{\em output} & Output stream.\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1f/class_a_t_p_r_n_e_r_1_1_c_s_v_utils_a377f7a74bf9bb2672f1669f6d562cd67_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_a_t_p_r_n_e_r_1_1_c_s_v_utils_a1fd132bc18c3722a06eb10f1aedf50cd}{}\label{class_a_t_p_r_n_e_r_1_1_c_s_v_utils_a1fd132bc18c3722a06eb10f1aedf50cd} 
+\index{A\+T\+P\+R\+N\+E\+R\+::\+C\+S\+V\+Utils@{A\+T\+P\+R\+N\+E\+R\+::\+C\+S\+V\+Utils}!Get\+Entities\+From\+Dic@{Get\+Entities\+From\+Dic}}
+\index{Get\+Entities\+From\+Dic@{Get\+Entities\+From\+Dic}!A\+T\+P\+R\+N\+E\+R\+::\+C\+S\+V\+Utils@{A\+T\+P\+R\+N\+E\+R\+::\+C\+S\+V\+Utils}}
+\subsubsection{\texorpdfstring{Get\+Entities\+From\+Dic()}{GetEntitiesFromDic()}}
+{\footnotesize\ttfamily static List$<$String$>$ A\+T\+P\+R\+N\+E\+R.\+C\+S\+V\+Utils.\+Get\+Entities\+From\+Dic (\begin{DoxyParamCaption}\item[{string}]{dictionary\+Path,  }\item[{char}]{sep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Gets the entities from dictionary (C\+SV File). 
+
+\begin{DoxyReturn}{Returns}
+The entities from dic.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em dictionary\+Path} & Dictionary path.\\
+\hline
+\end{DoxyParams}
 \hypertarget{class_a_t_p_r_n_e_r_1_1_c_s_v_utils_ab236c362e83053e0e7165aa2e45849c4}{}\label{class_a_t_p_r_n_e_r_1_1_c_s_v_utils_ab236c362e83053e0e7165aa2e45849c4} 
 \index{A\+T\+P\+R\+N\+E\+R\+::\+C\+S\+V\+Utils@{A\+T\+P\+R\+N\+E\+R\+::\+C\+S\+V\+Utils}!Remove\+Duplicates@{Remove\+Duplicates}}
 \index{Remove\+Duplicates@{Remove\+Duplicates}!A\+T\+P\+R\+N\+E\+R\+::\+C\+S\+V\+Utils@{A\+T\+P\+R\+N\+E\+R\+::\+C\+S\+V\+Utils}}
@@ -39,13 +110,49 @@ The entities in C\+SV.
 Removes the duplicates from a C\+SV. 
 
 \begin{DoxyReturn}{Returns}
-The duplicates.
+The C\+SV without duplicated entries.
 \end{DoxyReturn}
 
 \begin{DoxyParams}{Parameters}
-{\em csv} & Csv.\\
+{\em csv} & A C\+SV file.\\
 \hline
 \end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1f/class_a_t_p_r_n_e_r_1_1_c_s_v_utils_ab236c362e83053e0e7165aa2e45849c4_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_a_t_p_r_n_e_r_1_1_c_s_v_utils_addabfb59d0e9755c0336b2de6b0bc9a4}{}\label{class_a_t_p_r_n_e_r_1_1_c_s_v_utils_addabfb59d0e9755c0336b2de6b0bc9a4} 
+\index{A\+T\+P\+R\+N\+E\+R\+::\+C\+S\+V\+Utils@{A\+T\+P\+R\+N\+E\+R\+::\+C\+S\+V\+Utils}!Tabulate\+C\+SV@{Tabulate\+C\+SV}}
+\index{Tabulate\+C\+SV@{Tabulate\+C\+SV}!A\+T\+P\+R\+N\+E\+R\+::\+C\+S\+V\+Utils@{A\+T\+P\+R\+N\+E\+R\+::\+C\+S\+V\+Utils}}
+\subsubsection{\texorpdfstring{Tabulate\+C\+S\+V()}{TabulateCSV()}}
+{\footnotesize\ttfamily static List$<$string\mbox{[}$\,$\mbox{]}$>$ A\+T\+P\+R\+N\+E\+R.\+C\+S\+V\+Utils.\+Tabulate\+C\+SV (\begin{DoxyParamCaption}\item[{Text\+Reader}]{reader,  }\item[{char}]{sep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns the C\+SV as a tabular structure 
+
+\begin{DoxyReturn}{Returns}
+The table
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em reader} & A reader with C\+SV entries.\\
+\hline
+{\em sep} & The C\+SV separator\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d1f/class_a_t_p_r_n_e_r_1_1_c_s_v_utils_addabfb59d0e9755c0336b2de6b0bc9a4_icgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

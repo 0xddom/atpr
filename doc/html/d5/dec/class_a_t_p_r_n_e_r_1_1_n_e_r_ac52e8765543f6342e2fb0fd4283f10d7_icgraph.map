@@ -1,0 +1,8 @@
+<map id="ATPRNER.NER.GenerateEntities" name="ATPRNER.NER.GenerateEntities">
+<area shape="rect" id="node2" href="$de/d99/class_a_t_p_r_1_1_generate_entities_strategy.html#a05c83e5d9d7ea2b05f4de5dab1a87f06" title="Generates an entities XML from NER output. " alt="" coords="272,5,508,31"/>
+<area shape="rect" id="node3" href="$d5/dec/class_a_t_p_r_n_e_r_1_1_n_e_r.html#afbf080a32a868531adb8c7f4ec5f8035" title="Generates the dict from the documents in inputPath and send output to stdout " alt="" coords="281,55,500,80"/>
+<area shape="rect" id="node4" href="$d5/dec/class_a_t_p_r_n_e_r_1_1_n_e_r.html#a8480137d05620d726021a2f4ae818869" title="Generates the dict from the documents in inputPath and send output to a string. " alt="" coords="281,104,500,143"/>
+<area shape="rect" id="node5" href="$d2/d22/class_a_t_p_r_1_1_generate_dictionary_strategy.html#acec75993f2d1b9e2899130cd9dff1ffa" title="Generates the dictionary of entities found. " alt="" coords="556,83,807,108"/>
+<area shape="rect" id="node6" href="$d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher.html#a6fc36cbd0e0df420c2aaafa389ae7b61" title="Writes to the output stream a csv with the match results against the dictionary " alt="" coords="583,132,781,171"/>
+<area shape="rect" id="node7" href="$df/db7/class_a_t_p_r_1_1_match_entities_strategy.html#a7494fa761f1e14c463b4c6e5614ae1c4" title="Generates the match between textentities and dictionary entities. " alt="" coords="855,139,1072,164"/>
+</map>

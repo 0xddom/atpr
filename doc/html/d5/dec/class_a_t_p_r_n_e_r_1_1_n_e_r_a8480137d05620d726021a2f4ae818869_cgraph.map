@@ -1,0 +1,6 @@
+<map id="ATPRNER.NER.GenerateEntitiesToString" name="ATPRNER.NER.GenerateEntitiesToString">
+<area shape="rect" id="node2" href="$d5/dec/class_a_t_p_r_n_e_r_1_1_n_e_r.html#ac52e8765543f6342e2fb0fd4283f10d7" title="Generates the dict from the documents in inputPath and send output to output file in outputPath ..." alt="" coords="283,5,502,31"/>
+<area shape="rect" id="node3" href="$d4/d4f/class_a_t_p_r_n_e_r_1_1_consts.html#ad399f9a954d0d35c77fdc899f1c47255" title="Gets the home for the stanford jars. " alt="" coords="272,55,513,80"/>
+<area shape="rect" id="node4" href="$d5/de9/class_a_t_p_r_n_e_r_1_1_files_utils.html#aa9ee9ca4b22ddc16322bff7ea1d979bb" title="Returns an array of files to be parsed " alt="" coords="295,104,490,129"/>
+<area shape="rect" id="node5" href="$d5/de9/class_a_t_p_r_n_e_r_1_1_files_utils.html#adaf763c34895368bcfe1254086d87f99" title="Extrat the text from a file, using Toxy for binary files. " alt="" coords="290,153,495,179"/>
+</map>

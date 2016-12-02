@@ -1,0 +1,11 @@
+<map id="ATPRNER.DictionaryMatcher.MatchEntitiesInFiles" name="ATPRNER.DictionaryMatcher.MatchEntitiesInFiles">
+<area shape="rect" id="node2" href="$d5/de9/class_a_t_p_r_n_e_r_1_1_files_utils.html#aa9ee9ca4b22ddc16322bff7ea1d979bb" title="Returns an array of files to be parsed " alt="" coords="545,5,740,31"/>
+<area shape="rect" id="node3" href="$d5/dec/class_a_t_p_r_n_e_r_1_1_n_e_r.html#a8480137d05620d726021a2f4ae818869" title="Generates the dict from the documents in inputPath and send output to a string. " alt="" coords="253,56,472,95"/>
+<area shape="rect" id="node7" href="$d7/d1f/class_a_t_p_r_n_e_r_1_1_c_s_v_utils.html#a6d40fcdbc82ad0745e7f47ace6695f8a" title="From a NER xml entities returns a CSV with the interesting entities " alt="" coords="269,119,457,157"/>
+<area shape="rect" id="node8" href="$d7/d1f/class_a_t_p_r_n_e_r_1_1_c_s_v_utils.html#addabfb59d0e9755c0336b2de6b0bc9a4" title="Returns the CSV as a tabular structure " alt="" coords="252,181,474,207"/>
+<area shape="rect" id="node9" href="$d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher.html#aa6fdeaf3a88c14b5ed8e4f452d1c3c17" title="Matchs the text entities with the dictionary entities. " alt="" coords="264,231,462,269"/>
+<area shape="rect" id="node10" href="$d7/d1f/class_a_t_p_r_n_e_r_1_1_c_s_v_utils.html#a377f7a74bf9bb2672f1669f6d562cd67" title="Generates a CSV with the provided dictionary and writes it to the stream " alt="" coords="263,293,463,332"/>
+<area shape="rect" id="node4" href="$d5/dec/class_a_t_p_r_n_e_r_1_1_n_e_r.html#ac52e8765543f6342e2fb0fd4283f10d7" title="Generates the dict from the documents in inputPath and send output to output file in outputPath ..." alt="" coords="533,55,752,80"/>
+<area shape="rect" id="node5" href="$d4/d4f/class_a_t_p_r_n_e_r_1_1_consts.html#ad399f9a954d0d35c77fdc899f1c47255" title="Gets the home for the stanford jars. " alt="" coords="522,104,763,129"/>
+<area shape="rect" id="node6" href="$d5/de9/class_a_t_p_r_n_e_r_1_1_files_utils.html#adaf763c34895368bcfe1254086d87f99" title="Extrat the text from a file, using Toxy for binary files. " alt="" coords="540,153,745,179"/>
+</map>

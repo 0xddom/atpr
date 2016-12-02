@@ -1,0 +1,9 @@
+<map id="ATPR.GenerateDictionaryStrategy.Run" name="ATPR.GenerateDictionaryStrategy.Run">
+<area shape="rect" id="node2" href="$d5/dec/class_a_t_p_r_n_e_r_1_1_n_e_r.html#a8480137d05620d726021a2f4ae818869" title="Generates the dict from the documents in inputPath and send output to a string. " alt="" coords="324,72,542,111"/>
+<area shape="rect" id="node7" href="$d7/d1f/class_a_t_p_r_n_e_r_1_1_c_s_v_utils.html#ab236c362e83053e0e7165aa2e45849c4" title="Removes the duplicates from a CSV. " alt="" coords="305,135,561,160"/>
+<area shape="rect" id="node8" href="$d7/d1f/class_a_t_p_r_n_e_r_1_1_c_s_v_utils.html#a6d40fcdbc82ad0745e7f47ace6695f8a" title="From a NER xml entities returns a CSV with the interesting entities " alt="" coords="339,184,527,223"/>
+<area shape="rect" id="node3" href="$d5/dec/class_a_t_p_r_n_e_r_1_1_n_e_r.html#ac52e8765543f6342e2fb0fd4283f10d7" title="Generates the dict from the documents in inputPath and send output to output file in outputPath ..." alt="" coords="620,5,839,31"/>
+<area shape="rect" id="node4" href="$d4/d4f/class_a_t_p_r_n_e_r_1_1_consts.html#ad399f9a954d0d35c77fdc899f1c47255" title="Gets the home for the stanford jars. " alt="" coords="609,55,850,80"/>
+<area shape="rect" id="node5" href="$d5/de9/class_a_t_p_r_n_e_r_1_1_files_utils.html#aa9ee9ca4b22ddc16322bff7ea1d979bb" title="Returns an array of files to be parsed " alt="" coords="632,104,827,129"/>
+<area shape="rect" id="node6" href="$d5/de9/class_a_t_p_r_n_e_r_1_1_files_utils.html#adaf763c34895368bcfe1254086d87f99" title="Extrat the text from a file, using Toxy for binary files. " alt="" coords="627,153,832,179"/>
+</map>

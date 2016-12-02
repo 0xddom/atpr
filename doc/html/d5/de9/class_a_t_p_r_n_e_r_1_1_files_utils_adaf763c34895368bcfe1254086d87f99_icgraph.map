@@ -1,0 +1,6 @@
+<map id="ATPRNER.FilesUtils.FileToText" name="ATPRNER.FilesUtils.FileToText">
+<area shape="rect" id="node2" href="$d5/dec/class_a_t_p_r_n_e_r_1_1_n_e_r.html#a8480137d05620d726021a2f4ae818869" title="Generates the dict from the documents in inputPath and send output to a string. " alt="" coords="259,27,478,65"/>
+<area shape="rect" id="node3" href="$d2/d22/class_a_t_p_r_1_1_generate_dictionary_strategy.html#acec75993f2d1b9e2899130cd9dff1ffa" title="Generates the dictionary of entities found. " alt="" coords="526,5,777,31"/>
+<area shape="rect" id="node4" href="$d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher.html#a6fc36cbd0e0df420c2aaafa389ae7b61" title="Writes to the output stream a csv with the match results against the dictionary " alt="" coords="552,55,751,93"/>
+<area shape="rect" id="node5" href="$df/db7/class_a_t_p_r_1_1_match_entities_strategy.html#a7494fa761f1e14c463b4c6e5614ae1c4" title="Generates the match between textentities and dictionary entities. " alt="" coords="825,61,1042,87"/>
+</map>
