@@ -45,13 +45,13 @@ TODO
 
 #### Entities extractor:
 
-    mono atpr -c 1 -p pathToDocuments [-o outputFile ]
+    mono ATPR.exe -c 1 -i <pathToDocuments> [-o outputFile ]
 
 If `-o` is missing the output will be redirected to STDOUT.
 
 #### Dictionary generator:
 
-    mono atpr -c 2 -p pathToDocuments [-o outputFile ]
+    mono ATPR.exe -c 2 -i <pathToDocuments> [-o outputFile ]
 
 If `-o` is missing the output will be redirected to STDOUT.
 
