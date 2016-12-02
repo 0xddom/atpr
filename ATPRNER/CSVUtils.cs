@@ -32,8 +32,8 @@ namespace ATPRNER
 		/// <summary>
 		/// Removes the duplicates from a CSV.
 		/// </summary>
-		/// <returns>The duplicates.</returns>
-		/// <param name="csv">Csv.</param>
+		/// <returns>The CSV without duplicated entries.</returns>
+		/// <param name="csv">A CSV file.</param>
 		public static string RemoveDuplicates(string csv)
 		{
 			string[] csvEntries = csv.Split('\n');
@@ -52,6 +52,24 @@ namespace ATPRNER
 			} while (e.MoveNext());
 
 			return sb.ToString();
+		}
+
+		/// <summary>
+		/// Returns the CSV as a tabular structure
+		/// </summary>
+		/// <returns>The table</returns>
+		/// <param name="reader">A reader with CSV entries.</param>
+		/// <param name="sep">The CSV separator</param>
+		public static List<string[]> TabulateCSV(TextReader reader, char sep)
+		{
+			List<string[]> table = new List<string[]>();
+			string line;
+			while ((line = reader.ReadLine()) != null)
+			{
+				table.Add(line.Split(sep));	
+			}
+
+			return table;
 		}
 
 		/// <summary>
