@@ -78,7 +78,7 @@ namespace ATPR
 						if (options.Verbose)
 							Console.WriteLine("Option 1.");
 
-						if (String.IsNullOrEmpty(options.Output))
+						if (string.IsNullOrEmpty(options.Output))
 						{
 							NER.GenerateEntities(options.InputFile);
 						}
