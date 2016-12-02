@@ -47,20 +47,17 @@ namespace ATPRNER
 		/// </summary>
 		/// <returns>A file paths array</returns>
 		/// <param name="inputPath">The input path.</param>
-		static String[] GetFiles(string inputPath)
+		static string[] GetFiles(string inputPath)
 		{
 			if (Directory.Exists(inputPath))
 			{
 				return Directory.GetFiles(inputPath);
 			}
-			else if (File.Exists(inputPath))
+			if (File.Exists(inputPath))
 			{
 				return new string[] { inputPath };
 			}
-			else
-			{
-				throw new DirectoryNotFoundException(inputPath);
-			}
+			throw new DirectoryNotFoundException(inputPath);
 
 		}
 

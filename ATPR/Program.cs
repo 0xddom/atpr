@@ -46,7 +46,7 @@ namespace ATPR
 		/// <param name="args">The command-line arguments.</param>
 		static void Main(string[] args) {
 			var options = new Options();
-			if (CommandLine.Parser.Default.ParseArguments(args, options)) {
+			if (Parser.Default.ParseArguments(args, options)) {
 				// Values are available here
 				if (options.Verbose) {
 					Console.Write("Running with options: ");
