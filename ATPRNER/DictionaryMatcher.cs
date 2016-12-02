@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using TagLib.Riff;
-using NPOI.OpenXmlFormats.Dml.Diagram;
 
 namespace ATPRNER
 {
@@ -14,10 +12,10 @@ namespace ATPRNER
 		/// <returns>The entities.</returns>
 		/// <param name="textEntities">Text entities.</param>
 		/// <param name="dictEntities">Dict entities.</param>
-		public static Dictionary<string, MatchedEntity> 
-			MatchEntities (List<string[]> textEntities,List<string> dictEntities)
+		public static Dictionary<string, MatchedEntity>
+			MatchEntities(List<string[]> textEntities, List<string> dictEntities)
 		{
-			Dictionary<string, MatchedEntity> matches = new Dictionary<string, MatchedEntity> ();
+			Dictionary<string, MatchedEntity> matches = new Dictionary<string, MatchedEntity>();
 
 			foreach (string[] entity in textEntities) {
 				if (dictEntities.Contains(entity[1])) { 
