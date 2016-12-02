@@ -25,9 +25,11 @@ namespace ATPRParser
 		{
 
 			//Load spanish models.
-			var jarRoot = @"~/Hackaton/Standford/models/stanford-spanish";
-			var modelsDirectory = jarRoot+@"/edu/stanford/nlp/models";
-			var lp = LexicalizedParser.loadModel(modelsDirectory + @"/lexparser/spanishPCFG.ser.gz");
+			var jarRoot = GetStanfordHome();
+			var modelsDirectory = jarRoot + Consts.MODELS;
+			var lexparserDirectory = modelsDirectory + Consts.LEXPARSER;
+
+			var lp = LexicalizedParser.loadModel(lexparserDirectory);
 
 			//Parser sentence.
 			var sent2 = Sentence;
@@ -41,6 +43,15 @@ namespace ATPRParser
 			var tp = new TreePrint("penn");
 			tp.printTree(tree2);
 
+		}
+
+		/// <summary>
+		/// Gets the home for the stanford jars.
+		/// </summary>
+		/// <returns>The stanford home path</returns>
+		static string GetStanfordHome()
+		{
+			return Environment.GetEnvironmentVariable("STANFORD_HOME") ?? Consts.DEFAULT_STANFORD_NLP;
 		}
 	}
 }

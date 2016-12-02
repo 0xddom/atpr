@@ -66,3 +66,8 @@ The aplication support the following documents types:
 * pdf
 
 The main target for this tool is to help the forensics community in processing evidences with large amount of documents.
+
+# Extra Doc
+
+- You can see the WIKI [HERE] (https://github.com/KuroAku/atpr/wiki)
+- Doxygen documentation is aviable in "doc" folder in HTML or LaTeX format
