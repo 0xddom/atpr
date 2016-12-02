@@ -93,4 +93,10 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ATPRNER\ATPRNER.csproj">
+      <Project>{2BB20598-FE97-40B2-BDB2-1DD37BC8CFDD}</Project>
+      <Name>ATPRNER</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

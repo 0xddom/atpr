@@ -14,10 +14,10 @@ namespace ATPRNER
 		/// </summary>
 		/// <param name="inputPath">Input path.</param>
 		/// <param name="outputPath">Output path.</param>
-		public static void GenerateDict(string inputPath, string outputPath)
+		public static void GenerateEntities(string inputPath, string outputPath)
 		{
 			StreamWriter outputFile = new StreamWriter(outputPath);
-			GenerateDict(inputPath, outputFile);
+			GenerateEntities(inputPath, outputFile);
 			outputFile.Close();
 		}
 
@@ -35,10 +35,10 @@ namespace ATPRNER
 		/// and send output to stdout
 		/// </summary>
 		/// <param name="inputPath">Input path.</param>
-		public static void GenerateDict(string inputPath)
+		public static void GenerateEntities(string inputPath)
 		{
 			var stdout = new StreamWriter(Console.OpenStandardOutput());
-			GenerateDict(inputPath, stdout);
+			GenerateEntities(inputPath, stdout);
 			stdout.Close();
 		}
 
@@ -84,16 +84,16 @@ namespace ATPRNER
 		}
 
 		/// <summary>
-		/// Global method for dictionary generation
+		/// Global method for entities generation
 		/// </summary>
 		/// <param name="inputPath">The input path</param>
 		/// <param name="output">Output stream</param>
-		static void GenerateDict(string inputPath, StreamWriter output)
+		static void GenerateEntities(string inputPath, StreamWriter output)
 		{
 			output.WriteLine("<wis>");
 
 			var jarRoot = GetStanfordHome();
-			var classifiersDirecrory = jarRoot + Consts.CLASIFIERS;
+			var classifiersDirectory = jarRoot + Consts.CLASIFIERS;
 			string[] fileEntries = GetFiles(inputPath);
 
 			foreach (var document in fileEntries)
@@ -108,7 +108,7 @@ namespace ATPRNER
 					continue;
 				}
 
-				var classifier = CRFClassifier.getClassifierNoExceptions(classifiersDirecrory + Consts.MODELS);
+				var classifier = CRFClassifier.getClassifierNoExceptions(classifiersDirectory + Consts.MODELS);
 
 				output.WriteLine(classifier.classifyToString(text, "xml", true));
 			}

@@ -1,6 +1,9 @@
 ﻿using System;
 using CommandLine;
 using CommandLine.Text;
+using DocumentFormat.OpenXml.Office2010.PowerPoint;
+using Org.BouncyCastle.Asn1.Misc;
+using ATPRNER;
 
 namespace ATPR
 {
@@ -20,7 +23,7 @@ namespace ATPR
 
 			[Option('o', "output", Required = false,
 				HelpText = "Output path where the tool will save the results.")]
-			public bool Output { get; set; }
+			public string Output { get; set; }
 				
 			[Option('c', "choose", Required = true,
 				HelpText = "Selected option for running the tool.")]
@@ -45,7 +48,6 @@ namespace ATPR
 			var options = new Options();
 			if (CommandLine.Parser.Default.ParseArguments(args, options)) {
 				// Values are available here
-
 				if (options.Verbose) {
 					Console.Write("Running with options: ");
 					for (int i = 0; i < args.Length; i++)
@@ -54,10 +56,20 @@ namespace ATPR
 					}
 					Console.WriteLine("");
 				}
+
 				int choose = options.Choose;
+
 				switch (choose) {
 				case 1:	//Option 1, gets only entities
-					if (options.Verbose) Console.WriteLine("Option 1.");
+					if (options.Verbose)
+						Console.WriteLine ("Option 1.");
+
+					if (String.IsNullOrEmpty(options.Output)) {
+						NER.GenerateEntities (options.InputFile);
+					} else {
+						NER.GenerateEntities (options.InputFile, options.Output);
+					}
+
 					break;
 				case 2:	//Option 2, generates dictionary
 					if (options.Verbose) Console.WriteLine("Option 2.");
