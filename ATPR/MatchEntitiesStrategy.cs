@@ -4,12 +4,22 @@ using ATPRNER;
 
 namespace ATPR
 {
+	/// <summary>
+	/// Strategy class that generates the matches between textentities and dictionary entities.
+	/// </summary>
 	public class MatchEntitiesStrategy : ExecStrategy
 	{
+		/// <summary>
+		/// Initializes a new instance of the <see cref="ATPR.MatchEntitiesStrategy"/> class.
+		/// </summary>
 		public MatchEntitiesStrategy()
 		{
 		}
 
+		/// <summary>
+		/// Generates the match between textentities and dictionary entities.
+		/// </summary>
+		/// <param name="options">Options.</param>
 		public void Run(Options options)
 		{
 			if (options.Verbose)

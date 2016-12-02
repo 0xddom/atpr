@@ -3,6 +3,10 @@ using System.IO;
 
 namespace ATPR
 {
+	/// <summary>
+	/// Strategy class that generate the syntax analisis of the documents
+	/// using the entities of the matching process result.
+	/// </summary>
 	public class ParseStrategy : ExecStrategy
 	{
 		/// <summary>

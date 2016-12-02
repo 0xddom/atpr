@@ -4,8 +4,7 @@ using ATPRNER;
 namespace ATPR
 {
 	/// <summary>
-	/// Generate entities strategy class.
-	/// Check generate entities command arguments and execute generate entities.
+	/// sStrategy class  that check generate entities command arguments and execute generate entities.
 	/// </summary>
 	public class GenerateEntitiesStrategy : ExecStrategy
 	{

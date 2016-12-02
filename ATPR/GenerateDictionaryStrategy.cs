@@ -5,7 +5,7 @@ using ATPRNER;
 namespace ATPR
 {
 	/// <summary>
-	/// This strategy class that generates the dictionary from the NER result.
+	/// Strategy class that generates the dictionary from the NER result.
 	/// </summary>
 	public class GenerateDictionaryStrategy : ExecStrategy
 	{
