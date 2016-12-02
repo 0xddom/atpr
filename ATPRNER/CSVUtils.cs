@@ -40,17 +40,16 @@ namespace ATPRNER
 			string[] csvEntries = csv.Split('\n');
 			HashSet<string> withoutDuplicates = new HashSet<string>();
 			foreach (string entry in csvEntries)
-			{
-				if (!withoutDuplicates.Contains(entry))
-					withoutDuplicates.Add(entry);
-			}
+				if (!string.IsNullOrWhiteSpace(entry))
+					if (!withoutDuplicates.Contains(entry))
+						withoutDuplicates.Add(entry);
+			
 
 			var e = withoutDuplicates.GetEnumerator();
 			var sb = new StringBuilder();
-			do
-			{
+			while(e.MoveNext())				
 				sb.AppendFormat("{0}\n", e.Current);
-			} while (e.MoveNext());
+			
 
 			return sb.ToString();
 		}

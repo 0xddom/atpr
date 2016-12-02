@@ -29,18 +29,8 @@ namespace ATPR
 			var options = new Options();
 			if (Parser.Default.ParseArguments(args, options))
 			{
-				// Values are available here
-				if (options.Verbose)
-				{
-					Console.Write("Running with options: ");
-					for (int i = 0; i < args.Length; i++)
-					{
-						Console.Write(" {0} ", args[i]);
-					}
-					Console.WriteLine("");
-				}
+				if (options.Verbose) PrintArgs(args);
 
-				string choose = options.Choose;
 				ExecStrategy strategy = null;
 
 				switch (options.Choose)
@@ -61,6 +51,16 @@ namespace ATPR
 				if (strategy != null)
 					strategy.Run(options);
 			}
+		}
+
+		static void PrintArgs(string[] args)
+		{
+			Console.Write("Running with options: ");
+			for (int i = 0; i < args.Length; i++)
+			{
+				Console.Write(" {0} ", args[i]);
+			}
+			Console.WriteLine("");
 		}
 	}
 }

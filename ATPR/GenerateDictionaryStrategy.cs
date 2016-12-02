@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using ATPRNER;
 
 namespace ATPR
@@ -9,21 +10,25 @@ namespace ATPR
 		{
 		}
 
+		Options options;
+
 		public void Run(Options options)
 		{
+			this.options = options;
+
 			if (options.Verbose)
-				Console.WriteLine("Option 2.");
+				Console.WriteLine("Dictionary generation command");
 
 			string xml = NER.GenerateEntitiesToString(options.InputFile);
 			string csv = CSVUtils.EntitiesToCsv(xml, options.Separator);
 
-			if (string.IsNullOrEmpty(options.Output))
-			{
-				Console.WriteLine(csv);
-			}
-			else {
-				System.IO.File.WriteAllText(options.Output, csv);
-			}
+			WriteResult(csv);
+		}
+
+		void WriteResult(string result)
+		{
+			if (string.IsNullOrEmpty(options.Output)) Console.Write(result);
+			else File.WriteAllText(options.Output, result);
 		}
 	}
 }
