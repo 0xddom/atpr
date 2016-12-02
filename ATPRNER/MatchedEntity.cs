@@ -9,7 +9,7 @@ namespace ATPRNER
 		/// Gets or sets the name of the entity.
 		/// </summary>
 		/// <value>The name of the entity.</value>
-		public String entityName {
+		public String EntityName {
 			get;
 			set;
 		}
@@ -17,7 +17,16 @@ namespace ATPRNER
 		/// Gets or sets the match number.
 		/// </summary>
 		/// <value>The match number.</value>
-		public int matchNumber {
+		public int MatchNumber {
+			get;
+			set;
+		}
+
+		/// <summary>
+		/// Gets or sets the type.
+		/// </summary>
+		/// <value>The type.</value>
+		public String Type{
 			get;
 			set;
 		}
@@ -26,18 +35,19 @@ namespace ATPRNER
 		/// Initializes a new instance of the <see cref="ATPRNER.MatchedEntity"/> class.
 		/// </summary>
 		/// <param name="entityName">Entity name.</param>
-		public MatchedEntity (String entityName)
+		public MatchedEntity (String entityName, String type)
 		{
-			this.entityName = entityName;
-			matchNumber = 1;
+			this.EntityName = entityName;
+			this.Type = type;
+			MatchNumber = 1;
 		}
 
 		/// <summary>
 		/// Increments the match number one unity.
 		/// </summary>
-		public  void IncrementMatch ()
+		public void IncrementMatch ()
 		{
-			matchNumber++;
+			MatchNumber++;
 		}
 	}
 }
