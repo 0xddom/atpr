@@ -6,6 +6,7 @@ using Org.BouncyCastle.Asn1.Misc;
 using ATPRNER;
 using System.Globalization;
 using System.Threading;
+using System.IO;
 
 namespace ATPR
 {
@@ -48,12 +49,13 @@ namespace ATPR
 		/// The entry point of the program, where the program control starts and ends.
 		/// </summary>
 		/// <param name="args">The command-line arguments.</param>
-		static void Main(string[] args) {
+		static void Main(string[] args)
+		{
 
 			CultureInfo ci = new CultureInfo("en-US");
 			Thread.CurrentThread.CurrentCulture = ci;
 			Thread.CurrentThread.CurrentUICulture = ci;
-		
+
 			var options = new Options();
 			if (Parser.Default.ParseArguments(args, options))
 			{
@@ -91,11 +93,12 @@ namespace ATPR
 						string xml = NER.GenerateEntitiesToString(options.InputFile);
 						string csv = CSVUtils.EntitiesToCsv(xml);
 
-						System.Console.WriteLine("[DEBUG]");
-						System.Console.WriteLine(csv);
 						if (string.IsNullOrEmpty(options.Output))
 						{
-							
+							Console.WriteLine(csv);
+						}
+						else {
+							File.WriteAllText(options.Output, csv);
 						}
 						break;
 					case 3: //Option 3, gets entities that match with a dictionary
