@@ -6,7 +6,7 @@ namespace ATPRNER
 		/// <summary>
 		/// The default stanford nlp directory.
 		/// </summary>
-		public static string DEFAULT_STANFORD_NLP = "~/Hackaton/Stanford/";
+		public static string DEFAULT_STANFORD_NLP = Environment.GetEnvironmentVariable("HOME") + "/Hackaton/Stanford/";
 
 		/// <summary>
 		/// The clasifiers directory.

@@ -43,6 +43,19 @@ namespace ATPRNER
 		}
 
 		/// <summary>
+		/// Generates the dict from the documents in inputPath
+		/// and send output to a string.
+		/// </summary>
+		/// <returns>The entities xml.</returns>
+		/// <param name="inputPath">Input path.</param>
+		public static string GenerateEntitiesToString(string inputPath)
+		{
+			var strWriter = new StringWriter();
+			GenerateEntities(inputPath, strWriter);
+			return strWriter.ToString();
+		}
+
+		/// <summary>
 		/// Returns an array of files to be parsed
 		/// </summary>
 		/// <returns>A file paths array</returns>
@@ -85,7 +98,7 @@ namespace ATPRNER
 		/// </summary>
 		/// <param name="inputPath">The input path</param>
 		/// <param name="output">Output stream</param>
-		static void GenerateEntities(string inputPath, StreamWriter output)
+		static void GenerateEntities(string inputPath, TextWriter output)
 		{
 			output.WriteLine("<wis>");
 
