@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Xml;
@@ -45,12 +44,10 @@ namespace ATPR.Utils
 					if (!withoutDuplicates.Contains(entry))
 						withoutDuplicates.Add(entry);
 
-
 			var e = withoutDuplicates.GetEnumerator();
 			var sb = new StringBuilder();
 			while (e.MoveNext())
 				sb.AppendFormat("{0}\n", e.Current);
-
 
 			return sb.ToString();
 		}
@@ -66,9 +63,7 @@ namespace ATPR.Utils
 			List<string[]> table = new List<string[]>();
 			string line;
 			while ((line = reader.ReadLine()) != null)
-			{
 				table.Add(line.Split(sep));
-			}
 
 			return table;
 		}
@@ -90,7 +85,7 @@ namespace ATPR.Utils
 						foundWi = reader.Name.Equals("wi");
 						if (foundWi && !reader.GetAttribute("entity").Equals("O"))
 							entity = reader.GetAttribute("entity");
-						else 
+						else
 							shouldBreak = true;
 						break;
 					case XmlNodeType.Text:

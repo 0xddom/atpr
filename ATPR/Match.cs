@@ -5,6 +5,9 @@ using ATPR.Utils;
 
 namespace ATPR
 {
+	/// <summary>
+	/// Stores a match with the text of the source file
+	/// </summary>
 	public class Match
 	{
 		public string Text { get; private set; }

@@ -3,9 +3,12 @@ using System.Collections.Generic;
 
 namespace ATPR
 {
+	/// <summary>
+	/// Iterates over the matched entries
+	/// </summary>
 	public class MatchIterator : IMatchIterator
 	{
-		List<string[]> matches;
+		readonly List<string[]> matches;
 		int count;
 
 		public MatchIterator(List<string[]> matches)

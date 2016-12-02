@@ -1,11 +1,6 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
 using ATPRParser;
-using ATPR.Utils;
-using DocumentFormat.OpenXml.Drawing;
-using TagLib.Riff;
-using System.Collections.ObjectModel;
 
 namespace ATPR
 {
