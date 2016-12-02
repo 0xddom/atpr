@@ -27,7 +27,7 @@ namespace ATPRNER
 				CreateEntry(ref reader, ref sb, sep);
 			reader.Close();
 
-			return RemoveDuplicates(sb.ToString());
+			return sb.ToString();
 		}
 
 		/// <summary>
@@ -143,7 +143,7 @@ namespace ATPRNER
 			foreach (var entry in entries)
 			{
 				var entryObj = entry.Value;
-				output.WriteLine("{0}{4}{1}{4}{2}{4}{3}", origFile, entryObj.entityName, entryObj.matchNumber, dicFile, sep);
+				output.WriteLine("{0}{4}{1}{4}{2}{4}{5}{4}{3}", origFile, entryObj.EntityName, entryObj.MatchNumber, dicFile, sep,entryObj.Type);
 			}
 		}
 	}

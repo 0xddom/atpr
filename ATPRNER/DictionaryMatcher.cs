@@ -17,17 +17,13 @@ namespace ATPRNER
 		{
 			Dictionary<string, MatchedEntity> matches = new Dictionary<string, MatchedEntity>();
 
-			foreach (string[] entity in textEntities)
-			{
-				if (dictEntities.Contains(entity[1]))
-				{
-					if (matches.ContainsKey(entity[1]))
-					{
-						matches[entity[1]].IncrementMatch();
-					}
-					else {
-						var matchedEntity = new MatchedEntity(entity[1]);
-						matches.Add(entity[1], matchedEntity);
+			foreach (string[] entity in textEntities) {
+				if (dictEntities.Contains(entity[1])) { 
+					if (matches.ContainsKey (entity[1])) {
+						matches[entity [1]].IncrementMatch();
+					} else {
+						var matchedEntity = new MatchedEntity (entity[1],entity[0]);
+						matches.Add (entity[1], matchedEntity);
 					}
 				}
 			}
@@ -48,24 +44,30 @@ namespace ATPRNER
 				string xml = NER.GenerateEntitiesToString(file);
 				string csv = CSVUtils.EntitiesToCsv(xml, sep);
 
-				var dicTable = CSVUtils.TabulateCSV(new StreamReader(dicPath), sep);
-				var fileTable = CSVUtils.TabulateCSV(new StringReader(csv), sep);
+				List<String[]> dicTable = CSVUtils.TabulateCSV(new StreamReader(dicPath), sep);
+				List<String[]> fileTable = CSVUtils.TabulateCSV(new StringReader(csv), sep);
+				List<String> entitiesTable = GetEntitiesFromDic (dicTable);
 
-				//Refactor this (is a bug fix)
-
-				List<String> dicTable2 = new List<String>();
-
-				foreach (string[] item in dicTable)
-				{
-					dicTable2.Add(item[1]);
-				}
-
-				//
-
-				var matchs = MatchEntities(fileTable, dicTable2);
+				var matchs = MatchEntities(fileTable, entitiesTable);
 
 				CSVUtils.GenerateMatchedEntriesCSV(file, dicPath, matchs, output, sep);
 			}
+		}
+
+		/// <summary>
+		/// Gets the entities from dictionary 
+		/// (entities are the second col of the csv).
+		/// </summary>
+		/// <returns>The entities from dic.</returns>
+		private static List<String> GetEntitiesFromDic(List<String[]> dicTable)
+		{		
+			List<String> entitiesTable = new List<String> ();
+			foreach (string[] item in dicTable) {
+				entitiesTable.Add (item [1]);
+			}
+
+			return entitiesTable;
+				
 		}
 	}
 }

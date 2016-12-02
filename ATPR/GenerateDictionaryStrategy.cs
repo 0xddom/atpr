@@ -20,7 +20,7 @@ namespace ATPR
 				Console.WriteLine("Dictionary generation command");
 
 			string xml = NER.GenerateEntitiesToString(options.InputFile);
-			string csv = CSVUtils.EntitiesToCsv(xml, options.Separator);
+			string csv = CSVUtils.RemoveDuplicates(CSVUtils.EntitiesToCsv(xml, options.Separator));
 
 			WriteResult(csv);
 		}
