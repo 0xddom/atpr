@@ -23,5 +23,5 @@ WORKDIR /app
 
 RUN nuget restore && xbuild /p:Configuration=Release
 
-RUN chmod +x atpr.sh && ln -s /app/atpr.sh /bin/atpr
+RUN chmod +x scripts/atpr.sh && ln -s /app/scritps/atpr.sh /bin/atpr
 
