@@ -71,7 +71,8 @@ Build the image or dowload it from the registry (TODO) and run
     
 In this example the input files and the dictionaries are found in `/inputs` and `/dictionaries` respectively inside the docker container. In your atpr command use those directories to found your files.
 
-    docker run -v ~/Escritorio/Texts:/inputs atpr_image atpr -c dictionary -i /inputs -o ~/Escritorio/Dicts/generatedDict.csv
+    docker run -v ~/Desktop/Texts:/inputs atpr_image -v ~/Desktop/Dicts:/dicts \
+      atpr -c dictionary -i /inputs -o /dicts/generatedDict.csv
 
 # Functions
 ATPR is a tool focused in the analysis of documents using NLP(Natural Language Processing). 
