@@ -61,7 +61,12 @@ If `-o` is missing the output will be redirected to STDOUT.
     
 If `-o` is missing the output will be redirected to STDOUT.
 
-TODO: Complete usage
+
+### Parse text:
+
+    mono ATPR.exe -c parse -i <path_to_matchfile> [-o output_file]
+    
+If `-o` is missing the output will be redirected to STDOUT.
 
 ## Using ATPR with Docker
 
