@@ -82,6 +82,15 @@
     <Reference Include="Toxy">
       <HintPath>..\packages\Toxy.1.6.1.1\lib\net45\Toxy.dll</HintPath>
     </Reference>
+    <Reference Include="Mono.Posix">
+      <HintPath>..\packages\Mono.Posix.4.0.0.0\lib\net40\Mono.Posix.dll</HintPath>
+    </Reference>
+    <Reference Include="r2pipe">
+      <HintPath>..\packages\r2pipe.1.0.2\lib\net40\r2pipe.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CSVUtils.cs" />
@@ -92,6 +101,8 @@
     <Compile Include="ToxyDocumentStrategy.cs" />
     <Compile Include="PlainTextStrategy.cs" />
     <Compile Include="PPTDocumentStrategy.cs" />
+    <Compile Include="R2PipeStrategy.cs" />
+    <Compile Include="R2ZString.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

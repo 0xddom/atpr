@@ -20,6 +20,10 @@ namespace ATPR.Utils
 			{
 				fType = s.GetFileType();
 			}
+
+			if (fType == null)
+				return new R2PipeStrategy().ExtractText(filePath, "");
+
 			var availableStrategies = from type in System.Reflection.Assembly.GetExecutingAssembly().GetTypes()
 									  where typeof(IFileToTextStrategy).IsAssignableFrom(type) && !type.IsInterface
 									  select type;
@@ -29,7 +33,7 @@ namespace ATPR.Utils
 				var strategy = Activator.CreateInstance(sType) as IFileToTextStrategy;
 				if (strategy.IsSupportedExtension(fType.Extension))
 					return strategy.ExtractText(filePath, fType.Extension);
-				
+
 			}
 
 			return null; // Unsupported file
@@ -57,7 +61,40 @@ namespace ATPR.Utils
 		/// <param name="path">Path.</param>
 		public static bool ExistsModels(string path)
 		{
-			return File.Exists (path);
+			return File.Exists(path);
+		}
+
+		/// <summary>
+		/// Checks if the file exists on the PATH
+		/// </summary>
+		/// <returns><c>true</c>, if on path exists, <c>false</c> otherwise.</returns>
+		/// <param name="fileName">File name.</param>
+		public static bool ExistsOnPath(string fileName)
+		{
+			return GetFullPath(fileName) != null;
+		}
+
+		/// <summary>
+		/// Returns the full path of a fileName in PATH
+		/// </summary>
+		/// <returns>The full path.</returns>
+		/// <param name="fileName">File name.</param>
+		public static string GetFullPath(string fileName)
+		{
+			if (File.Exists(fileName))
+				return Path.GetFullPath(fileName);
+
+			var values = Environment.GetEnvironmentVariable("PATH");
+
+			char sep = values.Contains(':') ? ':' : ';';
+
+			foreach (var path in values.Split(sep))
+			{
+				var fullPath = Path.Combine(path, fileName);
+				if (File.Exists(fullPath))
+					return fullPath;
+			}
+			return null;
 		}
 	}
 }
