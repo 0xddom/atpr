@@ -1,6 +1,9 @@
 ﻿using System;
 namespace ATPR.Utils
 {
+	/// <summary>
+	/// Stanford NLP library configuration constants.
+	/// </summary>
 	public class StanfordEnv
 	{
 		/// <summary>

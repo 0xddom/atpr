@@ -11,6 +11,10 @@ using TagLib.Riff;
 
 namespace ATPRParser
 {
+	/// <summary>
+	/// Parser
+	/// Extracts the sentences where entities appear and parse it generating his syntactic analysis.
+	/// </summary>
 	public class Parser
 	{
 		// fichero original;entidad;frase;arbol

@@ -4,6 +4,10 @@ using ATPR.Utils;
 
 namespace ATPRNER
 {
+	/// <summary>
+	/// Dictionary matcher:
+	/// Matches the entities in the texts with the entities in the dictionaries.
+	/// </summary>
 	public class DictionaryMatcher
 	{
 		/// <summary>

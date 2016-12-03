@@ -5,7 +5,10 @@ using System.Xml;
 
 namespace ATPR.Utils
 {
-
+	/// <summary>
+	/// CSV utils.
+	/// Methods for common CSV tasks.
+	/// </summary>
 	public class CSVUtils
 	{
 		static bool foundWi;

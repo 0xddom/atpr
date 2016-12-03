@@ -6,6 +6,10 @@ using Toxy;
 
 namespace ATPRNER
 {
+	/// <summary>
+	/// NER:
+	/// Extract entities from the text.
+	/// </summary>
 	public static class NER
 	{
 		/// <summary>

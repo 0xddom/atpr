@@ -4,6 +4,10 @@ using Toxy;
 
 namespace ATPR.Utils
 {
+	/// <summary>
+	/// Files utils.
+	/// Methods for common File tasks.
+	/// </summary>
 	public static class FilesUtils
 	{
 		/// <summary>

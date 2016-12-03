@@ -3,6 +3,9 @@
 
 namespace ATPRNER
 {
+	/// <summary>
+	/// Represents the matched entitiy with the information needed.
+	/// </summary>
 	public class MatchedEntity
 	{
 		/// <summary>
