@@ -28,23 +28,23 @@ namespace ATPR
 				switch (options.Choose)
 				{
 					case "entities": //Option 1, gets only entities
-						strategy = new GenerateEntitiesStrategy();
+						strategy = new GenerateEntitiesStrategy(options);
 						break;
 					case "dictionary": //Option 2, generates dictionary
-						strategy = new GenerateDictionaryStrategy();
+						strategy = new GenerateDictionaryStrategy(options);
 						break;
 					case "match": //Option 3, gets entities that match with a dictionary
-						strategy = new MatchEntitiesStrategy();
+						strategy = new MatchEntitiesStrategy(options);
 						break;
 					case "parser": //Option 4, parse text and show the syntax analis
-						strategy = new ParseStrategy();
+						strategy = new ParseStrategy(options);
 						break;
 					default:
 						Console.Error.WriteLine("Option not recognized. Exiting...");
 						break;
 				}
 				if (strategy != null)
-					strategy.Run(options);
+					strategy.Run();
 			}
 		}
 

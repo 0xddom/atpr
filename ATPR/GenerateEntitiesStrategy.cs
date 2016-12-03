@@ -11,7 +11,7 @@ namespace ATPR
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ATPR.GenerateEntitiesStrategy"/> class.
 		/// </summary>
-		public GenerateEntitiesStrategy()
+		public GenerateEntitiesStrategy(Options options) : base(options)
 		{
 		}
 
@@ -19,7 +19,7 @@ namespace ATPR
 		/// Generates an entities XML from NER output.
 		/// </summary>
 		/// <param name="options">Options.</param>
-		public override void Run(Options options)
+		public override void Run()
 		{
 			if (options.Verbose)
 				Console.Error.WriteLine("Option 1.");

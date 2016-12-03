@@ -13,7 +13,7 @@ namespace ATPR
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ATPR.MatchEntitiesStrategy"/> class.
 		/// </summary>
-		public MatchEntitiesStrategy()
+		public MatchEntitiesStrategy(Options options) : base(options)
 		{
 		}
 
@@ -21,7 +21,7 @@ namespace ATPR
 		/// Generates the match between textentities and dictionary entities.
 		/// </summary>
 		/// <param name="options">Options.</param>
-		public override void Run(Options options)
+		public override void Run()
 		{
 			if (options.Verbose)
 				Console.Error.WriteLine("Option 3.");

@@ -12,10 +12,12 @@ namespace ATPR
 	{
 		public string Text { get; private set; }
 		public List<string[]> Items { get; private set; }
+		public string FilePath { get; private set; }
 
 		public Match(string filePath, List<string[]> items)
 		{
 			Text = FilesUtils.FileToText(filePath);
+			FilePath = filePath;
 			if (Text == null)
 				throw new ArgumentException();
 			Items = items;

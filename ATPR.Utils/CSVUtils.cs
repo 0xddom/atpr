@@ -68,6 +68,20 @@ namespace ATPR.Utils
 			return table;
 		}
 
+		public delegate void CSVFormatDelegate<E>(StringBuilder builder, E e);
+
+		public static string BuildCSV<E>(List<E> list, CSVFormatDelegate<E> del)
+		{
+			var sb = new StringBuilder();
+
+			list.ForEach((E e) => { 
+				del(sb, e);
+				sb.Append("\n");
+			});
+
+			return sb.ToString();
+		}
+
 		/// <summary>
 		/// From the XML reader write in the string builder the CSV entry for tha found entity.
 		/// </summary>

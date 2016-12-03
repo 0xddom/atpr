@@ -13,12 +13,11 @@ namespace ATPRParser
 {
 	public class Parser
 	{
-
-		public static void Parse (string text, string entity, int number)
+		// fichero original;entidad;frase;arbol
+		public static List<string[]> Parse (string text, string entity, string origFile)
 		{
-
+			var results = new List<string[]>();
 			//Load spanish models.
-			var jarRoot = StanfordEnv.PARSER_HOME;
 			var modelsDirectory = StanfordEnv.PARSER_MODELS;
 			var lexparserDirectory = modelsDirectory + StanfordEnv.LEXPARSER;
 			var lp = LexicalizedParser.loadModel(lexparserDirectory);
@@ -27,9 +26,6 @@ namespace ATPRParser
 			List<string> entityLines = GetEntitiesLines (splittedText,entity);
 
 			foreach (var line in entityLines) {
-
-				Console.Error.WriteLine($"[DEBUG] {line}");
-				
 				//Parser sentence.
 				var tokenizerFactory = PTBTokenizer.factory (new CoreLabelTokenFactory (), "");
 				var sent2Reader = new java.io.StringReader (line);
@@ -37,10 +33,10 @@ namespace ATPRParser
 				sent2Reader.close ();
 				var tree2 = lp.apply (rawWords2);
 
-				//Print LISP like format tree.
-				var tp = new TreePrint ("penn");
-				tp.printTree (tree2);
+				results.Add(new string[] { origFile, entity, line, tree2.ToString() });
 			}
+
+			return results;
 		}
 
 		/// <summary>
@@ -50,8 +46,6 @@ namespace ATPRParser
 		/// <param name="matchingFilePath">Matching file path.</param>
 		public static List<String[]> GetMatching (string matchingFilePath, char sep)
 		{
-			//String matchs = FilesUtils.FileToText (matchingFilePath);
-			//StringReader reader = new StringReader (matchs);
 			return CSVUtils.TabulateCSV (new StreamReader(matchingFilePath), sep);
 		}
 

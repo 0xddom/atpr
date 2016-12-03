@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using ATPR.Utils;
 using ATPRParser;
 
 namespace ATPR
@@ -13,7 +14,7 @@ namespace ATPR
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ATPR.ParseStrategy"/> class.
 		/// </summary>
-		public ParseStrategy()
+		public ParseStrategy(Options options) : base(options)
 		{
 		}
 
@@ -22,10 +23,8 @@ namespace ATPR
 		/// Run all the logic of the command.
 		/// </summary>
 		/// <param name="options">Options.</param>
-		public override void Run(Options options)
+		public override void Run()
 		{
-			this.options = options;
-
 			if (options.Verbose)
 				Console.Error.WriteLine("Parse text command");
 
@@ -41,42 +40,24 @@ namespace ATPR
 				return;
 			}
 
-			//TODO: Parse text
-
 			List<string[]> matchs = Parser.GetMatching(options.InputFile, options.Separator);
 
 			IMatchIterator iter = new MatchIterator(matchs);
+
+			var csvEntries = new List<string[]>();
 
 			while (iter.HasNext())
 			{
 				Match match = iter.GetNext();
 				foreach (string[] item in match.Items)
-					Parser.Parse(match.Text, item[1], int.Parse(item[2]));
+					csvEntries.AddRange(Parser.Parse(match.Text, item[1], match.FilePath));
 			}
 
-			//foreach (String[] item in matchs)
-			//{
-			//	if (orgMatches.ContainsKey(item[0]))
-			//	{
-			//		orgMatches[item[0]].Add(item);
-			//	}
-			//	else {
-			//		List<String[]> itemList = new List<String[]>();
-			//		itemList.Add(item);
-			//		orgMatches.Add(item[0], itemList);
-			//	}
-			//}
+			var CSV_FMT = "{0}{4}{1}{4}{2}{4}{3}";
 
-			//foreach (var entry in orgMatches)
-			//{
-			//	foreach (String[] subItem in entry.Value)
-			//	{
-			//		String text = FilesUtils.FileToText(subItem[1]);
-			//		Parser.Parse(text, subItem[2], int.Parse(subItem[3]));
-			//	}
-			//}
-
-			WriteResult("TODO");
+			WriteResult(CSVUtils.BuildCSV(csvEntries, 
+			                              (builder, e) => builder.AppendFormat(
+				                              CSV_FMT, e[0], e[1], e[2], e[3], options.Separator)));
 		}
 
 	}

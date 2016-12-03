@@ -5,13 +5,14 @@ namespace ATPR
 {
 	public abstract class AbstractExecStrategy : ExecStrategy
 	{
-		public AbstractExecStrategy()
+		public AbstractExecStrategy(Options options)
 		{
+			this.options = options;
 		}
 
 		protected Options options;
 
-		public abstract void Run(Options options);
+		public abstract void Run();
 
 		/// <summary>
 		/// Writes the run method result.
