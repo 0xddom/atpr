@@ -46,7 +46,7 @@ namespace ATPRNER
 			foreach (string file in files)
 			{
 				string xml = NER.GenerateEntitiesToString(file);
-				string csv = CSVUtils.EntitiesToCsv(xml, sep);
+				string csv = CSVUtils.RemoveDuplicates(CSVUtils.EntitiesToCsv(xml, sep));
 
 				List<string[]> dicTable = CSVUtils.TabulateCSV(new StreamReader(dicPath), sep);
 				List<string[]> fileTable = CSVUtils.TabulateCSV(new StringReader(csv), sep);
