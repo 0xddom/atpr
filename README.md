@@ -25,6 +25,8 @@ You can either load the .sln in Xamarin Studio/MonoDevelop or in a shell run:
     cd <the project path>
     nuget restore
     xbuild /p:Configuration=<Debug or Release> ATPR.sln
+
+It is recommendable to install Radare2 (from GIT) to identify strings in non supported files/ plain text files.
     
 ## Windows
 Install Xamarin Studio and the c# toolchain
@@ -36,6 +38,8 @@ Load the project in Xamarin Studio (prefered) or VS (not tested) and build, or i
     cd <project path>
     nuget restore
     msbuild ATPR.sln
+
+It is recommendable to install Radare2 (from GIT) to identify strings in non supported files/ plain text files.
     
 # Usage
 ## Using ATPR with Autopsy
