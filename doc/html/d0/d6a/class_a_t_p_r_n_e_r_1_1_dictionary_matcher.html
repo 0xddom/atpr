@@ -69,6 +69,9 @@ $(function() {
 <div class="title">ATPRNER.DictionaryMatcher Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Dictionary matcher: Matches the entities in the texts with the entities in the dictionaries.  
+ <a href="../../d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher.html#details">More...</a></p>
 <div class="dynheader">
 Collaboration diagram for ATPRNER.DictionaryMatcher:</div>
 <div class="dyncontent">
@@ -82,11 +85,135 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aa6fdeaf3a88c14b5ed8e4f452d1c3c17"><td class="memItemLeft" align="right" valign="top">static Dictionary&lt; string, <a class="el" href="../../df/d78/class_a_t_p_r_n_e_r_1_1_matched_entity.html">MatchedEntity</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher.html#aa6fdeaf3a88c14b5ed8e4f452d1c3c17">MatchEntities</a> (List&lt; string[]&gt; textEntities, List&lt; string &gt; dictEntities)</td></tr>
 <tr class="memdesc:aa6fdeaf3a88c14b5ed8e4f452d1c3c17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matchs the text entities with the dictionary entities.  <a href="#aa6fdeaf3a88c14b5ed8e4f452d1c3c17">More...</a><br /></td></tr>
 <tr class="separator:aa6fdeaf3a88c14b5ed8e4f452d1c3c17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fc36cbd0e0df420c2aaafa389ae7b61"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher.html#a6fc36cbd0e0df420c2aaafa389ae7b61">MatchEntitiesInFiles</a> (string inputPath, string dicPath, TextWriter output, char sep)</td></tr>
-<tr class="memdesc:a6fc36cbd0e0df420c2aaafa389ae7b61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes to the output stream a csv with the match results against the dictionary  <a href="#a6fc36cbd0e0df420c2aaafa389ae7b61">More...</a><br /></td></tr>
-<tr class="separator:a6fc36cbd0e0df420c2aaafa389ae7b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb054c6ab6e27f9ea70e946671869d90"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher.html#acb054c6ab6e27f9ea70e946671869d90">MatchEntitiesInFiles</a> (string inputPath, string dicPath, TextWriter output, char sep, string language)</td></tr>
+<tr class="memdesc:acb054c6ab6e27f9ea70e946671869d90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes to the output stream a csv with the match results against the dictionary  <a href="#acb054c6ab6e27f9ea70e946671869d90">More...</a><br /></td></tr>
+<tr class="separator:acb054c6ab6e27f9ea70e946671869d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46c40a1214abf84cf7fd1981b193cddf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher.html#a46c40a1214abf84cf7fd1981b193cddf">GenerateMatchedEntriesCSV</a> (string origFile, string dicFile, Dictionary&lt; string, <a class="el" href="../../df/d78/class_a_t_p_r_n_e_r_1_1_matched_entity.html">MatchedEntity</a> &gt; entries, TextWriter output, char sep)</td></tr>
+<tr class="memdesc:a46c40a1214abf84cf7fd1981b193cddf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a CSV with the provided dictionary and writes it to the stream  <a href="#a46c40a1214abf84cf7fd1981b193cddf">More...</a><br /></td></tr>
+<tr class="separator:a46c40a1214abf84cf7fd1981b193cddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98d35fff3cf9f96fa1267ebdff6773d5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher.html#a98d35fff3cf9f96fa1267ebdff6773d5">IsEntryValid</a> (string[] entry)</td></tr>
+<tr class="memdesc:a98d35fff3cf9f96fa1267ebdff6773d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if is dic entry is valid (CSV with two columns).  <a href="#a98d35fff3cf9f96fa1267ebdff6773d5">More...</a><br /></td></tr>
+<tr class="separator:a98d35fff3cf9f96fa1267ebdff6773d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Dictionary matcher: Matches the entities in the texts with the entities in the dictionaries. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a46c40a1214abf84cf7fd1981b193cddf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46c40a1214abf84cf7fd1981b193cddf">&sect;&nbsp;</a></span>GenerateMatchedEntriesCSV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ATPRNER.DictionaryMatcher.GenerateMatchedEntriesCSV </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>origFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>dicFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Dictionary&lt; string, <a class="el" href="../../df/d78/class_a_t_p_r_n_e_r_1_1_matched_entity.html">MatchedEntity</a> &gt;&#160;</td>
+          <td class="paramname"><em>entries</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TextWriter&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>sep</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generates a CSV with the provided dictionary and writes it to the stream </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">origFile</td><td>Path of the file where the match was found.</td></tr>
+    <tr><td class="paramname">dicFile</td><td>The dictionary used to match.</td></tr>
+    <tr><td class="paramname">entries</td><td>The found matchs.</td></tr>
+    <tr><td class="paramname">output</td><td>Output stream.</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a46c40a1214abf84cf7fd1981b193cddf_icgraph.png" border="0" usemap="#d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a46c40a1214abf84cf7fd1981b193cddf_icgraph" alt=""/></div>
+<map name="d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a46c40a1214abf84cf7fd1981b193cddf_icgraph" id="d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a46c40a1214abf84cf7fd1981b193cddf_icgraph">
+<area shape="rect" id="node2" href="../../d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher.html#acb054c6ab6e27f9ea70e946671869d90" title="Writes to the output stream a csv with the match results against the dictionary " alt="" coords="252,5,450,44"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a98d35fff3cf9f96fa1267ebdff6773d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98d35fff3cf9f96fa1267ebdff6773d5">&sect;&nbsp;</a></span>IsEntryValid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool ATPRNER.DictionaryMatcher.IsEntryValid </td>
+          <td>(</td>
+          <td class="paramtype">string []&#160;</td>
+          <td class="paramname"><em>entry</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines if is dic entry is valid (CSV with two columns). </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if is entry valid the specified entry; otherwise, <code>false</code>.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entry</td><td>Entry.</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a98d35fff3cf9f96fa1267ebdff6773d5_icgraph.png" border="0" usemap="#d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a98d35fff3cf9f96fa1267ebdff6773d5_icgraph" alt=""/></div>
+<map name="d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a98d35fff3cf9f96fa1267ebdff6773d5_icgraph" id="d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a98d35fff3cf9f96fa1267ebdff6773d5_icgraph">
+<area shape="rect" id="node2" href="../../d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher.html#acb054c6ab6e27f9ea70e946671869d90" title="Writes to the output stream a csv with the match results against the dictionary " alt="" coords="252,5,450,44"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="aa6fdeaf3a88c14b5ed8e4f452d1c3c17"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa6fdeaf3a88c14b5ed8e4f452d1c3c17">&sect;&nbsp;</a></span>MatchEntities()</h2>
 
@@ -135,15 +262,14 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_aa6fdeaf3a88c14b5ed8e4f452d1c3c17_icgraph.png" border="0" usemap="#d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_aa6fdeaf3a88c14b5ed8e4f452d1c3c17_icgraph" alt=""/></div>
 <map name="d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_aa6fdeaf3a88c14b5ed8e4f452d1c3c17_icgraph" id="d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_aa6fdeaf3a88c14b5ed8e4f452d1c3c17_icgraph">
-<area shape="rect" id="node2" href="../../d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher.html#a6fc36cbd0e0df420c2aaafa389ae7b61" title="Writes to the output stream a csv with the match results against the dictionary " alt="" coords="252,5,450,44"/>
-<area shape="rect" id="node3" href="../../df/db7/class_a_t_p_r_1_1_match_entities_strategy.html#a7494fa761f1e14c463b4c6e5614ae1c4" title="Generates the match between textentities and dictionary entities. " alt="" coords="498,12,714,37"/>
+<area shape="rect" id="node2" href="../../d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher.html#acb054c6ab6e27f9ea70e946671869d90" title="Writes to the output stream a csv with the match results against the dictionary " alt="" coords="252,5,450,44"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a6fc36cbd0e0df420c2aaafa389ae7b61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6fc36cbd0e0df420c2aaafa389ae7b61">&sect;&nbsp;</a></span>MatchEntitiesInFiles()</h2>
+<a id="acb054c6ab6e27f9ea70e946671869d90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb054c6ab6e27f9ea70e946671869d90">&sect;&nbsp;</a></span>MatchEntitiesInFiles()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -173,7 +299,13 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>sep</em>&#160;</td>
+          <td class="paramname"><em>sep</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>language</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -200,25 +332,11 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a6fc36cbd0e0df420c2aaafa389ae7b61_cgraph.png" border="0" usemap="#d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a6fc36cbd0e0df420c2aaafa389ae7b61_cgraph" alt=""/></div>
-<map name="d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a6fc36cbd0e0df420c2aaafa389ae7b61_cgraph" id="d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a6fc36cbd0e0df420c2aaafa389ae7b61_cgraph">
-<area shape="rect" id="node2" href="../../d5/de9/class_a_t_p_r_n_e_r_1_1_files_utils.html#aa9ee9ca4b22ddc16322bff7ea1d979bb" title="Returns an array of files to be parsed " alt="" coords="545,5,740,31"/>
-<area shape="rect" id="node3" href="../../d5/dec/class_a_t_p_r_n_e_r_1_1_n_e_r.html#a8480137d05620d726021a2f4ae818869" title="Generates the dict from the documents in inputPath and send output to a string. " alt="" coords="253,56,472,95"/>
-<area shape="rect" id="node7" href="../../d7/d1f/class_a_t_p_r_n_e_r_1_1_c_s_v_utils.html#a6d40fcdbc82ad0745e7f47ace6695f8a" title="From a NER xml entities returns a CSV with the interesting entities " alt="" coords="269,119,457,157"/>
-<area shape="rect" id="node8" href="../../d7/d1f/class_a_t_p_r_n_e_r_1_1_c_s_v_utils.html#addabfb59d0e9755c0336b2de6b0bc9a4" title="Returns the CSV as a tabular structure " alt="" coords="252,181,474,207"/>
-<area shape="rect" id="node9" href="../../d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher.html#aa6fdeaf3a88c14b5ed8e4f452d1c3c17" title="Matchs the text entities with the dictionary entities. " alt="" coords="264,231,462,269"/>
-<area shape="rect" id="node10" href="../../d7/d1f/class_a_t_p_r_n_e_r_1_1_c_s_v_utils.html#a377f7a74bf9bb2672f1669f6d562cd67" title="Generates a CSV with the provided dictionary and writes it to the stream " alt="" coords="263,293,463,332"/>
-<area shape="rect" id="node4" href="../../d5/dec/class_a_t_p_r_n_e_r_1_1_n_e_r.html#ac52e8765543f6342e2fb0fd4283f10d7" title="Generates the dict from the documents in inputPath and send output to output file in outputPath ..." alt="" coords="533,55,752,80"/>
-<area shape="rect" id="node5" href="../../d4/d4f/class_a_t_p_r_n_e_r_1_1_consts.html#ad399f9a954d0d35c77fdc899f1c47255" title="Gets the home for the stanford jars. " alt="" coords="522,104,763,129"/>
-<area shape="rect" id="node6" href="../../d5/de9/class_a_t_p_r_n_e_r_1_1_files_utils.html#adaf763c34895368bcfe1254086d87f99" title="Extrat the text from a file, using Toxy for binary files. " alt="" coords="540,153,745,179"/>
-</map>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a6fc36cbd0e0df420c2aaafa389ae7b61_icgraph.png" border="0" usemap="#d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a6fc36cbd0e0df420c2aaafa389ae7b61_icgraph" alt=""/></div>
-<map name="d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a6fc36cbd0e0df420c2aaafa389ae7b61_icgraph" id="d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a6fc36cbd0e0df420c2aaafa389ae7b61_icgraph">
-<area shape="rect" id="node2" href="../../df/db7/class_a_t_p_r_1_1_match_entities_strategy.html#a7494fa761f1e14c463b4c6e5614ae1c4" title="Generates the match between textentities and dictionary entities. " alt="" coords="252,12,468,37"/>
+<div class="center"><img src="../../d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_acb054c6ab6e27f9ea70e946671869d90_cgraph.png" border="0" usemap="#d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_acb054c6ab6e27f9ea70e946671869d90_cgraph" alt=""/></div>
+<map name="d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_acb054c6ab6e27f9ea70e946671869d90_cgraph" id="d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_acb054c6ab6e27f9ea70e946671869d90_cgraph">
+<area shape="rect" id="node2" href="../../d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher.html#aa6fdeaf3a88c14b5ed8e4f452d1c3c17" title="Matchs the text entities with the dictionary entities. " alt="" coords="252,5,450,44"/>
+<area shape="rect" id="node3" href="../../d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher.html#a46c40a1214abf84cf7fd1981b193cddf" title="Generates a CSV with the provided dictionary and writes it to the stream " alt="" coords="252,68,450,107"/>
+<area shape="rect" id="node4" href="../../d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher.html#a98d35fff3cf9f96fa1267ebdff6773d5" title="Determines if is dic entry is valid (CSV with two columns). " alt="" coords="252,131,450,169"/>
 </map>
 </div>
 

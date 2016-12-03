@@ -1,0 +1,138 @@
+\hypertarget{class_a_t_p_r_parser_1_1_parser}{}\section{A\+T\+P\+R\+Parser.\+Parser Class Reference}
+\label{class_a_t_p_r_parser_1_1_parser}\index{A\+T\+P\+R\+Parser.\+Parser@{A\+T\+P\+R\+Parser.\+Parser}}
+
+
+\hyperlink{class_a_t_p_r_parser_1_1_parser}{Parser} Extracts the sentences where entities appear and parse it generating his syntactic analysis.  
+
+
+
+
+Collaboration diagram for A\+T\+P\+R\+Parser.\+Parser\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{de/d41/class_a_t_p_r_parser_1_1_parser__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static List$<$ string\mbox{[}$\,$\mbox{]}$>$ \hyperlink{class_a_t_p_r_parser_1_1_parser_a4d0782c4136575c1b9a33102be225ea1}{Parse} (string text, string entity, string orig\+File, string language)
+\begin{DoxyCompactList}\small\item\em Parse the document searching for sentences where the entity found. Returns a csv line with the file, the entity the sentence and the sintax analisis of the sentences \end{DoxyCompactList}\item 
+static List$<$ String\mbox{[}$\,$\mbox{]}$>$ \hyperlink{class_a_t_p_r_parser_1_1_parser_a853c07acd90bab8533ae613fd05f3057}{Get\+Matching} (string matching\+File\+Path, char sep)
+\begin{DoxyCompactList}\small\item\em Gets the matchs of the matching\+File. \end{DoxyCompactList}\item 
+static string \mbox{[}$\,$\mbox{]} \hyperlink{class_a_t_p_r_parser_1_1_parser_adb6ac564b6ddc976a82a46d66f91bb54}{Split\+Text} (string text)
+\begin{DoxyCompactList}\small\item\em Splits the text. \end{DoxyCompactList}\item 
+static List$<$ string $>$ \hyperlink{class_a_t_p_r_parser_1_1_parser_ae5268f6e00d7c5a30a7cb8f463892772}{Get\+Entities\+Lines} (string\mbox{[}$\,$\mbox{]} text, string entity)
+\begin{DoxyCompactList}\small\item\em Gets the entities lines. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_a_t_p_r_parser_1_1_parser}{Parser} Extracts the sentences where entities appear and parse it generating his syntactic analysis. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_a_t_p_r_parser_1_1_parser_ae5268f6e00d7c5a30a7cb8f463892772}{}\label{class_a_t_p_r_parser_1_1_parser_ae5268f6e00d7c5a30a7cb8f463892772} 
+\index{A\+T\+P\+R\+Parser\+::\+Parser@{A\+T\+P\+R\+Parser\+::\+Parser}!Get\+Entities\+Lines@{Get\+Entities\+Lines}}
+\index{Get\+Entities\+Lines@{Get\+Entities\+Lines}!A\+T\+P\+R\+Parser\+::\+Parser@{A\+T\+P\+R\+Parser\+::\+Parser}}
+\subsubsection{\texorpdfstring{Get\+Entities\+Lines()}{GetEntitiesLines()}}
+{\footnotesize\ttfamily static List$<$string$>$ A\+T\+P\+R\+Parser.\+Parser.\+Get\+Entities\+Lines (\begin{DoxyParamCaption}\item[{string \mbox{[}$\,$\mbox{]}}]{text,  }\item[{string}]{entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Gets the entities lines. 
+
+\begin{DoxyReturn}{Returns}
+The entities lines.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em text} & Text.\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d53/class_a_t_p_r_parser_1_1_parser_ae5268f6e00d7c5a30a7cb8f463892772_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_a_t_p_r_parser_1_1_parser_a853c07acd90bab8533ae613fd05f3057}{}\label{class_a_t_p_r_parser_1_1_parser_a853c07acd90bab8533ae613fd05f3057} 
+\index{A\+T\+P\+R\+Parser\+::\+Parser@{A\+T\+P\+R\+Parser\+::\+Parser}!Get\+Matching@{Get\+Matching}}
+\index{Get\+Matching@{Get\+Matching}!A\+T\+P\+R\+Parser\+::\+Parser@{A\+T\+P\+R\+Parser\+::\+Parser}}
+\subsubsection{\texorpdfstring{Get\+Matching()}{GetMatching()}}
+{\footnotesize\ttfamily static List$<$String\mbox{[}$\,$\mbox{]}$>$ A\+T\+P\+R\+Parser.\+Parser.\+Get\+Matching (\begin{DoxyParamCaption}\item[{string}]{matching\+File\+Path,  }\item[{char}]{sep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Gets the matchs of the matching\+File. 
+
+\begin{DoxyReturn}{Returns}
+The matching.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em matching\+File\+Path} & Matching file path.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_a_t_p_r_parser_1_1_parser_a4d0782c4136575c1b9a33102be225ea1}{}\label{class_a_t_p_r_parser_1_1_parser_a4d0782c4136575c1b9a33102be225ea1} 
+\index{A\+T\+P\+R\+Parser\+::\+Parser@{A\+T\+P\+R\+Parser\+::\+Parser}!Parse@{Parse}}
+\index{Parse@{Parse}!A\+T\+P\+R\+Parser\+::\+Parser@{A\+T\+P\+R\+Parser\+::\+Parser}}
+\subsubsection{\texorpdfstring{Parse()}{Parse()}}
+{\footnotesize\ttfamily static List$<$string\mbox{[}$\,$\mbox{]}$>$ A\+T\+P\+R\+Parser.\+Parser.\+Parse (\begin{DoxyParamCaption}\item[{string}]{text,  }\item[{string}]{entity,  }\item[{string}]{orig\+File,  }\item[{string}]{language }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Parse the document searching for sentences where the entity found. Returns a csv line with the file, the entity the sentence and the sintax analisis of the sentences 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & Document text\\
+\hline
+{\em entity} & Entity.\\
+\hline
+{\em orig\+File} & Original file.\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d53/class_a_t_p_r_parser_1_1_parser_a4d0782c4136575c1b9a33102be225ea1_cgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_a_t_p_r_parser_1_1_parser_adb6ac564b6ddc976a82a46d66f91bb54}{}\label{class_a_t_p_r_parser_1_1_parser_adb6ac564b6ddc976a82a46d66f91bb54} 
+\index{A\+T\+P\+R\+Parser\+::\+Parser@{A\+T\+P\+R\+Parser\+::\+Parser}!Split\+Text@{Split\+Text}}
+\index{Split\+Text@{Split\+Text}!A\+T\+P\+R\+Parser\+::\+Parser@{A\+T\+P\+R\+Parser\+::\+Parser}}
+\subsubsection{\texorpdfstring{Split\+Text()}{SplitText()}}
+{\footnotesize\ttfamily static string \mbox{[}$\,$\mbox{]} A\+T\+P\+R\+Parser.\+Parser.\+Split\+Text (\begin{DoxyParamCaption}\item[{string}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Splits the text. 
+
+\begin{DoxyReturn}{Returns}
+The text.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em text} & Text.\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{df/d53/class_a_t_p_r_parser_1_1_parser_adb6ac564b6ddc976a82a46d66f91bb54_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+A\+T\+P\+R\+P\+A\+R\+S\+E\+R/Parser.\+cs\end{DoxyCompactItemize}

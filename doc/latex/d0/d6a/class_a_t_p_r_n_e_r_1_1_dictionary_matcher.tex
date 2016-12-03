@@ -2,12 +2,17 @@
 \label{class_a_t_p_r_n_e_r_1_1_dictionary_matcher}\index{A\+T\+P\+R\+N\+E\+R.\+Dictionary\+Matcher@{A\+T\+P\+R\+N\+E\+R.\+Dictionary\+Matcher}}
 
 
+Dictionary matcher\+: Matches the entities in the texts with the entities in the dictionaries.  
+
+
+
+
 Collaboration diagram for A\+T\+P\+R\+N\+E\+R.\+Dictionary\+Matcher\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=226pt]{db/d42/class_a_t_p_r_n_e_r_1_1_dictionary_matcher__coll__graph}
+\includegraphics[width=243pt]{db/d42/class_a_t_p_r_n_e_r_1_1_dictionary_matcher__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Static Public Member Functions}
@@ -15,11 +20,75 @@ Collaboration diagram for A\+T\+P\+R\+N\+E\+R.\+Dictionary\+Matcher\+:
 \item 
 static Dictionary$<$ string, \hyperlink{class_a_t_p_r_n_e_r_1_1_matched_entity}{Matched\+Entity} $>$ \hyperlink{class_a_t_p_r_n_e_r_1_1_dictionary_matcher_aa6fdeaf3a88c14b5ed8e4f452d1c3c17}{Match\+Entities} (List$<$ string\mbox{[}$\,$\mbox{]}$>$ text\+Entities, List$<$ string $>$ dict\+Entities)
 \begin{DoxyCompactList}\small\item\em Matchs the text entities with the dictionary entities. \end{DoxyCompactList}\item 
-static void \hyperlink{class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a6fc36cbd0e0df420c2aaafa389ae7b61}{Match\+Entities\+In\+Files} (string input\+Path, string dic\+Path, Text\+Writer output, char sep)
-\begin{DoxyCompactList}\small\item\em Writes to the output stream a csv with the match results against the dictionary \end{DoxyCompactList}\end{DoxyCompactItemize}
+static void \hyperlink{class_a_t_p_r_n_e_r_1_1_dictionary_matcher_acb054c6ab6e27f9ea70e946671869d90}{Match\+Entities\+In\+Files} (string input\+Path, string dic\+Path, Text\+Writer output, char sep, string language)
+\begin{DoxyCompactList}\small\item\em Writes to the output stream a csv with the match results against the dictionary \end{DoxyCompactList}\item 
+static void \hyperlink{class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a46c40a1214abf84cf7fd1981b193cddf}{Generate\+Matched\+Entries\+C\+SV} (string orig\+File, string dic\+File, Dictionary$<$ string, \hyperlink{class_a_t_p_r_n_e_r_1_1_matched_entity}{Matched\+Entity} $>$ entries, Text\+Writer output, char sep)
+\begin{DoxyCompactList}\small\item\em Generates a C\+SV with the provided dictionary and writes it to the stream \end{DoxyCompactList}\item 
+static bool \hyperlink{class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a98d35fff3cf9f96fa1267ebdff6773d5}{Is\+Entry\+Valid} (string\mbox{[}$\,$\mbox{]} entry)
+\begin{DoxyCompactList}\small\item\em Determines if is dic entry is valid (C\+SV with two columns). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Dictionary matcher\+: Matches the entities in the texts with the entities in the dictionaries. 
+
 
 
 \subsection{Member Function Documentation}
+\hypertarget{class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a46c40a1214abf84cf7fd1981b193cddf}{}\label{class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a46c40a1214abf84cf7fd1981b193cddf} 
+\index{A\+T\+P\+R\+N\+E\+R\+::\+Dictionary\+Matcher@{A\+T\+P\+R\+N\+E\+R\+::\+Dictionary\+Matcher}!Generate\+Matched\+Entries\+C\+SV@{Generate\+Matched\+Entries\+C\+SV}}
+\index{Generate\+Matched\+Entries\+C\+SV@{Generate\+Matched\+Entries\+C\+SV}!A\+T\+P\+R\+N\+E\+R\+::\+Dictionary\+Matcher@{A\+T\+P\+R\+N\+E\+R\+::\+Dictionary\+Matcher}}
+\subsubsection{\texorpdfstring{Generate\+Matched\+Entries\+C\+S\+V()}{GenerateMatchedEntriesCSV()}}
+{\footnotesize\ttfamily static void A\+T\+P\+R\+N\+E\+R.\+Dictionary\+Matcher.\+Generate\+Matched\+Entries\+C\+SV (\begin{DoxyParamCaption}\item[{string}]{orig\+File,  }\item[{string}]{dic\+File,  }\item[{Dictionary$<$ string, \hyperlink{class_a_t_p_r_n_e_r_1_1_matched_entity}{Matched\+Entity} $>$}]{entries,  }\item[{Text\+Writer}]{output,  }\item[{char}]{sep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Generates a C\+SV with the provided dictionary and writes it to the stream 
+
+
+\begin{DoxyParams}{Parameters}
+{\em orig\+File} & Path of the file where the match was found.\\
+\hline
+{\em dic\+File} & The dictionary used to match.\\
+\hline
+{\em entries} & The found matchs.\\
+\hline
+{\em output} & Output stream.\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a46c40a1214abf84cf7fd1981b193cddf_icgraph}
+\end{center}
+\end{figure}
+\hypertarget{class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a98d35fff3cf9f96fa1267ebdff6773d5}{}\label{class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a98d35fff3cf9f96fa1267ebdff6773d5} 
+\index{A\+T\+P\+R\+N\+E\+R\+::\+Dictionary\+Matcher@{A\+T\+P\+R\+N\+E\+R\+::\+Dictionary\+Matcher}!Is\+Entry\+Valid@{Is\+Entry\+Valid}}
+\index{Is\+Entry\+Valid@{Is\+Entry\+Valid}!A\+T\+P\+R\+N\+E\+R\+::\+Dictionary\+Matcher@{A\+T\+P\+R\+N\+E\+R\+::\+Dictionary\+Matcher}}
+\subsubsection{\texorpdfstring{Is\+Entry\+Valid()}{IsEntryValid()}}
+{\footnotesize\ttfamily static bool A\+T\+P\+R\+N\+E\+R.\+Dictionary\+Matcher.\+Is\+Entry\+Valid (\begin{DoxyParamCaption}\item[{string \mbox{[}$\,$\mbox{]}}]{entry }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Determines if is dic entry is valid (C\+SV with two columns). 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if is entry valid the specified entry; otherwise, {\ttfamily false}.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em entry} & Entry.\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a98d35fff3cf9f96fa1267ebdff6773d5_icgraph}
+\end{center}
+\end{figure}
 \hypertarget{class_a_t_p_r_n_e_r_1_1_dictionary_matcher_aa6fdeaf3a88c14b5ed8e4f452d1c3c17}{}\label{class_a_t_p_r_n_e_r_1_1_dictionary_matcher_aa6fdeaf3a88c14b5ed8e4f452d1c3c17} 
 \index{A\+T\+P\+R\+N\+E\+R\+::\+Dictionary\+Matcher@{A\+T\+P\+R\+N\+E\+R\+::\+Dictionary\+Matcher}!Match\+Entities@{Match\+Entities}}
 \index{Match\+Entities@{Match\+Entities}!A\+T\+P\+R\+N\+E\+R\+::\+Dictionary\+Matcher@{A\+T\+P\+R\+N\+E\+R\+::\+Dictionary\+Matcher}}
@@ -48,11 +117,11 @@ Here is the caller graph for this function\+:
 \includegraphics[width=350pt]{d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_aa6fdeaf3a88c14b5ed8e4f452d1c3c17_icgraph}
 \end{center}
 \end{figure}
-\hypertarget{class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a6fc36cbd0e0df420c2aaafa389ae7b61}{}\label{class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a6fc36cbd0e0df420c2aaafa389ae7b61} 
+\hypertarget{class_a_t_p_r_n_e_r_1_1_dictionary_matcher_acb054c6ab6e27f9ea70e946671869d90}{}\label{class_a_t_p_r_n_e_r_1_1_dictionary_matcher_acb054c6ab6e27f9ea70e946671869d90} 
 \index{A\+T\+P\+R\+N\+E\+R\+::\+Dictionary\+Matcher@{A\+T\+P\+R\+N\+E\+R\+::\+Dictionary\+Matcher}!Match\+Entities\+In\+Files@{Match\+Entities\+In\+Files}}
 \index{Match\+Entities\+In\+Files@{Match\+Entities\+In\+Files}!A\+T\+P\+R\+N\+E\+R\+::\+Dictionary\+Matcher@{A\+T\+P\+R\+N\+E\+R\+::\+Dictionary\+Matcher}}
 \subsubsection{\texorpdfstring{Match\+Entities\+In\+Files()}{MatchEntitiesInFiles()}}
-{\footnotesize\ttfamily static void A\+T\+P\+R\+N\+E\+R.\+Dictionary\+Matcher.\+Match\+Entities\+In\+Files (\begin{DoxyParamCaption}\item[{string}]{input\+Path,  }\item[{string}]{dic\+Path,  }\item[{Text\+Writer}]{output,  }\item[{char}]{sep }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily static void A\+T\+P\+R\+N\+E\+R.\+Dictionary\+Matcher.\+Match\+Entities\+In\+Files (\begin{DoxyParamCaption}\item[{string}]{input\+Path,  }\item[{string}]{dic\+Path,  }\item[{Text\+Writer}]{output,  }\item[{char}]{sep,  }\item[{string}]{language }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -72,15 +141,7 @@ Here is the call graph for this function\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a6fc36cbd0e0df420c2aaafa389ae7b61_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_a6fc36cbd0e0df420c2aaafa389ae7b61_icgraph}
+\includegraphics[width=350pt]{d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher_acb054c6ab6e27f9ea70e946671869d90_cgraph}
 \end{center}
 \end{figure}
 

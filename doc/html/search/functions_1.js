@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['filetotext',['FileToText',['../d5/de9/class_a_t_p_r_n_e_r_1_1_files_utils.html#adaf763c34895368bcfe1254086d87f99',1,'ATPRNER::FilesUtils']]]
+  ['hasnext',['HasNext',['../d1/d21/class_a_t_p_r_1_1_match_iterator.html#a65b39ac2d89a16934d81a8992767d3e9',1,'ATPR::MatchIterator']]]
 ];

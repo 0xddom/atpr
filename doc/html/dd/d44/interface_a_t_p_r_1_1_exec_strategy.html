@@ -77,10 +77,7 @@ Inheritance diagram for ATPR.ExecStrategy:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d2/d3b/interface_a_t_p_r_1_1_exec_strategy__inherit__graph.png" border="0" usemap="#_a_t_p_r_8_exec_strategy_inherit__map" alt="Inheritance graph"/></div>
 <map name="_a_t_p_r_8_exec_strategy_inherit__map" id="_a_t_p_r_8_exec_strategy_inherit__map">
-<area shape="rect" id="node2" href="../../d2/d22/class_a_t_p_r_1_1_generate_dictionary_strategy.html" title="Strategy class that generates the dictionary from the NER result. " alt="" coords="5,127,229,213"/>
-<area shape="rect" id="node3" href="../../de/d99/class_a_t_p_r_1_1_generate_entities_strategy.html" title="sStrategy class that check generate entities command arguments and execute generate entities..." alt="" coords="253,127,462,213"/>
-<area shape="rect" id="node4" href="../../df/db7/class_a_t_p_r_1_1_match_entities_strategy.html" title="Strategy class that generates the matches between textentities and dictionary entities. " alt="" coords="485,127,675,213"/>
-<area shape="rect" id="node5" href="../../d6/dba/class_a_t_p_r_1_1_parse_strategy.html" title="Strategy class that generate the syntax analisis of the documents using the entities of the matching ..." alt="" coords="699,127,843,213"/>
+<area shape="rect" id="node2" href="../../dd/d99/class_a_t_p_r_1_1_abstract_exec_strategy.html" title="Class that sets a common structure for all the strategies " alt="" coords="5,153,193,280"/>
 </map>
 </div>
 <div class="dynheader">
@@ -93,9 +90,15 @@ Collaboration diagram for ATPR.ExecStrategy:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aaedec6af95b4eaad55142be83f228159"><td class="memItemLeft" align="right" valign="top"><a id="aaedec6af95b4eaad55142be83f228159"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Run</b> (<a class="el" href="../../d6/d90/class_a_t_p_r_1_1_options.html">Options</a> options)</td></tr>
-<tr class="separator:aaedec6af95b4eaad55142be83f228159"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcd52fae2702ce31b645ec8d149c0e51"><td class="memItemLeft" align="right" valign="top"><a id="adcd52fae2702ce31b645ec8d149c0e51"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>Run</b> ()</td></tr>
+<tr class="separator:adcd52fae2702ce31b645ec8d149c0e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd32c810cb2247e7b058520cce7ed3cb"><td class="memItemLeft" align="right" valign="top"><a id="acd32c810cb2247e7b058520cce7ed3cb"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>UsesNER</b> ()</td></tr>
+<tr class="separator:acd32c810cb2247e7b058520cce7ed3cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04e0c2d18b63468c4255c08182620726"><td class="memItemLeft" align="right" valign="top"><a id="a04e0c2d18b63468c4255c08182620726"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>UsesParser</b> ()</td></tr>
+<tr class="separator:a04e0c2d18b63468c4255c08182620726"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base interface for strategy classes </p>

@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$d1/d72/class_a_t_p_r_1_1_main_class.html" title="ATPR.MainClass" alt="" coords="5,5,127,31"/>
+<area shape="rect" id="node1" href="$db/d09/interface_a_t_p_r_1_1_i_match_iterator.html" title="Interface for iterating matches. " alt="" coords="5,5,147,31"/>
+<area shape="rect" id="node2" href="$d1/d21/class_a_t_p_r_1_1_match_iterator.html" title="Iterates over the matched entries " alt="" coords="195,5,333,31"/>
 </map>

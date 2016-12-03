@@ -1,0 +1,5 @@
+<map id="ATPRNER.DictionaryMatcher.MatchEntitiesInFiles" name="ATPRNER.DictionaryMatcher.MatchEntitiesInFiles">
+<area shape="rect" id="node2" href="$d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher.html#aa6fdeaf3a88c14b5ed8e4f452d1c3c17" title="Matchs the text entities with the dictionary entities. " alt="" coords="252,5,450,44"/>
+<area shape="rect" id="node3" href="$d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher.html#a46c40a1214abf84cf7fd1981b193cddf" title="Generates a CSV with the provided dictionary and writes it to the stream " alt="" coords="252,68,450,107"/>
+<area shape="rect" id="node4" href="$d0/d6a/class_a_t_p_r_n_e_r_1_1_dictionary_matcher.html#a98d35fff3cf9f96fa1267ebdff6773d5" title="Determines if is dic entry is valid (CSV with two columns). " alt="" coords="252,131,450,169"/>
+</map>
