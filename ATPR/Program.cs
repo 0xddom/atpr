@@ -48,6 +48,10 @@ namespace ATPR
 			}
 		}
 
+		/// <summary>
+		/// Prints the arguments.
+		/// </summary>
+		/// <param name="args">Arguments.</param>
 		static void PrintArgs(string[] args)
 		{
 			Console.Error.Write("Running with options: ");

@@ -70,6 +70,13 @@ namespace ATPR.Utils
 
 		public delegate void CSVFormatDelegate<E>(StringBuilder builder, E e);
 
+		/// <summary>
+		/// Builds a csv with the provided delegate.
+		/// </summary>
+		/// <returns>The csv.</returns>
+		/// <param name="list">Elements list.</param>
+		/// <param name="del">Entry line delegate generator</param>
+		/// <typeparam name="E">The type of data used to generate</typeparam>
 		public static string BuildCSV<E>(List<E> list, CSVFormatDelegate<E> del)
 		{
 			var sb = new StringBuilder();

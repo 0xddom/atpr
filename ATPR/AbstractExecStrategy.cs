@@ -3,6 +3,9 @@ using System.IO;
 
 namespace ATPR
 {
+	/// <summary>
+	/// Class that sets a common structure for all the strategies
+	/// </summary>
 	public abstract class AbstractExecStrategy : ExecStrategy
 	{
 		public AbstractExecStrategy(Options options)
