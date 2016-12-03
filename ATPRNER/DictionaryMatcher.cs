@@ -68,7 +68,7 @@ namespace ATPRNER
 			List<string> entitiesTable = new List<string>();
 			foreach (string[] item in dicTable)
 			{
-				entitiesTable.Add(item[1]);
+				if(IsEntryValid(item)) entitiesTable.Add(item[1]);
 			}
 
 			return entitiesTable;
@@ -93,6 +93,17 @@ namespace ATPRNER
 				var entryObj = entry.Value;
 				output.WriteLine("{0}{4}{1}{4}{2}{4}{5}{4}{3}", origFile, entryObj.EntityName, entryObj.MatchNumber, dicFile, sep, entryObj.Type);
 			}
+		}
+
+
+		/// <summary>
+		/// Determines if is dic entry is valid (CSV with two columns). 
+		/// </summary>
+		/// <returns><c>true</c> if is entry valid the specified entry; otherwise, <c>false</c>.</returns>
+		/// <param name="entry">Entry.</param>
+		public static bool IsEntryValid(string[] entry)
+		{
+			return entry.Length == 2;
 		}
 	}
 }
