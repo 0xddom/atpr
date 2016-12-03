@@ -9,6 +9,7 @@
 * juanangel.lopezs@gmail.com
 
 # What is ATPR?
+ATPR is a console tool that can extract entities (such as nouns, organizations, persons...) from pdf, docx... files and match it with a word dictionary based on a selected topic (such as weapons, drugs or whatever you want).
 
 # Install ATPR
 Check the Wiki https://github.com/KuroAku/atpr/wiki for tutorials and installation steps. 
