@@ -45,26 +45,26 @@ Check https://github.com/KuroAku/atpr/wiki/Autopsy-Integration
 
 ### Entities extractor:
 
-    mono ATPR.exe -c entities -i <path_to_documents> [-o output_file ]
+    mono ATPR.exe -c entities -i <path_to_documents> [-o output_file ] [-f language]
 
 If `-o` is missing the output will be redirected to STDOUT.
 
 ### Dictionary generator:
 
-    mono ATPR.exe -c dictionary -i <path_to_documents> [-o output_file ]
+    mono ATPR.exe -c dictionary -i <path_to_documents> [-o output_file ] [-f language]
 
 If `-o` is missing the output will be redirected to STDOUT.
 
 ### Dictionary matching:
 
-    mono ATPR.exe -c match -i <path_to_documents> -d <path_to_dictionary> [-o output_file]
+    mono ATPR.exe -c match -i <path_to_documents> -d <path_to_dictionary> [-o output_file] [-f language]
     
 If `-o` is missing the output will be redirected to STDOUT.
 
 
 ### Parse text:
 
-    mono ATPR.exe -c parser -i <path_to_matchfile> [-o output_file]
+    mono ATPR.exe -c parser -i <path_to_matchfile> [-o output_file] [-f language]
     
 If `-o` is missing the output will be redirected to STDOUT.
 
@@ -78,6 +78,26 @@ In this example the input files and the dictionaries are found in `/inputs` and 
 
     docker run -v ~/Desktop/Texts:/inputs atpr_image -v ~/Desktop/Dicts:/dicts \
       atpr -c dictionary -i /inputs -o /dicts/generatedDict.csv
+      
+# Add language models
+
+To add language models you have to specific name the .gz files and put it in specific path relative to your STANFORD_HOME.
+
+## Add lenguages to NER
+Name your language file like language.ancora.distsim.s512.crf.ser.gz where language is the name of the lenguage to add.
+
+Example:
+_`spanish.ancora.distsim.s512.crf.ser.gz`_
+
+Put the file in  STANFORD_HOME/stanford-ner-2015-12-09/classifiers/
+
+## Add lenguages to PARSER
+Name your language file like languagePCFG.ser.gz where language is the name of the lenguage to add.
+
+Example:
+_`spanishPCFG.ser.gz`_
+
+Put the file in  STANFORD_HOME/models/stanford-spanish/edu/stanford/nlp/models/lexparser/";
 
 # Functions
 ATPR is a tool focused in the analysis of documents using NLP(Natural Language Processing). 
