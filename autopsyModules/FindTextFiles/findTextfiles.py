@@ -1,5 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 # Looks for text files that contain extension doc, docx, txt and pdf
-
 
 import jarray
 import inspect
@@ -83,7 +84,6 @@ class FindTextFilesIngestModule(FileIngestModule):
             art = file.newArtifact(BlackboardArtifact.ARTIFACT_TYPE.TSK_INTERESTING_FILE_HIT)
             att = BlackboardAttribute(BlackboardAttribute.ATTRIBUTE_TYPE.TSK_SET_NAME.getTypeID(), 
                   FindTextFilesModuleFactory.moduleName, "Find text Files")
-
 
             # Create find text directory in module output directory, if it exists then continue on processing     
             outpuDir = Case.getCurrentCase().getModulesOutputDirAbsPath() + "\TextFiles"
