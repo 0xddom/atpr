@@ -35,12 +35,6 @@ namespace ATPR
 				return;
 			}
 				
-			if (!ParserLangUtils.CheckLangFiles (options.Language)) {
-				Console.Error.WriteLine ("Language files not found.Exiting...");
-				return;
-			}
-				
-
 			List<string[]> matchs = Parser.GetMatching(options.InputFile, options.Separator);
 
 			IMatchIterator iter = new MatchIterator(matchs);
@@ -66,9 +60,15 @@ namespace ATPR
 				                                                        options.Separator))));
 		}
 
+		public override bool UsesNER()
+		{
+			return false;
+		}
 
-
-
+		public override bool UsesParser()
+		{
+			return true;
+		}
 	}
 }
 

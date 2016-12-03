@@ -32,11 +32,6 @@ namespace ATPR
 				return;
 			}
 
-			if (!NERLangUtils.CheckLangFiles (options.Language)) {
-				Console.Error.WriteLine ("Language files not found.Exiting...");
-				return;
-			}
-
 			TextWriter output;
 			if (string.IsNullOrEmpty(options.Output)) output = new StreamWriter(Console.OpenStandardOutput());
 			else output = new StreamWriter(options.Output);
@@ -46,6 +41,16 @@ namespace ATPR
 			
 	
 			output.Close();
+		}
+
+		public override bool UsesNER()
+		{
+			return true;
+		}
+
+		public override bool UsesParser()
+		{
+			return false;
 		}
 	}
 }

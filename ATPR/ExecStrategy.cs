@@ -7,5 +7,7 @@ namespace ATPR
 	public interface ExecStrategy
 	{
 		void Run();
+		bool UsesNER();
+		bool UsesParser();
 	}
 }

@@ -2,6 +2,8 @@
 using CommandLine;
 using System.Globalization;
 using System.Threading;
+using ATPRNER;
+using ATPRPARSER;
 
 namespace ATPR
 {
@@ -22,6 +24,15 @@ namespace ATPR
 			if (Parser.Default.ParseArguments(args, options))
 			{
 				if (options.Verbose) PrintArgs(args);
+
+				if (!CheckLanguage(options.Language))
+				{
+					Console.Error.WriteLine(
+						@"The language identifier contains dots and/or slashes. Those characters are not permited in the language identifier.
+If your language identifier contains those symbols in its name, please rename it.
+Aborting...");
+					Environment.Exit(1);
+				}
 
 				ExecStrategy strategy = null;
 
@@ -44,8 +55,28 @@ namespace ATPR
 						break;
 				}
 				if (strategy != null)
+				{
+					if ((strategy.UsesNER() && !NERLangUtils.CheckLangFiles(options.Language))
+					    || (strategy.UsesParser() && !ParserLangUtils.CheckLangFiles(options.Language)))
+					{
+						Console.Error.WriteLine("Language files not found\nExiting...");
+						Environment.Exit(1);
+					}
 					strategy.Run();
+				}
 			}
+		}
+
+		static bool CheckLanguage(string lang)
+		{
+			bool acc = true;
+			foreach (var c in new string[]{
+				".", "/", "\\"})
+			{
+				acc = acc && !lang.Contains(c);
+			}
+
+			return acc;
 		}
 
 		/// <summary>

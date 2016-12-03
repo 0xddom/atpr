@@ -26,5 +26,8 @@ namespace ATPR
 			if (string.IsNullOrEmpty(options.Output)) Console.Write(result);
 			else File.WriteAllText(options.Output, result);
 		}
+
+		public abstract bool UsesNER();
+		public abstract bool UsesParser();
 	}
 }

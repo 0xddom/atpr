@@ -92,14 +92,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ExecStrategy.cs" />
     <Compile Include="Options.cs" />
-    <Compile Include="GenerateEntitiesStrategy.cs" />
-    <Compile Include="GenerateDictionaryStrategy.cs" />
-    <Compile Include="MatchEntitiesStrategy.cs" />
-    <Compile Include="ParseStrategy.cs" />
     <Compile Include="AbstractExecStrategy.cs" />
     <Compile Include="MatchIterator.cs" />
     <Compile Include="IMatchIterator.cs" />
     <Compile Include="Match.cs" />
+    <Compile Include="RunStrategies\GenerateDictionaryStrategy.cs" />
+    <Compile Include="RunStrategies\GenerateEntitiesStrategy.cs" />
+    <Compile Include="RunStrategies\MatchEntitiesStrategy.cs" />
+    <Compile Include="RunStrategies\ParseStrategy.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -118,5 +118,8 @@
       <Project>{5F569CDB-28A5-476A-A586-1ACF8B312A3A}</Project>
       <Name>ATPRParser</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="RunStrategies\" />
   </ItemGroup>
 </Project>
