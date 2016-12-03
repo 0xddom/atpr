@@ -17,6 +17,10 @@ namespace ATPR
 			count = 0;
 		}
 
+		/// <summary>
+		/// Returns the next matches grouped by source file
+		/// </summary>
+		/// <returns>The next.</returns>
 		public Match GetNext()
 		{
 			List<string[]> entities = new List<string[]>();
@@ -28,6 +32,10 @@ namespace ATPR
 			return new Match(filePath, entities);
 		}
 
+		/// <summary>
+		/// Returns true if there are more matches
+		/// </summary>
+		/// <returns><c>true</c>, if there are more, <c>false</c> otherwise.</returns>
 		public bool HasNext()
 		{
 			return count < matches.Count;
