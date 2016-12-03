@@ -40,12 +40,12 @@ namespace ATPRNER
 		/// <param name="inputPath">Files path.</param>
 		/// <param name="dicPath">Dictionary path.</param>
 		/// <param name="output">Output stream.</param>
-		public static void MatchEntitiesInFiles(string inputPath, string dicPath, TextWriter output, char sep)
+		public static void MatchEntitiesInFiles(string inputPath, string dicPath, TextWriter output, char sep,string language)
 		{
 			string[] files = FilesUtils.GetFiles(inputPath);
 			foreach (string file in files)
 			{
-				string xml = NER.GenerateEntitiesToString(file);
+				string xml = NER.GenerateEntitiesToString(file,language);
 				string csv = CSVUtils.RemoveDuplicates(CSVUtils.EntitiesToCsv(xml, sep));
 
 				List<string[]> dicTable = CSVUtils.TabulateCSV(new StreamReader(dicPath), sep);

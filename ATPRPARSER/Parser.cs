@@ -13,6 +13,7 @@ namespace ATPRParser
 {
 	public class Parser
 	{
+		
 		/// <summary>
 		/// Parse the document searching for sentences where the entity found.
 		/// Returns a csv line with the file, the entity the sentence and the sintax analisis of the sentences
@@ -20,12 +21,12 @@ namespace ATPRParser
 		/// <param name="text">Document text</param>
 		/// <param name="entity">Entity.</param>
 		/// <param name="origFile">Original file.</param>
-		public static List<string[]> Parse (string text, string entity, string origFile)
+		public static List<string[]> Parse (string text, string entity, string origFile,string language)
 		{
 			var results = new List<string[]>();
 			//Load spanish models.
 			var modelsDirectory = StanfordEnv.PARSER_MODELS;
-			var lexparserDirectory = modelsDirectory + StanfordEnv.LEXPARSER;
+			var lexparserDirectory = modelsDirectory + StanfordEnv.GetParserLanguageFiles(language);
 			var lp = LexicalizedParser.loadModel(lexparserDirectory);
 
 			string[] splittedText = SplitText (text);

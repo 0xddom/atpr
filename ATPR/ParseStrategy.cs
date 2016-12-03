@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using ATPR.Utils;
 using ATPRParser;
+using ATPRPARSER;
 
 namespace ATPR
 {
@@ -33,6 +34,12 @@ namespace ATPR
 				Console.Error.WriteLine("Input file/directory required. Exiting...");
 				return;
 			}
+				
+			if (!ParserLangUtils.CheckLangFiles (options.Language)) {
+				Console.Error.WriteLine ("Language files not found.Exiting...");
+				return;
+			}
+				
 
 			List<string[]> matchs = Parser.GetMatching(options.InputFile, options.Separator);
 
@@ -44,7 +51,7 @@ namespace ATPR
 			{
 				Match match = iter.GetNext();
 				foreach (string[] item in match.Items)
-					csvEntries.AddRange(Parser.Parse(match.Text, item[1], match.FilePath));
+					csvEntries.AddRange(Parser.Parse(match.Text, item[1], match.FilePath,options.Language));
 			}
 
 			var CSV_FMT = "{0}{4}{1}{4}{2}{4}{3}";
@@ -58,6 +65,9 @@ namespace ATPR
 				                                                        e[3], 
 				                                                        options.Separator))));
 		}
+
+
+
 
 	}
 }

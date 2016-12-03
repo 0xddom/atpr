@@ -1,5 +1,6 @@
 ﻿using System;
 using ATPRNER;
+using ATPR.Utils;
 
 namespace ATPR
 {
@@ -24,7 +25,13 @@ namespace ATPR
 			if (options.Verbose)
 				Console.Error.WriteLine("Option 1.");
 
-			WriteResult(NER.GenerateEntitiesToString(options.InputFile));
+			if (!NERLangUtils.CheckLangFiles (options.Language)) {
+				Console.Error.WriteLine ("Language files not found.Exiting...");
+				return;
+			}
+
+
+			WriteResult(NER.GenerateEntitiesToString(options.InputFile,options.Language));
 		}
 	}
 }

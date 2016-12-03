@@ -44,5 +44,15 @@ namespace ATPR.Utils
 			throw new DirectoryNotFoundException(inputPath);
 
 		}
+
+		/// <summary>
+		/// Check if language model files exists.
+		/// </summary>
+		/// <returns><c>true</c>, if models was existsed, <c>false</c> otherwise.</returns>
+		/// <param name="path">Path.</param>
+		public static bool ExistsModels(string path)
+		{
+			return File.Exists (path);
+		}
 	}
 }

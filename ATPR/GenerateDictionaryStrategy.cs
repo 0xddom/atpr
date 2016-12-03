@@ -22,7 +22,13 @@ namespace ATPR
 			if (options.Verbose)
 				Console.Error.WriteLine("Dictionary generation command");
 
-			string xml = NER.GenerateEntitiesToString(options.InputFile);
+
+			if (!NERLangUtils.CheckLangFiles (options.Language)) {
+				Console.Error.WriteLine ("Language files not found.Exiting...");
+				return;
+			}
+
+			string xml = NER.GenerateEntitiesToString(options.InputFile,options.Language);
 			string csv = CSVUtils.RemoveDuplicates(CSVUtils.EntitiesToCsv(xml, options.Separator));
 
 			WriteResult(csv);

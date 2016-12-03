@@ -180,6 +180,7 @@
     <Compile Include="NER.cs" />
     <Compile Include="DictionaryMatcher.cs" />
     <Compile Include="MatchedEntity.cs" />
+    <Compile Include="NERLangUtils.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
