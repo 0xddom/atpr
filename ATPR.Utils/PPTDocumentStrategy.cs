@@ -32,7 +32,8 @@ namespace ATPR.Utils
 
 		public bool IsSupportedExtension(string extension)
 		{
-			return extension.Equals("ppt");
+			//TODO: There is a problem with the PPT & PPTX magic number.
+			return false;
 		}
 
 	}
