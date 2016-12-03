@@ -74,6 +74,10 @@ class RunExeIngestModule(DataSourceIngestModule):
         if not os.path.exists(self.path_to_exe):
             raise IngestModuleException("EXE was not found in module folder")
 
+        self.path_to_dirs = os.path.join(os.path.dirname(os.path.abspath(__file__)), "/dicts/")
+        if not os.path.exists(self.path_to_dirs):
+            raise IngestModuleException("EXE was not found in module folder")
+
     # Where the analysis is done.
     # The 'dataSource' object being passed in is of type org.sleuthkit.datamodel.Content.
     # See: http://www.sleuthkit.org/sleuthkit/docs/jni-docs/4.3/interfaceorg_1_1sleuthkit_1_1datamodel_1_1_content.html
@@ -83,32 +87,27 @@ class RunExeIngestModule(DataSourceIngestModule):
         
         # we don't know how much work there will be
         progressBar.switchToIndeterminate()
-        
-        # Example has only a Windows EXE, so bail if we aren't on Windows
-        if not PlatformUtil.isWindowsOS(): 
-            self.log(Level.INFO, "Ignoring data source.  Not running on Windows")
-            return IngestModule.ProcessResult.OK
 
-        # Verify we have a disk image and not a folder of files
-        if not isinstance(dataSource, Image):
-            self.log(Level.INFO, "Ignoring data source.  Not an image")
-            return IngestModule.ProcessResult.OK
+        # Get the folder with de texts files            
+        inputDir = Case.getCurrentCase().getModulesOutputDirAbsPath() + "\TextFiles"
+        try:
+            os.mkdir(inputDir)
+            self.log(Level.INFO, "Find Text Directory must exists for launching the module" + inputDir)
+        except:
+            self.log(Level.INFO, "Find Text Directory exists " + inputDir)
 
-        # Get disk image paths            
-        imagePaths = dataSource.getPaths()
-        
         # We'll save our output to a file in the reports folder, named based on EXE and data source ID
-        reportPath = os.path.join(Case.getCurrentCase().getCaseDirectory(), "Reports", "img_stat-" + str(dataSource.getId()) + ".txt") 
-        reportHandle = open(reportPath, 'w')
-        
+        reportPath = os.path.join(Case.getCurrentCase().getCaseDirectory(), "Reports", "atprResult-" + str(dataSource.getId()) + ".csv") 
+       
+        logPath = os.path.join(Case.getCurrentCase().getCaseDirectory(), "Reports", "log" + str(dataSource.getId()) + ".txt") 
+        logHandle = open(reportPath, 'w')
+
         # Run the EXE, saving output to the report
-        # NOTE: we should really be checking for if the module has been
-        # cancelled and then killing the process. 
         self.log(Level.INFO, "Running program on data source")
-        subprocess.Popen([self.path_to_exe, imagePaths[0]], stdout=reportHandle).communicate()[0]    
-        reportHandle.close()
+        subprocess.Popen([self.path_to_exe, "-c", "match" , "-i", inputDir, "-d", self.path_to_dirs, "-o", reportPath], stdout=logHandle).communicate()[0]    
+        logHandle.close()
         
         # Add the report to the case, so it shows up in the tree
-        Case.getCurrentCase().addReport(reportPath, "Run EXE", "img_stat output")
+        Case.getCurrentCase().addReport(reportPath, "Run EXE", "ATPR result output")
         
         return IngestModule.ProcessResult.OK
