@@ -25,7 +25,10 @@ namespace ATPR
 
 				if (!CheckLanguage(options.Language))
 				{
-					Console.Error.WriteLine("The language contains dots and slashes. Those characters are not permited in the language string\nAborting...");
+					Console.Error.WriteLine(
+						@"The language identifier contains dots and/or slashes. Those characters are not permited in the language identifier.
+If your language identifier contains those symbols in its name, please rename it.
+Aborting...");
 					Environment.Exit(1);
 				}
 
