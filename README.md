@@ -48,12 +48,14 @@ Check https://github.com/KuroAku/atpr/wiki/Autopsy-Integration
     mono ATPR.exe -c entities -i <path_to_documents> [-o output_file ] [-f language]
 
 If `-o` is missing the output will be redirected to STDOUT.
+`-f` flag does not allow  '.' , '/' or '\' chars
 
 ### Dictionary generator:
 
     mono ATPR.exe -c dictionary -i <path_to_documents> [-o output_file ] [-f language]
 
 If `-o` is missing the output will be redirected to STDOUT.
+`-f` flag does not allow  '.' , '/' or '\' chars
 
 ### Dictionary matching:
 
@@ -61,12 +63,15 @@ If `-o` is missing the output will be redirected to STDOUT.
     
 If `-o` is missing the output will be redirected to STDOUT.
 
+`-f` flag does not allow  '.' , '/' or '\' chars
 
 ### Parse text:
 
     mono ATPR.exe -c parser -i <path_to_matchfile> [-o output_file] [-f language]
     
 If `-o` is missing the output will be redirected to STDOUT.
+
+`-f` flag does not allow  '.' , '/' or '\' chars
 
 ## Using ATPR with Docker
 
