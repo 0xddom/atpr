@@ -32,9 +32,11 @@ It is recommendable to install Radare2 (from GIT) to identify strings in non sup
 ## Windows
 Install Xamarin Studio and the c# toolchain
 
-You have to download Stanford libs and extract it in ~/Hackaton : [LIBS] (https://www.dropbox.com/s/103t3z1tiiquizq/Standford.tar.gz?dl=0)
+You have to download [Stanford LIBS] (https://www.dropbox.com/s/103t3z1tiiquizq/Standford.tar.gz?dl=0) in order for the tool to work.
 
-Load the project in Xamarin Studio (prefered) or VS (not tested) and build, or in a shell:
+You can extract it in ~/Hackaton or you can add STANFORD_HOME variable to the path. STANFORD_HOME is the folder where the Stanford libraries are.  
+
+Load the project in Xamarin Studio (prefered) or VS (not tested), restone nugets and build, or in a shell:
 
     cd <project path>
     nuget restore
