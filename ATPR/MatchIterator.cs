@@ -22,7 +22,7 @@ namespace ATPR
 			List<string[]> entities = new List<string[]>();
 
 			string filePath = matches[count][0];
-			while (matches[count][0].Equals(filePath))
+			while (HasNext() && matches[count][0].Equals(filePath))
 				entities.Add(matches[count++]);
 
 			return new Match(filePath, entities);

@@ -91,7 +91,11 @@ namespace ATPRNER
 			foreach (var entry in entries)
 			{
 				var entryObj = entry.Value;
-				output.WriteLine("{0}{4}{1}{4}{2}{4}{5}{4}{3}", origFile, entryObj.EntityName, entryObj.MatchNumber, dicFile, sep, entryObj.Type);
+				output.WriteLine("{0}{4}{1}{4}{2}{4}{5}{4}{3}", 
+				                 origFile, 
+				                 entryObj.EntityName, 
+				                 entryObj.MatchNumber, 
+				                 dicFile, sep, entryObj.Type);
 			}
 		}
 	}

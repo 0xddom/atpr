@@ -17,17 +17,19 @@ namespace ATPRParser
 		public static void Parse (string text, string entity, int number)
 		{
 
+			//Load spanish models.
+			var jarRoot = StanfordEnv.PARSER_HOME;
+			var modelsDirectory = StanfordEnv.PARSER_MODELS;
+			var lexparserDirectory = modelsDirectory + StanfordEnv.LEXPARSER;
+			var lp = LexicalizedParser.loadModel(lexparserDirectory);
+
 			string[] splittedText = SplitText (text);
 			List<string> entityLines = GetEntitiesLines (splittedText,entity);
 
 			foreach (var line in entityLines) {
-				
-				//Load spanish models.
-				var jarRoot = GetStanfordHome ();
-				var modelsDirectory = jarRoot + Consts.MODELS;
-				var lexparserDirectory = modelsDirectory + Consts.LEXPARSER;
-				var lp = LexicalizedParser.loadModel (lexparserDirectory);
 
+				Console.Error.WriteLine($"[DEBUG] {line}");
+				
 				//Parser sentence.
 				var tokenizerFactory = PTBTokenizer.factory (new CoreLabelTokenFactory (), "");
 				var sent2Reader = new java.io.StringReader (line);
@@ -42,24 +44,15 @@ namespace ATPRParser
 		}
 
 		/// <summary>
-		/// Gets the home for the stanford jars.
-		/// </summary>
-		/// <returns>The stanford home path</returns>
-		static string GetStanfordHome ()
-		{
-			return Environment.GetEnvironmentVariable ("STANFORD_HOME") ?? Consts.DEFAULT_STANFORD_NLP;
-		}
-
-		/// <summary>
 		/// Gets the matchs of the matchingFile.
 		/// </summary>
 		/// <returns>The matching.</returns>
 		/// <param name="matchingFilePath">Matching file path.</param>
-		public static List<String[]> GetMatching (string matchingFilePath)
+		public static List<String[]> GetMatching (string matchingFilePath, char sep)
 		{
-			String matchs = FilesUtils.FileToText (matchingFilePath);
-			StringReader reader = new StringReader (matchs);
-			return CSVUtils.TabulateCSV (reader, ';');
+			//String matchs = FilesUtils.FileToText (matchingFilePath);
+			//StringReader reader = new StringReader (matchs);
+			return CSVUtils.TabulateCSV (new StreamReader(matchingFilePath), sep);
 		}
 
 		/// <summary>
@@ -69,10 +62,10 @@ namespace ATPRParser
 		/// <param name="text">Text.</param>
 		public static string[] SplitText (string text)
 		{
-			char[] delimiters = new char[] {
+			char[] delimiters = {
 				'{', '}', '(', ')', '[', ']', '>', '<', '-', '_', '=', '+',
-				'|', '\\', ':', ';', ' ', '\'', ',', '.', '/', '?', '~', '!',
-				'@', '#', '$', '%', '^', '&', '*', ' ', '\r', '\n', '\t'
+				'|', '\\', ':', ';', '\'', ',', '.', '/', '?', '~', '!',
+				'@', '#', '$', '%', '^', '&', '*', '\r', '\n', '\t'
 			};
 
 			return text.Split (delimiters, StringSplitOptions.RemoveEmptyEntries);

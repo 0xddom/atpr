@@ -43,7 +43,7 @@ namespace ATPR
 
 			//TODO: Parse text
 
-			List<string[]> matchs = Parser.GetMatching(options.InputFile);
+			List<string[]> matchs = Parser.GetMatching(options.InputFile, options.Separator);
 
 			IMatchIterator iter = new MatchIterator(matchs);
 
@@ -51,7 +51,7 @@ namespace ATPR
 			{
 				Match match = iter.GetNext();
 				foreach (string[] item in match.Items)
-					Parser.Parse(match.Text, item[2], int.Parse(item[3]));
+					Parser.Parse(match.Text, item[1], int.Parse(item[2]));
 			}
 
 			//foreach (String[] item in matchs)
