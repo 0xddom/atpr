@@ -50,6 +50,8 @@
     <Reference Include="taglib-sharp">
       <HintPath>..\packages\taglib.2.1.0.0\lib\taglib-sharp.dll</HintPath>
     </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="DCSoft.RTF">
       <HintPath>..\packages\Toxy.1.6.1.1\lib\net45\DCSoft.RTF.dll</HintPath>
     </Reference>
@@ -86,9 +88,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FilesUtils.cs" />
     <Compile Include="StanfordEnv.cs" />
+    <Compile Include="IFileToTextStrategy.cs" />
+    <Compile Include="ToxyDocumentStrategy.cs" />
+    <Compile Include="PlainTextStrategy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MimeDetective\MimeDetective.csproj">
+      <Project>{808E29FE-EF7A-4B04-858B-414238956BC3}</Project>
+      <Name>MimeDetective</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

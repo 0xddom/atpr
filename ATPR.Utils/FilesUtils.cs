@@ -1,69 +1,34 @@
 ﻿using System;
 using System.IO;
+using MimeDetective;
+using System.Linq;
 using Toxy;
 
 namespace ATPR.Utils
 {
 	public static class FilesUtils
 	{
-		/// <summary>
-		/// Extrat the text from a file, using Toxy for binary files.
-		/// </summary>
-		/// <returns>The plain text of the document</returns>
-		/// <param name="filePath">File path.</param>
 		public static string FileToText(string filePath)
 		{
-			if (filePath.EndsWith(".doc", StringComparison.CurrentCulture)
-				|| filePath.EndsWith(".docx", StringComparison.CurrentCulture)
-				|| filePath.EndsWith(".pdf", StringComparison.CurrentCulture)
-				|| filePath.EndsWith(".rtf", StringComparison.CurrentCulture)
-				|| filePath.EndsWith(".html", StringComparison.CurrentCulture)
-			)
-				//Test rtf
+			FileType fType;
+
+			using (Stream s = new FileStream(filePath, FileMode.Open))
 			{
-				ParserContext c = new ParserContext(filePath);
-				//TODO Add suport to ppt and pptx CreateSlideshow
-				//Examples https://github.com/tonyqus/toxy/tree/master/Toxy.Test
-				try
-				{	
-					IDocumentParser parser = ParserFactory.CreateDocument(c);
-					ToxyDocument result = parser.Parse();
-					return result.ToString();
-				}
-				catch (Exception e)
-				{
-					Console.Error.WriteLine("{0} Exception caught error with {1}.", e, filePath);
-					return null;
-				}
+				fType = s.GetFileType();
+			}
+			var availableStrategies = from type in System.Reflection.Assembly.GetExecutingAssembly().GetTypes()
+									  where typeof(IFileToTextStrategy).IsAssignableFrom(type) && !type.IsInterface
+									  select type;
+
+			foreach (var sType in availableStrategies)
+			{
+				var strategy = Activator.CreateInstance(sType) as IFileToTextStrategy;
+				if (strategy.IsSupportedExtension(fType.Extension))
+					return strategy.ExtractText(filePath, fType.Extension);
 			}
 
-			if (filePath.EndsWith(".txt", StringComparison.CurrentCulture)
-				|| filePath.EndsWith(".csv", StringComparison.CurrentCulture)
-				|| filePath.EndsWith(".html", StringComparison.CurrentCulture))
-				try
-			{
-				ParserContext c = new ParserContext(filePath);
-				ITextParser parser = ParserFactory.CreateText(c);
-				string text = parser.Parse();
-
-				foreach (var t in text)
-				{
-					if (char.IsControl(t) && t != '\n' && t != '\t' && t != '\r')
-					{
-						Console.Error.WriteLine("Found control character: {0} {1}", (int)t, t);
-						return null;
-					}
-				}
-				return text;
-			}
-			catch (Exception e) 
-			{
-				Console.Error.WriteLine("{0} Exception caught error with {1}.", e, filePath);
-				return null;
-			}
 			return null; // Unsupported file
 		}
-
 
 		/// <summary>
 		/// Returns an array of files to be parsed
