@@ -28,12 +28,6 @@ namespace ATPR
 			if (options.Verbose)
 				Console.Error.WriteLine("Parse text command");
 
-			if (options.Matchfile == null)
-			{
-				Console.Error.WriteLine("Matcfile required. Exiting...");
-				return;
-			}
-
 			if (options.InputFile == null)
 			{
 				Console.Error.WriteLine("Input file/directory required. Exiting...");
@@ -55,9 +49,14 @@ namespace ATPR
 
 			var CSV_FMT = "{0}{4}{1}{4}{2}{4}{3}";
 
-			WriteResult(CSVUtils.BuildCSV(csvEntries, 
+			WriteResult(CSVUtils.RemoveDuplicates(CSVUtils.BuildCSV(csvEntries, 
 			                              (builder, e) => builder.AppendFormat(
-				                              CSV_FMT, e[0], e[1], e[2], e[3], options.Separator)));
+				                                                        CSV_FMT, 
+				                                                        e[0], 
+				                                                        e[1], 
+				                                                        e[2], 
+				                                                        e[3], 
+				                                                        options.Separator))));
 		}
 
 	}
