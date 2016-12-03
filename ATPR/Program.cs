@@ -23,6 +23,12 @@ namespace ATPR
 			{
 				if (options.Verbose) PrintArgs(args);
 
+				if (!CheckLanguage(options.Language))
+				{
+					Console.Error.WriteLine("The language contains dots and slashes. Those characters are not permited in the language string\nAborting...");
+					Environment.Exit(1);
+				}
+
 				ExecStrategy strategy = null;
 
 				switch (options.Choose)
@@ -46,6 +52,18 @@ namespace ATPR
 				if (strategy != null)
 					strategy.Run();
 			}
+		}
+
+		static bool CheckLanguage(string lang)
+		{
+			bool acc = true;
+			foreach (var c in new string[]{
+				".", "/", "\\"})
+			{
+				acc = acc && !lang.Contains(c);
+			}
+
+			return acc;
 		}
 
 		/// <summary>
