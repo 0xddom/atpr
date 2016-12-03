@@ -75,7 +75,7 @@ namespace ATPRNER
 					continue;
 				}
 
-				var classifier = CRFClassifier.getClassifierNoExceptions(classifiersDirectory + StanfordEnv.GetNerLanguageFiles(language));
+				var classifier = CRFClassifiers.GetClassifierByLang(language); //CRFClassifier.getClassifierNoExceptions(classifiersDirectory + StanfordEnv.GetNerLanguageFiles(language));
 
 				output.WriteLine(classifier.classifyToString(text, "xml", true));
 			}
