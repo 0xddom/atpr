@@ -5,7 +5,7 @@ using ATPR.Utils;
 namespace ATPR
 {
 	/// <summary>
-	/// sStrategy class  that check generate entities command arguments and execute generate entities.
+	/// Strategy class that check generate entities command arguments and execute generate entities.
 	/// </summary>
 	public class GenerateEntitiesStrategy : AbstractExecStrategy
 	{
@@ -25,13 +25,17 @@ namespace ATPR
 			if (options.Verbose)
 				Console.Error.WriteLine("Option 1.");
 
-			if (!NERLangUtils.CheckLangFiles (options.Language)) {
-				Console.Error.WriteLine ("Language files not found.Exiting...");
-				return;
-			}
-
-
 			WriteResult(NER.GenerateEntitiesToString(options.InputFile,options.Language));
+		}
+
+		public override bool UsesNER()
+		{
+			return true;
+		}
+
+		public override bool UsesParser()
+		{
+			return false;
 		}
 	}
 }

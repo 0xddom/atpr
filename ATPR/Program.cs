@@ -2,6 +2,8 @@
 using CommandLine;
 using System.Globalization;
 using System.Threading;
+using ATPRNER;
+using ATPRPARSER;
 
 namespace ATPR
 {
@@ -53,7 +55,15 @@ Aborting...");
 						break;
 				}
 				if (strategy != null)
+				{
+					if ((strategy.UsesNER() && !NERLangUtils.CheckLangFiles(options.Language))
+					    || (strategy.UsesParser() && !ParserLangUtils.CheckLangFiles(options.Language)))
+					{
+						Console.Error.WriteLine("Language files not found\nExiting...");
+						Environment.Exit(1);
+					}
 					strategy.Run();
+				}
 			}
 		}
 
