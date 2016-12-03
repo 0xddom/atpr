@@ -91,6 +91,7 @@
     <Compile Include="IFileToTextStrategy.cs" />
     <Compile Include="ToxyDocumentStrategy.cs" />
     <Compile Include="PlainTextStrategy.cs" />
+    <Compile Include="PPTDocumentStrategy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

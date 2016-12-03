@@ -29,6 +29,7 @@ namespace ATPR.Utils
 				var strategy = Activator.CreateInstance(sType) as IFileToTextStrategy;
 				if (strategy.IsSupportedExtension(fType.Extension))
 					return strategy.ExtractText(filePath, fType.Extension);
+				
 			}
 
 			return null; // Unsupported file
