@@ -18,10 +18,10 @@ namespace ATPRNER
 		/// </summary>
 		/// <param name="inputPath">Input path.</param>
 		/// <param name="outputPath">Output path.</param>
-		public static void GenerateEntities(string inputPath, string outputPath)
+		public static void GenerateEntities(string inputPath, string outputPath,string language)
 		{
 			StreamWriter outputFile = new StreamWriter(outputPath);
-			GenerateEntities(inputPath, outputFile);
+			GenerateEntities(inputPath, outputFile,language);
 			outputFile.Close();
 		}
 
@@ -30,10 +30,10 @@ namespace ATPRNER
 		/// and send output to stdout
 		/// </summary>
 		/// <param name="inputPath">Input path.</param>
-		public static void GenerateEntities(string inputPath)
+		public static void GenerateEntities(string inputPath,string language)
 		{
 			var stdout = new StreamWriter(Console.OpenStandardOutput());
-			GenerateEntities(inputPath, stdout);
+			GenerateEntities(inputPath, stdout,language);
 			stdout.Close();
 		}
 
@@ -43,10 +43,10 @@ namespace ATPRNER
 		/// </summary>
 		/// <returns>The entities xml.</returns>
 		/// <param name="inputPath">Input path.</param>
-		public static string GenerateEntitiesToString(string inputPath)
+		public static string GenerateEntitiesToString(string inputPath,string language)
 		{
 			var strWriter = new StringWriter();
-			GenerateEntities(inputPath, strWriter);
+			GenerateEntities(inputPath, strWriter,language);
 			return strWriter.ToString();
 		}
 
@@ -55,7 +55,7 @@ namespace ATPRNER
 		/// </summary>
 		/// <param name="inputPath">The input path</param>
 		/// <param name="output">Output stream</param>
-		static void GenerateEntities(string inputPath, TextWriter output)
+		static void GenerateEntities(string inputPath, TextWriter output , string language)
 		{
 			output.WriteLine("<wis>");
 
@@ -75,7 +75,7 @@ namespace ATPRNER
 					continue;
 				}
 
-				var classifier = CRFClassifier.getClassifierNoExceptions(classifiersDirectory + StanfordEnv.MODELS);
+				var classifier = CRFClassifier.getClassifierNoExceptions(classifiersDirectory + StanfordEnv.GetNerLanguageFiles(language));
 
 				output.WriteLine(classifier.classifyToString(text, "xml", true));
 			}
