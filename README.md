@@ -64,7 +64,7 @@ If `-o` is missing the output will be redirected to STDOUT.
 
 ### Parse text:
 
-    mono ATPR.exe -c parse -i <path_to_matchfile> [-o output_file]
+    mono ATPR.exe -c parser -i <path_to_matchfile> [-o output_file]
     
 If `-o` is missing the output will be redirected to STDOUT.
 

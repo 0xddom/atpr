@@ -17,7 +17,13 @@ namespace ATPRParser
 	/// </summary>
 	public class Parser
 	{
-		// fichero original;entidad;frase;arbol
+		/// <summary>
+		/// Parse the document searching for sentences where the entity found.
+		/// Returns a csv line with the file, the entity the sentence and the sintax analisis of the sentences
+		/// </summary>
+		/// <param name="text">Document text</param>
+		/// <param name="entity">Entity.</param>
+		/// <param name="origFile">Original file.</param>
 		public static List<string[]> Parse (string text, string entity, string origFile)
 		{
 			var results = new List<string[]>();
@@ -78,10 +84,10 @@ namespace ATPRParser
 		{
 			List<string> entitiesLines = new List<string>();
 
-			foreach (string line in text) {
+			foreach (string line in text) 
 				if (line.Contains (entity))
 					entitiesLines.Add (line);
-			}
+			
 			return entitiesLines;
 		}
 	}

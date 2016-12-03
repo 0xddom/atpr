@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATPR.Tests", "ATPR.Tests\AT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATPR.Utils", "ATPR.Utils\ATPR.Utils.csproj", "{19ED0270-F067-4F55-A8EA-D7D98CAD16C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MimeDetective", "MimeDetective\MimeDetective.csproj", "{808E29FE-EF7A-4B04-858B-414238956BC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -37,5 +39,9 @@ Global
 		{19ED0270-F067-4F55-A8EA-D7D98CAD16C7}.Debug|x86.Build.0 = Debug|Any CPU
 		{19ED0270-F067-4F55-A8EA-D7D98CAD16C7}.Release|x86.ActiveCfg = Release|Any CPU
 		{19ED0270-F067-4F55-A8EA-D7D98CAD16C7}.Release|x86.Build.0 = Release|Any CPU
+		{808E29FE-EF7A-4B04-858B-414238956BC3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{808E29FE-EF7A-4B04-858B-414238956BC3}.Debug|x86.Build.0 = Debug|Any CPU
+		{808E29FE-EF7A-4B04-858B-414238956BC3}.Release|x86.ActiveCfg = Release|Any CPU
+		{808E29FE-EF7A-4B04-858B-414238956BC3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
