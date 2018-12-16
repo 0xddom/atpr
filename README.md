@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/KuroAku/atpr.svg?branch=master)](https://travis-ci.org/KuroAku/atpr)
 [![Build status](https://ci.appveyor.com/api/projects/status/64836q07f261hoti?svg=true)](https://ci.appveyor.com/project/KuroAku/atpr)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2F0xddom%2Fatpr.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2F0xddom%2Fatpr?ref=badge_shield)
 
 * alvaro.schuller@edu.uah.es
 * carlos.cilleruelo@edu.uah.es
@@ -132,3 +133,7 @@ The main target for this tool is to help the forensics community in processing e
 # Testing Repository 
 https://github.com/KuroAku/atpr-testing
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2F0xddom%2Fatpr.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2F0xddom%2Fatpr?ref=badge_large)
